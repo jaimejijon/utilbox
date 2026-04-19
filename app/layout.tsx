@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   description:
     "Calculadoras y simuladores financieros gratuitos para Latinoamérica. Interés compuesto, préstamos, jubilación, ROI y más.",
   metadataBase: new URL("https://utilbox.lat"),
+  verification: {
+    google: "U0fFEbAjrPlRY1ADfeHZS-lEv5D859GfmZjDbVwiUNo",
+  },
 };
 
 export default function RootLayout({
