@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Sora } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
-const geist = Geist({
-  variable: "--font-geist-sans",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
+  weight: ["400", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "utilbox.lat — Herramientas financieras gratuitas",
+    default: "utilbox.lat — Herramientas gratuitas para Latinoamérica",
     template: "%s | utilbox.lat",
   },
   description:
-    "Calculadoras y simuladores financieros gratuitos para Latinoamérica. Interés compuesto, préstamos, jubilación, ROI y más.",
+    "Plataforma de herramientas gratuitas para Latinoamérica: calculadoras financieras, simuladores y utilidades para finanzas, salud, hogar y más. Sin registro, sin costos.",
   metadataBase: new URL("https://utilbox.lat"),
   verification: {
     google: "U0fFEbAjrPlRY1ADfeHZS-lEv5D859GfmZjDbVwiUNo",
@@ -31,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${geist.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
+    <html lang="es" className={`${sora.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col" style={{ background: "#0F1117", color: "#ECECEC" }}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-120NH053PK"
           strategy="afterInteractive"

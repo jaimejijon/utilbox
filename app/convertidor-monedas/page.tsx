@@ -5,7 +5,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
-// Tasas estáticas respecto al USD (actualizadas aproximadamente)
+const NICHO = { color: "#5C6BC0", light: "#7F8FE0", bg: "#1E1A3A", tint: "#13141F", border: "rgba(92,107,192,0.2)" };
+
 const RATES: Record<string, { rate: number; name: string; symbol: string }> = {
   USD: { rate: 1, name: "Dólar estadounidense", symbol: "$" },
   MXN: { rate: 17.5, name: "Peso mexicano", symbol: "$" },
@@ -31,11 +32,15 @@ const RATES: Record<string, { rate: number; name: string; symbol: string }> = {
 
 const currencies = Object.keys(RATES);
 
-function fmt(n: number, code: string) {
+function fmt(n: number, _code: string) {
   if (n >= 1000) return n.toLocaleString("es-MX", { maximumFractionDigits: 2 });
   if (n < 0.01) return n.toFixed(6);
   return n.toLocaleString("es-MX", { minimumFractionDigits: 2, maximumFractionDigits: 4 });
 }
+
+const inputStyle = { background: "#0F1117", border: "0.5px solid #1E2030", color: "#ECECEC" };
+const inputClass = "w-full rounded-lg px-3 py-2.5 text-sm focus:outline-none transition-colors";
+const selectStyle = { background: "#0F1117", border: "0.5px solid #1E2030", color: "#ECECEC", borderRadius: "8px", padding: "10px 12px", width: "100%", fontSize: "13px", cursor: "pointer", outline: "none" };
 
 export default function ConvertidorMonedas() {
   const [cantidad, setCantidad] = useState("100");
@@ -62,229 +67,215 @@ export default function ConvertidorMonedas() {
   return (
     <>
       <Header />
-      <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-10">
-        <nav className="text-sm text-slate-400 mb-6">
-          <Link href="/" className="hover:text-accent transition-colors">Inicio</Link>
-          <span className="mx-2">›</span>
-          <span className="text-slate-600">Convertidor de monedas</span>
+      <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
+
+        <nav style={{ fontSize: "13px", color: "#555", marginBottom: "20px" }}>
+          <Link href="/" style={{ color: "#555", textDecoration: "none" }} className="hover:!text-[#888] transition-colors">Inicio</Link>
+          <span style={{ margin: "0 8px" }}>›</span>
+          <Link href="/finanzas" style={{ color: "#555", textDecoration: "none" }} className="hover:!text-[#888] transition-colors">Finanzas</Link>
+          <span style={{ margin: "0 8px" }}>›</span>
+          <span style={{ color: "#888" }}>Convertidor de monedas</span>
         </nav>
 
-        <h1 className="text-3xl font-bold text-navy mb-2">
-          Convertidor de monedas
-        </h1>
-        <p className="text-slate-500 mb-2">
-          Convierte entre 20 monedas latinoamericanas y mundiales al instante.
-        </p>
-        <p className="text-xs text-amber-600 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2 mb-8 inline-block">
-          ⚠️ Las tasas son referenciales. Para transacciones financieras, consulta tasas oficiales.
-        </p>
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="lg:w-2/5 flex-shrink-0">
+            <div className="inline-flex items-center gap-2 mb-4"
+              style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}`, borderRadius: "999px", padding: "4px 12px 4px 8px" }}>
+              <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: NICHO.color, display: "block" }} />
+              <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: NICHO.color }}>Divisas</span>
+            </div>
+            <h1 style={{ fontSize: "22px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", lineHeight: 1.2, marginBottom: "8px" }}>
+              Convertidor de monedas
+            </h1>
+            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "6px" }}>
+              Convierte entre 20 monedas latinoamericanas y mundiales al instante.
+            </p>
+            <p style={{ fontSize: "11px", color: "#D4B85A", background: "rgba(212,184,90,0.08)", border: "0.5px solid rgba(212,184,90,0.2)", borderRadius: "6px", padding: "6px 10px", display: "inline-block", marginBottom: "20px" }}>
+              ⚠ Las tasas son referenciales. Para transacciones financieras, consulta tasas oficiales.
+            </p>
 
-        <div className="bg-white rounded-xl border border-slate-200 p-6 mb-6">
-          <div className="mb-5">
-            <label className="block text-sm font-medium text-navy mb-1.5">Cantidad</label>
-            <input
-              type="number"
-              min="0"
-              value={cantidad}
-              onChange={(e) => setCantidad(e.target.value)}
-              className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-navy text-lg font-semibold focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-            />
+            <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "20px" }}>
+              <div style={{ marginBottom: "16px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+                  <label style={{ fontSize: "12px", fontWeight: 600, color: "#888" }}>Cantidad</label>
+                  <span style={{ fontSize: "12px", color: NICHO.light, fontWeight: 600 }}>{cantidad}</span>
+                </div>
+                <input type="number" min="0" value={cantidad} onChange={(e) => setCantidad(e.target.value)}
+                  className={inputClass} style={{ ...inputStyle, fontSize: "16px", fontWeight: 600, outline: "none" }}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = NICHO.color; e.currentTarget.style.boxShadow = `0 0 0 1px ${NICHO.color}`; }}
+                  onBlur={(e) => { e.currentTarget.style.borderColor = "#1E2030"; e.currentTarget.style.boxShadow = "none"; }} />
+              </div>
+
+              <div className="flex gap-3 items-end">
+                <div className="flex-1">
+                  <label style={{ fontSize: "12px", fontWeight: 600, color: "#888", display: "block", marginBottom: "6px" }}>De</label>
+                  <select value={de} onChange={(e) => setDe(e.target.value)} style={selectStyle}>
+                    {currencies.map((c) => (
+                      <option key={c} value={c}>{c} — {RATES[c].name}</option>
+                    ))}
+                  </select>
+                </div>
+                <button onClick={intercambiar}
+                  style={{ padding: "10px 12px", borderRadius: "8px", border: "0.5px solid #1E2030", background: "#0F1117", color: "#555", cursor: "pointer", fontSize: "16px", marginBottom: "1px", transition: "color 0.2s ease" }}
+                  className="hover:!text-[#7F8FE0] hover:!border-[#5C6BC0]"
+                  title="Intercambiar monedas">
+                  ⇄
+                </button>
+                <div className="flex-1">
+                  <label style={{ fontSize: "12px", fontWeight: 600, color: "#888", display: "block", marginBottom: "6px" }}>A</label>
+                  <select value={a} onChange={(e) => setA(e.target.value)} style={selectStyle}>
+                    {currencies.map((c) => (
+                      <option key={c} value={c}>{c} — {RATES[c].name}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <button onClick={convertir} className="w-full mt-5 rounded-lg py-3 text-sm font-semibold transition-opacity hover:opacity-90"
+                style={{ background: NICHO.color, color: "#fff", border: "none", cursor: "pointer" }}>
+                Convertir
+              </button>
+            </div>
           </div>
 
-          <div className="flex gap-3 items-end">
-            <div className="flex-1">
-              <label className="block text-sm font-medium text-navy mb-1.5">De</label>
-              <select
-                value={de}
-                onChange={(e) => setDe(e.target.value)}
-                className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-navy focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-white"
-              >
-                {currencies.map((c) => (
-                  <option key={c} value={c}>
-                    {c} — {RATES[c].name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <button
-              onClick={intercambiar}
-              className="px-4 py-2.5 border border-slate-200 rounded-lg text-slate-500 hover:text-accent hover:border-accent transition-colors mb-0.5"
-              title="Intercambiar monedas"
-            >
-              ⇄
-            </button>
-            <div className="flex-1">
-              <label className="block text-sm font-medium text-navy mb-1.5">A</label>
-              <select
-                value={a}
-                onChange={(e) => setA(e.target.value)}
-                className="w-full border border-slate-200 rounded-lg px-3 py-2.5 text-navy focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-white"
-              >
-                {currencies.map((c) => (
-                  <option key={c} value={c}>
-                    {c} — {RATES[c].name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
+          <div className="flex-1 min-w-0">
+            {resultado !== null && tasa !== null ? (
+              <div className="flex flex-col gap-4">
+                <div className="rounded-[10px] p-6 text-center"
+                  style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}` }}>
+                  <p style={{ fontSize: "12px", color: "#666", marginBottom: "8px" }}>
+                    {cantidad} {de} equivale a
+                  </p>
+                  <p style={{ fontSize: "38px", fontWeight: 600, color: NICHO.light, letterSpacing: "-1px", lineHeight: 1 }}>
+                    {RATES[a].symbol} {fmt(resultado, a)}
+                  </p>
+                  <p style={{ fontSize: "12px", color: "#555", marginTop: "6px" }}>{a} — {RATES[a].name}</p>
+                </div>
 
-          <button
-            onClick={convertir}
-            className="mt-5 w-full bg-accent text-navy font-semibold py-3 rounded-lg hover:bg-accent-dark hover:text-white transition-colors"
-          >
-            Convertir
-          </button>
+                <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px" }}>
+                  <p style={{ fontSize: "12px", fontWeight: 600, color: "#888", marginBottom: "10px" }}>Tasas de referencia (base USD)</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {[
+                      { label: `1 USD →`, value: `${RATES[de].rate} ${de}` },
+                      { label: `1 USD →`, value: `${RATES[a].rate} ${a}` },
+                    ].map((item, i) => (
+                      <div key={i} style={{ background: "#0F1117", border: "0.5px solid #1E2030", borderRadius: "6px", padding: "8px 10px", display: "flex", justifyContent: "space-between", fontSize: "12px" }}>
+                        <span style={{ color: "#555" }}>{item.label}</span>
+                        <span style={{ color: "#D0D0D0", fontWeight: 600 }}>{item.value}</span>
+                      </div>
+                    ))}
+                    <div className="col-span-2" style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}`, borderRadius: "6px", padding: "8px 10px", display: "flex", justifyContent: "space-between", fontSize: "12px" }}>
+                      <span style={{ color: "#666" }}>1 {de} →</span>
+                      <span style={{ color: NICHO.light, fontWeight: 600 }}>{fmt(tasa, a)} {a}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", overflow: "hidden" }}>
+                  <p style={{ fontSize: "12px", fontWeight: 600, color: "#888", padding: "12px 14px", borderBottom: "0.5px solid #1E2030" }}>
+                    Tabla rápida — {de} a {a}
+                  </p>
+                  <div style={{ overflowX: "auto" }}>
+                    <table style={{ width: "100%", fontSize: "12px", borderCollapse: "collapse" }}>
+                      <thead>
+                        <tr style={{ background: "#0A0B10" }}>
+                          <th style={{ padding: "9px 14px", textAlign: "left", fontWeight: 600, color: "#555", borderBottom: "0.5px solid #1E2030" }}>{de}</th>
+                          <th style={{ padding: "9px 14px", textAlign: "right", fontWeight: 600, color: "#555", borderBottom: "0.5px solid #1E2030" }}>{a}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[1, 5, 10, 50, 100, 500, 1000].map((v) => (
+                          <tr key={v} style={{ borderBottom: "0.5px solid #1A1A2A" }}>
+                            <td style={{ padding: "8px 14px", color: "#888" }}>{RATES[de].symbol} {v.toLocaleString("es-MX")}</td>
+                            <td style={{ padding: "8px 14px", textAlign: "right", fontWeight: 600, color: NICHO.light }}>
+                              {RATES[a].symbol} {fmt((v / RATES[de].rate) * RATES[a].rate, a)}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="hidden lg:flex items-center justify-center h-64"
+                style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px" }}>
+                <p style={{ fontSize: "13px", color: "#555" }}>Selecciona las monedas y presiona Convertir</p>
+              </div>
+            )}
+          </div>
         </div>
 
-        {resultado !== null && tasa !== null && (
-          <div className="space-y-4">
-            <div className="bg-navy text-white rounded-xl p-6 text-center">
-              <p className="text-sm text-slate-300 mb-1">
-                {cantidad} {de} equivale a
-              </p>
-              <p className="text-4xl font-bold text-accent">
-                {RATES[a].symbol} {fmt(resultado, a)}
-              </p>
-              <p className="text-sm text-slate-400 mt-1">{a} — {RATES[a].name}</p>
-            </div>
-
-            <div className="bg-white border border-slate-200 rounded-xl p-5">
-              <p className="text-sm font-medium text-navy mb-3">Tasas de referencia (base USD)</p>
-              <div className="grid grid-cols-2 gap-2 text-sm text-slate-600">
-                <div className="flex justify-between bg-slate-50 rounded-lg px-3 py-2">
-                  <span>1 USD →</span>
-                  <span className="font-medium text-navy">{RATES[de].rate} {de}</span>
-                </div>
-                <div className="flex justify-between bg-slate-50 rounded-lg px-3 py-2">
-                  <span>1 USD →</span>
-                  <span className="font-medium text-navy">{RATES[a].rate} {a}</span>
-                </div>
-                <div className="col-span-2 flex justify-between bg-sky-50 border border-sky-100 rounded-lg px-3 py-2">
-                  <span>1 {de} →</span>
-                  <span className="font-semibold text-accent">
-                    {fmt(tasa, a)} {a}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick reference table */}
-            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
-              <p className="text-sm font-medium text-navy px-5 py-4 border-b border-slate-100">
-                Tabla rápida — {de} a {a}
-              </p>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead className="bg-slate-50 text-slate-500">
-                    <tr>
-                      <th className="text-left px-5 py-3 font-medium">{de}</th>
-                      <th className="text-right px-5 py-3 font-medium">{a}</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    {[1, 5, 10, 50, 100, 500, 1000].map((v) => (
-                      <tr key={v} className="hover:bg-slate-50">
-                        <td className="px-5 py-2.5">
-                          {RATES[de].symbol} {v.toLocaleString("es-MX")}
-                        </td>
-                        <td className="px-5 py-2.5 text-right font-medium text-accent">
-                          {RATES[a].symbol} {fmt((v / RATES[de].rate) * RATES[a].rate, a)}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        )}
         {/* SEO Content */}
         <div className="mt-14 space-y-8">
-          <div className="border-t border-slate-200 pt-10">
-            <h2 className="text-2xl font-bold text-navy mb-4">
+          <div style={{ borderTop: "0.5px solid #1E2030", paddingTop: "40px" }}>
+            <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", marginBottom: "16px" }}>
               Cómo funciona el convertidor de monedas
             </h2>
-            <p className="text-slate-600 leading-relaxed mb-4">
+            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
               Este convertidor te permite transformar cantidades entre 20 monedas de Latinoamérica y el mundo de forma inmediata. Cubre las divisas más usadas en la región: peso mexicano, real brasileño, peso colombiano, sol peruano, peso argentino, colón costarricense y muchas más, además de monedas globales como el dólar, el euro y el yen.
             </p>
-            <p className="text-slate-600 leading-relaxed mb-4">
+            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
               El mecanismo es simple: todas las conversiones pasan por el dólar estadounidense como moneda puente. Tu cantidad se convierte primero a USD usando la tasa de la moneda origen, y luego se multiplica por la tasa de la moneda destino. Este es el mismo sistema que usan la mayoría de plataformas financieras internacionales.
             </p>
-            <p className="text-slate-600 leading-relaxed">
+            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65" }}>
               Es útil para comparar precios en tiendas internacionales, entender el valor de un salario en otro país, planificar un viaje, o simplemente tener una referencia rápida antes de hacer una transferencia internacional.
             </p>
           </div>
 
-          {/* Practical example */}
-          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-            <h3 className="text-lg font-bold text-navy mb-3">Ejemplo práctico: comparar salarios en la región</h3>
-            <p className="text-slate-600 leading-relaxed mb-4">
-              Supón que recibes una oferta de trabajo de <strong className="text-navy">$25,000 MXN al mes</strong> y quieres saber cómo se compara con salarios en otros países de la región. Usando tasas de referencia aproximadas:
+          <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "20px 24px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "12px" }}>Ejemplo práctico: comparar salarios en la región</h3>
+            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
+              Supón que recibes una oferta de trabajo de <strong style={{ color: "#D0D0D0" }}>$25,000 MXN al mes</strong> y quieres saber cómo se compara con salarios en otros países de la región:
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {[
-                { pais: "México (origen)", valor: "$25,000 MXN", color: "text-navy" },
-                { pais: "En dólares USD", valor: "~$1,429 USD", color: "text-accent" },
-                { pais: "En reales BRL", valor: "~R$7,218 BRL", color: "text-slate-700" },
-                { pais: "En colones CRC", valor: "~₡754,285 CRC", color: "text-slate-700" },
-                { pais: "En soles PEN", valor: "~S/5,357 PEN", color: "text-slate-700" },
-                { pais: "En pesos COP", valor: "~$5,785,714 COP", color: "text-slate-700" },
+                { pais: "México (origen)", valor: "$25,000 MXN", color: NICHO.light },
+                { pais: "En dólares USD", valor: "~$1,429 USD", color: "#D0D0D0" },
+                { pais: "En reales BRL", valor: "~R$7,218 BRL", color: "#888" },
+                { pais: "En colones CRC", valor: "~₡754,285 CRC", color: "#888" },
+                { pais: "En soles PEN", valor: "~S/5,357 PEN", color: "#888" },
+                { pais: "En pesos COP", valor: "~$5.7M COP", color: "#888" },
               ].map((item) => (
-                <div key={item.pais} className="bg-white border border-slate-200 rounded-lg p-3">
-                  <p className="text-xs text-slate-500 mb-1">{item.pais}</p>
-                  <p className={`font-semibold ${item.color}`}>{item.valor}</p>
+                <div key={item.pais} style={{ background: "#0F1117", border: "0.5px solid #1E2030", borderRadius: "8px", padding: "10px" }}>
+                  <p style={{ fontSize: "10px", color: "#555", marginBottom: "3px" }}>{item.pais}</p>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: item.color }}>{item.valor}</p>
                 </div>
               ))}
             </div>
-            <p className="text-xs text-slate-500 mt-3">
-              Las tasas son referenciales. Para transacciones reales, consulta siempre el tipo de cambio actualizado de tu banco.
-            </p>
           </div>
 
-          {/* FAQ */}
           <div>
-            <h3 className="text-xl font-bold text-navy mb-4">Preguntas frecuentes</h3>
-            <div className="space-y-4">
-              <div className="bg-white border border-slate-200 rounded-xl p-5">
-                <p className="font-semibold text-navy mb-2">¿Las tasas de cambio son en tiempo real?</p>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Las tasas mostradas son referenciales y se actualizan periódicamente, pero no son datos en tiempo real de los mercados financieros. Para consultas rápidas y educativas son muy útiles. Sin embargo, si vas a realizar una transferencia internacional o cambiar divisas en una casa de cambio, siempre verifica la tasa exacta con tu banco o plataforma de pago, ya que los tipos de cambio fluctúan constantemente.
-                </p>
-              </div>
-              <div className="bg-white border border-slate-200 rounded-xl p-5">
-                <p className="font-semibold text-navy mb-2">¿Por qué el tipo de cambio del banco es diferente al de esta herramienta?</p>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Los bancos y casas de cambio aplican un margen (llamado spread) sobre la tasa interbancaria de referencia. Esa diferencia es su ganancia y puede variar entre el 1% y el 5% según la institución y la moneda. Por eso, si conviertes $1,000 USD en un banco, recibirás menos pesos de lo que indica esta calculadora con la tasa de referencia. Plataformas como Wise o Remitly suelen ofrecer spreads menores para transferencias internacionales.
-                </p>
-              </div>
-              <div className="bg-white border border-slate-200 rounded-xl p-5">
-                <p className="font-semibold text-navy mb-2">¿Por qué el peso argentino tiene una tasa tan alta respecto al dólar?</p>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Argentina ha atravesado períodos prolongados de alta inflación y devaluación de su moneda. La tasa mostrada es la oficial de referencia; en la práctica, Argentina ha tenido históricamente múltiples tipos de cambio simultáneos (oficial, blue, MEP, CCL). La situación cambia con frecuencia, por lo que para cualquier operación con pesos argentinos es fundamental verificar las condiciones actuales con fuentes locales.
-                </p>
-              </div>
+            <h3 style={{ fontSize: "18px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", marginBottom: "14px" }}>Preguntas frecuentes</h3>
+            <div className="space-y-3">
+              {[
+                { q: "¿Las tasas de cambio son en tiempo real?", a: "Las tasas mostradas son referenciales y se actualizan periódicamente, pero no son datos en tiempo real de los mercados financieros. Para consultas rápidas y educativas son muy útiles. Sin embargo, si vas a realizar una transferencia internacional o cambiar divisas en una casa de cambio, siempre verifica la tasa exacta con tu banco o plataforma de pago." },
+                { q: "¿Por qué el tipo de cambio del banco es diferente al de esta herramienta?", a: "Los bancos y casas de cambio aplican un margen (llamado spread) sobre la tasa interbancaria de referencia. Esa diferencia es su ganancia y puede variar entre el 1% y el 5% según la institución y la moneda. Plataformas como Wise o Remitly suelen ofrecer spreads menores para transferencias internacionales." },
+                { q: "¿Por qué el peso argentino tiene una tasa tan alta respecto al dólar?", a: "Argentina ha atravesado períodos prolongados de alta inflación y devaluación de su moneda. La tasa mostrada es la oficial de referencia; en la práctica, Argentina ha tenido históricamente múltiples tipos de cambio simultáneos. La situación cambia con frecuencia, por lo que para cualquier operación con pesos argentinos es fundamental verificar las condiciones actuales con fuentes locales." },
+              ].map((item) => (
+                <div key={item.q} style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px 20px" }}>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "8px" }}>{item.q}</p>
+                  <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65" }}>{item.a}</p>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* CTA to other tools */}
-          <div className="bg-navy rounded-xl p-6">
-            <h3 className="text-lg font-bold text-white mb-1">Explora otras herramientas financieras</h3>
-            <p className="text-slate-400 text-sm mb-5">Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div style={{ background: "#1A1A2E", border: `0.5px solid ${NICHO.border}`, borderRadius: "10px", padding: "24px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
+            <p style={{ fontSize: "13px", color: "#555", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[
                 { href: "/calculadora-interes-compuesto", label: "Interés compuesto", desc: "Proyecta el crecimiento de tus ahorros" },
                 { href: "/simulador-prestamo", label: "Simulador de préstamo", desc: "Calcula tu cuota y tabla de amortización" },
                 { href: "/calculadora-jubilacion", label: "Calculadora de jubilación", desc: "¿Cuánto necesitas para retirarte?" },
                 { href: "/calculadora-roi", label: "Calculadora de ROI", desc: "Mide la rentabilidad de tu inversión" },
               ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="bg-white/10 hover:bg-white/20 rounded-lg px-4 py-3 transition-colors group"
-                >
-                  <p className="font-medium text-white group-hover:text-accent transition-colors text-sm">{tool.label}</p>
-                  <p className="text-slate-400 text-xs mt-0.5">{tool.desc}</p>
+                <Link key={tool.href} href={tool.href}
+                  className="hover:!bg-[#1E1A3A] transition-colors"
+                  style={{ background: "rgba(255,255,255,0.04)", borderRadius: "8px", padding: "10px 14px", textDecoration: "none", display: "block" }}>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "2px" }}>{tool.label}</p>
+                  <p style={{ fontSize: "11px", color: "#555" }}>{tool.desc}</p>
                 </Link>
               ))}
             </div>
