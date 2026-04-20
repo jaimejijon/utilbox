@@ -337,7 +337,7 @@ export default function Home() {
         >
           Categorías
         </p>
-        <div className="flex gap-3 overflow-x-auto scrollbar-none pb-1 sm:grid sm:grid-cols-6">
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-2">
           {categories.map((cat) => (
             <Link
               key={cat.id}
@@ -348,7 +348,6 @@ export default function Home() {
                 border: "0.5px solid #2A2B45",
                 borderRadius: "10px",
                 padding: "14px 8px 16px",
-                minWidth: "90px",
                 textDecoration: "none",
               }}
             >
