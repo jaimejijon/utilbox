@@ -38,7 +38,7 @@ const categories = [
   },
   {
     id: "hogar",
-    href: "#",
+    href: "/hogar",
     name: "Hogar",
     color: "#D4856A",
     bg: "#3D2218",
@@ -51,7 +51,7 @@ const categories = [
   },
   {
     id: "educacion",
-    href: "#",
+    href: "/educacion",
     name: "Educación",
     color: "#74AEDD",
     bg: "#152638",
@@ -64,7 +64,7 @@ const categories = [
   },
   {
     id: "nutricion",
-    href: "#",
+    href: "/nutricion",
     name: "Nutrición",
     color: "#D4B85A",
     bg: "#332B0F",
@@ -189,6 +189,40 @@ export default function Home() {
         .tool-card-fin:last-child:nth-child(3n-1) {
           grid-column: span 2;
         }
+
+        .categoria-card {
+          transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
+          cursor: pointer;
+        }
+        .categoria-card .categoria-nombre {
+          transition: color 0.2s ease;
+        }
+        .categoria-card .categoria-bar {
+          transition: opacity 0.2s ease;
+        }
+        .categoria-card:hover .categoria-bar {
+          opacity: 1 !important;
+          background: currentColor;
+        }
+        .categoria-card:hover { transform: translateY(-2px); }
+
+        .categoria-finanzas:hover { background: #1E1A3A !important; border-color: #5C6BC0 !important; }
+        .categoria-finanzas:hover .categoria-nombre { color: #5C6BC0 !important; }
+
+        .categoria-salud:hover { background: #1A3D2E !important; border-color: #6EC9A0 !important; }
+        .categoria-salud:hover .categoria-nombre { color: #6EC9A0 !important; }
+
+        .categoria-hogar:hover { background: #3D2218 !important; border-color: #D4856A !important; }
+        .categoria-hogar:hover .categoria-nombre { color: #D4856A !important; }
+
+        .categoria-educacion:hover { background: #152638 !important; border-color: #74AEDD !important; }
+        .categoria-educacion:hover .categoria-nombre { color: #74AEDD !important; }
+
+        .categoria-nutricion:hover { background: #332B0F !important; border-color: #D4B85A !important; }
+        .categoria-nutricion:hover .categoria-nombre { color: #D4B85A !important; }
+
+        .categoria-proximamente:hover { background: #1E2030 !important; border-color: #444466 !important; }
+        .categoria-proximamente:hover .categoria-nombre { color: #AAAACC !important; }
       `}</style>
       <Header />
 
@@ -308,7 +342,7 @@ export default function Home() {
             <Link
               key={cat.id}
               href={cat.href}
-              className="flex-shrink-0 flex flex-col items-center gap-2 relative overflow-hidden transition-all duration-200"
+              className={`flex-shrink-0 flex flex-col items-center gap-2 relative overflow-hidden categoria-card categoria-${cat.id}`}
               style={{
                 background: cat.active ? "#20204A" : "#1A1B2E",
                 border: `0.5px solid ${cat.active ? "#4A4DA0" : "#2A2B45"}`,
@@ -333,6 +367,7 @@ export default function Home() {
                 {cat.icon}
               </div>
               <span
+                className="categoria-nombre"
                 style={{
                   fontSize: "11px",
                   fontWeight: 600,
@@ -345,13 +380,15 @@ export default function Home() {
               </span>
               {/* bottom color bar */}
               <span
+                className="categoria-bar"
                 style={{
                   position: "absolute",
                   bottom: 0,
                   left: 0,
                   right: 0,
                   height: "3px",
-                  background: cat.active ? cat.color : "transparent",
+                  background: cat.color,
+                  opacity: cat.active ? 1 : 0.15,
                 }}
               />
             </Link>
