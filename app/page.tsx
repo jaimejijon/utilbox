@@ -16,7 +16,7 @@ const categories = [
     name: "Finanzas",
     color: "#5C6BC0",
     bg: "#252045",
-    active: true,
+    active: false,
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <rect x="3" y="12" width="4" height="9" /><rect x="9.5" y="7" width="4" height="14" /><rect x="16" y="3" width="4" height="18" />
@@ -344,8 +344,8 @@ export default function Home() {
               href={cat.href}
               className={`flex-shrink-0 flex flex-col items-center gap-2 relative overflow-hidden categoria-card categoria-${cat.id}`}
               style={{
-                background: cat.active ? "#20204A" : "#1A1B2E",
-                border: `0.5px solid ${cat.active ? "#4A4DA0" : "#2A2B45"}`,
+                background: "#1A1B2E",
+                border: "0.5px solid #2A2B45",
                 borderRadius: "10px",
                 padding: "14px 8px 16px",
                 minWidth: "90px",
@@ -361,7 +361,7 @@ export default function Home() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: cat.active ? cat.color : "#FFFFFF",
+                  color: "#FFFFFF",
                 }}
               >
                 {cat.icon}
@@ -371,7 +371,7 @@ export default function Home() {
                 style={{
                   fontSize: "11px",
                   fontWeight: 600,
-                  color: cat.active ? cat.color : "#FFFFFF",
+                  color: "#FFFFFF",
                   letterSpacing: "0.02em",
                   textAlign: "center",
                 }}
@@ -388,7 +388,7 @@ export default function Home() {
                   right: 0,
                   height: "3px",
                   background: cat.color,
-                  opacity: cat.active ? 1 : 0.15,
+                  opacity: 0.15,
                 }}
               />
             </Link>
