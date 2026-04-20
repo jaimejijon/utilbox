@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
-const NICHO = { color: "#5C6BC0", light: "#7F8FE0", bg: "#1E1A3A", tint: "#13141F", border: "rgba(92,107,192,0.2)" };
+const NICHO = { color: "#5C6BC0", light: "#9AAAF0", bg: "#1E1A3A", tint: "#13141F", border: "rgba(92,107,192,0.2)" };
 
 function fmt(n: number) {
   return n.toLocaleString("es-MX", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -56,10 +56,10 @@ export default function CalculadoraROI() {
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 
-        <nav style={{ fontSize: "13px", color: "#555", marginBottom: "20px" }}>
-          <Link href="/" style={{ color: "#555", textDecoration: "none" }} className="hover:!text-[#888] transition-colors">Inicio</Link>
+        <nav style={{ fontSize: "13px", color: "#888", marginBottom: "20px" }}>
+          <Link href="/" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Inicio</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <Link href="/finanzas" style={{ color: "#555", textDecoration: "none" }} className="hover:!text-[#888] transition-colors">Finanzas</Link>
+          <Link href="/finanzas" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Finanzas</Link>
           <span style={{ margin: "0 8px" }}>›</span>
           <span style={{ color: "#888" }}>Calculadora de ROI</span>
         </nav>
@@ -145,23 +145,23 @@ export default function CalculadoraROI() {
                 {/* Main ROI */}
                 <div className="rounded-[10px] p-6 text-center"
                   style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}` }}>
-                  <p style={{ fontSize: "12px", color: "#666", marginBottom: "6px" }}>{getRoiLabel(resultado.roi)}</p>
+                  <p style={{ fontSize: "12px", color: "#888", marginBottom: "6px" }}>{getRoiLabel(resultado.roi)}</p>
                   <p style={{ fontSize: "44px", fontWeight: 600, color: getRoiColor(resultado.roi), letterSpacing: "-1px", lineHeight: 1 }}>
                     {resultado.roi >= 0 ? "+" : ""}{fmt(resultado.roi)}%
                   </p>
-                  <p style={{ fontSize: "12px", color: "#555", marginTop: "4px" }}>ROI total</p>
+                  <p style={{ fontSize: "12px", color: "#888", marginTop: "4px" }}>ROI total</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#666", marginBottom: "4px" }}>Ganancia neta</p>
+                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Ganancia neta</p>
                     <p style={{ fontSize: "20px", fontWeight: 600, color: resultado.gananciaNet >= 0 ? "#6EC9A0" : "#E07070" }}>
                       {resultado.gananciaNet >= 0 ? "+" : ""}${fmt(resultado.gananciaNet)}
                     </p>
                   </div>
                   {resultado.roiAnual !== null && (
                     <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                      <p style={{ fontSize: "11px", color: "#666", marginBottom: "4px" }}>ROI anualizado</p>
+                      <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>ROI anualizado</p>
                       <p style={{ fontSize: "20px", fontWeight: 600, color: getRoiColor(resultado.roiAnual) }}>
                         {resultado.roiAnual >= 0 ? "+" : ""}{fmt(resultado.roiAnual)}%
                       </p>
@@ -169,7 +169,7 @@ export default function CalculadoraROI() {
                   )}
                   {resultado.mesesRecuperacion !== null && resultado.gananciaNet > 0 && (
                     <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                      <p style={{ fontSize: "11px", color: "#666", marginBottom: "4px" }}>Período de recuperación</p>
+                      <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Período de recuperación</p>
                       <p style={{ fontSize: "20px", fontWeight: 600, color: "#D0D0D0" }}>
                         {resultado.mesesRecuperacion.toFixed(1)} meses
                       </p>
@@ -188,10 +188,10 @@ export default function CalculadoraROI() {
                       transition: "width 0.4s ease",
                     }} />
                   </div>
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "10px", color: "#444", marginTop: "6px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "10px", color: "#888", marginTop: "6px" }}>
                     <span>0%</span><span>50%</span><span>100%+</span>
                   </div>
-                  <p style={{ fontSize: "11px", color: "#444", marginTop: "8px" }}>
+                  <p style={{ fontSize: "11px", color: "#888", marginTop: "8px" }}>
                     Un ROI del 10–15% anual se considera bueno en inversiones diversificadas.
                   </p>
                 </div>
@@ -199,7 +199,7 @@ export default function CalculadoraROI() {
             ) : (
               <div className="hidden lg:flex items-center justify-center h-64"
                 style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px" }}>
-                <p style={{ fontSize: "13px", color: "#555" }}>Ingresa los valores y presiona Calcular ROI</p>
+                <p style={{ fontSize: "13px", color: "#888" }}>Ingresa los valores y presiona Calcular ROI</p>
               </div>
             )}
           </div>
@@ -235,7 +235,7 @@ export default function CalculadoraROI() {
                 { label: "Recuperación", value: "2.7 meses", color: "#D0D0D0" },
               ].map((item) => (
                 <div key={item.label} style={{ background: "#0F1117", border: "0.5px solid #1E2030", borderRadius: "8px", padding: "12px 8px", textAlign: "center" }}>
-                  <p style={{ fontSize: "10px", color: "#555", marginBottom: "4px" }}>{item.label}</p>
+                  <p style={{ fontSize: "10px", color: "#888", marginBottom: "4px" }}>{item.label}</p>
                   <p style={{ fontSize: "15px", fontWeight: 600, color: item.color }}>{item.value}</p>
                 </div>
               ))}
@@ -260,7 +260,7 @@ export default function CalculadoraROI() {
 
           <div style={{ background: "#1A1A2E", border: `0.5px solid ${NICHO.border}`, borderRadius: "10px", padding: "24px" }}>
             <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
-            <p style={{ fontSize: "13px", color: "#555", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <p style={{ fontSize: "13px", color: "#888", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[
                 { href: "/calculadora-interes-compuesto", label: "Interés compuesto", desc: "Proyecta el crecimiento de tus ahorros" },
@@ -272,7 +272,7 @@ export default function CalculadoraROI() {
                   className="hover:!bg-[#1E1A3A] transition-colors"
                   style={{ background: "rgba(255,255,255,0.04)", borderRadius: "8px", padding: "10px 14px", textDecoration: "none", display: "block" }}>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "2px" }}>{tool.label}</p>
-                  <p style={{ fontSize: "11px", color: "#555" }}>{tool.desc}</p>
+                  <p style={{ fontSize: "11px", color: "#888" }}>{tool.desc}</p>
                 </Link>
               ))}
             </div>

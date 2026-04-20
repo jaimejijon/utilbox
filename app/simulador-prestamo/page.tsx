@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
-const NICHO = { color: "#5C6BC0", light: "#7F8FE0", bg: "#1E1A3A", tint: "#13141F", border: "rgba(92,107,192,0.2)" };
+const NICHO = { color: "#5C6BC0", light: "#9AAAF0", bg: "#1E1A3A", tint: "#13141F", border: "rgba(92,107,192,0.2)" };
 
 function fmt(n: number) {
   return n.toLocaleString("es-MX", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -62,10 +62,10 @@ export default function SimuladorPrestamo() {
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 
-        <nav style={{ fontSize: "13px", color: "#555", marginBottom: "20px" }}>
-          <Link href="/" style={{ color: "#555", textDecoration: "none" }} className="hover:!text-[#888] transition-colors">Inicio</Link>
+        <nav style={{ fontSize: "13px", color: "#888", marginBottom: "20px" }}>
+          <Link href="/" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Inicio</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <Link href="/finanzas" style={{ color: "#555", textDecoration: "none" }} className="hover:!text-[#888] transition-colors">Finanzas</Link>
+          <Link href="/finanzas" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Finanzas</Link>
           <span style={{ margin: "0 8px" }}>›</span>
           <span style={{ color: "#888" }}>Simulador de préstamo</span>
         </nav>
@@ -124,15 +124,15 @@ export default function SimuladorPrestamo() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="col-span-2 sm:col-span-1 rounded-[10px] p-5 text-center"
                     style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}` }}>
-                    <p style={{ fontSize: "11px", color: "#666", marginBottom: "4px" }}>Cuota mensual</p>
+                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Cuota mensual</p>
                     <p style={{ fontSize: "26px", fontWeight: 600, color: NICHO.light, letterSpacing: "-0.5px" }}>${fmt(resultado.cuota)}</p>
                   </div>
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#666", marginBottom: "4px" }}>Total a pagar</p>
+                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Total a pagar</p>
                     <p style={{ fontSize: "20px", fontWeight: 600, color: "#D0D0D0" }}>${fmt(resultado.totalPagado)}</p>
                   </div>
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#666", marginBottom: "4px" }}>Total en intereses</p>
+                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Total en intereses</p>
                     <p style={{ fontSize: "20px", fontWeight: 600, color: "#E07070" }}>${fmt(resultado.totalIntereses)}</p>
                   </div>
                 </div>
@@ -148,7 +148,7 @@ export default function SimuladorPrestamo() {
                       { color: NICHO.color, label: `Capital (${100 - pctInteres}%)` },
                       { color: "#E07070", label: `Intereses (${pctInteres}%)` },
                     ].map((item) => (
-                      <span key={item.label} style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "11px", color: "#555" }}>
+                      <span key={item.label} style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "11px", color: "#888" }}>
                         <span style={{ width: "8px", height: "8px", borderRadius: "2px", background: item.color, display: "block" }} />
                         {item.label}
                       </span>
@@ -161,7 +161,7 @@ export default function SimuladorPrestamo() {
                     className="w-full flex items-center justify-between hover:bg-[#1A1A2E] transition-colors"
                     style={{ padding: "14px 16px", borderBottom: mostrarTabla ? "0.5px solid #1E2030" : "none", background: "transparent", cursor: "pointer", border: "none" }}>
                     <span style={{ fontSize: "12px", fontWeight: 600, color: "#888" }}>Tabla de amortización ({plazo} cuotas)</span>
-                    <span style={{ fontSize: "11px", color: "#444" }}>{mostrarTabla ? "▲" : "▼"}</span>
+                    <span style={{ fontSize: "11px", color: "#666" }}>{mostrarTabla ? "▲" : "▼"}</span>
                   </button>
                   {mostrarTabla && (
                     <div style={{ overflowX: "auto", maxHeight: "260px", overflowY: "auto" }}>
@@ -169,7 +169,7 @@ export default function SimuladorPrestamo() {
                         <thead>
                           <tr style={{ background: "#0A0B10", position: "sticky", top: 0 }}>
                             {["Mes", "Cuota", "Interés", "Capital", "Saldo"].map((h, i) => (
-                              <th key={h} style={{ padding: "9px 12px", textAlign: i === 0 ? "left" : "right", fontWeight: 600, color: "#555", borderBottom: "0.5px solid #1E2030" }}>{h}</th>
+                              <th key={h} style={{ padding: "9px 12px", textAlign: i === 0 ? "left" : "right", fontWeight: 600, color: "#888", borderBottom: "0.5px solid #1E2030" }}>{h}</th>
                             ))}
                           </tr>
                         </thead>
@@ -180,7 +180,7 @@ export default function SimuladorPrestamo() {
                               <td style={{ padding: "8px 12px", textAlign: "right", color: "#D0D0D0" }}>${fmt(row.cuota)}</td>
                               <td style={{ padding: "8px 12px", textAlign: "right", color: "#E07070" }}>${fmt(row.interes)}</td>
                               <td style={{ padding: "8px 12px", textAlign: "right", color: NICHO.light }}>${fmt(row.capital)}</td>
-                              <td style={{ padding: "8px 12px", textAlign: "right", color: "#666" }}>${fmt(row.saldo)}</td>
+                              <td style={{ padding: "8px 12px", textAlign: "right", color: "#888" }}>${fmt(row.saldo)}</td>
                             </tr>
                           ))}
                         </tbody>
@@ -192,7 +192,7 @@ export default function SimuladorPrestamo() {
             ) : (
               <div className="hidden lg:flex items-center justify-center h-64"
                 style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px" }}>
-                <p style={{ fontSize: "13px", color: "#555" }}>Ingresa los valores y presiona Calcular</p>
+                <p style={{ fontSize: "13px", color: "#888" }}>Ingresa los valores y presiona Calcular</p>
               </div>
             )}
           </div>
@@ -238,14 +238,14 @@ export default function SimuladorPrestamo() {
                     <tr key={plazo} style={{ borderBottom: "0.5px solid #1A1A2A" }}>
                       <td style={{ padding: "9px 12px", color: "#888" }}>{plazo}</td>
                       <td style={{ padding: "9px 12px", textAlign: "right", fontWeight: 600, color: "#D0D0D0" }}>{cuota}</td>
-                      <td style={{ padding: "9px 12px", textAlign: "right", color: "#666" }}>{total}</td>
+                      <td style={{ padding: "9px 12px", textAlign: "right", color: "#888" }}>{total}</td>
                       <td style={{ padding: "9px 12px", textAlign: "right", color: "#E07070" }}>{intereses}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p style={{ fontSize: "11px", color: "#444", marginTop: "12px" }}>
+            <p style={{ fontSize: "11px", color: "#666", marginTop: "12px" }}>
               Extender el plazo de 12 a 48 meses reduce la cuota mensual a menos de la mitad, pero cuadruplica los intereses totales pagados.
             </p>
           </div>
@@ -268,7 +268,7 @@ export default function SimuladorPrestamo() {
 
           <div style={{ background: "#1A1A2E", border: `0.5px solid ${NICHO.border}`, borderRadius: "10px", padding: "24px" }}>
             <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
-            <p style={{ fontSize: "13px", color: "#555", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <p style={{ fontSize: "13px", color: "#888", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[
                 { href: "/calculadora-interes-compuesto", label: "Interés compuesto", desc: "Proyecta el crecimiento de tus ahorros" },
@@ -280,7 +280,7 @@ export default function SimuladorPrestamo() {
                   className="hover:!bg-[#1E1A3A] transition-colors"
                   style={{ background: "rgba(255,255,255,0.04)", borderRadius: "8px", padding: "10px 14px", textDecoration: "none", display: "block" }}>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "2px" }}>{tool.label}</p>
-                  <p style={{ fontSize: "11px", color: "#555" }}>{tool.desc}</p>
+                  <p style={{ fontSize: "11px", color: "#888" }}>{tool.desc}</p>
                 </Link>
               ))}
             </div>

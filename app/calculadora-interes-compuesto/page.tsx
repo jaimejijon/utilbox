@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
-const NICHO = { color: "#5C6BC0", light: "#7F8FE0", bg: "#1E1A3A", tint: "#13141F", border: "rgba(92,107,192,0.2)" };
+const NICHO = { color: "#5C6BC0", light: "#9AAAF0", bg: "#1E1A3A", tint: "#13141F", border: "rgba(92,107,192,0.2)" };
 
 function fmt(n: number) {
   return n.toLocaleString("es-MX", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -69,10 +69,10 @@ export default function CalculadoraInteresCompuesto() {
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 
         {/* Breadcrumb */}
-        <nav style={{ fontSize: "13px", color: "#555", marginBottom: "20px" }}>
-          <Link href="/" style={{ color: "#555", textDecoration: "none" }} className="hover:!text-[#888] transition-colors">Inicio</Link>
+        <nav style={{ fontSize: "13px", color: "#888", marginBottom: "20px" }}>
+          <Link href="/" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Inicio</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <Link href="/finanzas" style={{ color: "#555", textDecoration: "none" }} className="hover:!text-[#888] transition-colors">Finanzas</Link>
+          <Link href="/finanzas" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Finanzas</Link>
           <span style={{ margin: "0 8px" }}>›</span>
           <span style={{ color: "#888" }}>Interés compuesto</span>
         </nav>
@@ -145,15 +145,15 @@ export default function CalculadoraInteresCompuesto() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="col-span-2 sm:col-span-1 rounded-[10px] p-5 text-center"
                     style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}` }}>
-                    <p style={{ fontSize: "11px", color: "#666", marginBottom: "4px" }}>Monto final</p>
+                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Monto final</p>
                     <p style={{ fontSize: "26px", fontWeight: 600, color: NICHO.light, letterSpacing: "-0.5px" }}>${fmt(resultado.total)}</p>
                   </div>
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#666", marginBottom: "4px" }}>Capital aportado</p>
+                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Capital aportado</p>
                     <p style={{ fontSize: "20px", fontWeight: 600, color: "#D0D0D0" }}>${fmt(resultado.capitalAportado)}</p>
                   </div>
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#666", marginBottom: "4px" }}>Intereses ganados</p>
+                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Intereses ganados</p>
                     <p style={{ fontSize: "20px", fontWeight: 600, color: "#6EC9A0" }}>${fmt(resultado.intereses)}</p>
                   </div>
                 </div>
@@ -166,11 +166,11 @@ export default function CalculadoraInteresCompuesto() {
                     <div style={{ flex: 1, background: "#6EC9A0", height: "100%" }} />
                   </div>
                   <div style={{ display: "flex", gap: "16px", marginTop: "8px" }}>
-                    <span style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "11px", color: "#555" }}>
+                    <span style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "11px", color: "#888" }}>
                       <span style={{ width: "8px", height: "8px", borderRadius: "2px", background: NICHO.color, display: "block" }} />
                       Aportado ({pct}%)
                     </span>
-                    <span style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "11px", color: "#555" }}>
+                    <span style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "11px", color: "#888" }}>
                       <span style={{ width: "8px", height: "8px", borderRadius: "2px", background: "#6EC9A0", display: "block" }} />
                       Intereses ({100 - pct}%)
                     </span>
@@ -187,7 +187,7 @@ export default function CalculadoraInteresCompuesto() {
                       <thead>
                         <tr style={{ background: "#0A0B10" }}>
                           {["Año", "Saldo", "Aportado", "Intereses"].map((h, i) => (
-                            <th key={h} style={{ padding: "10px 14px", textAlign: i === 0 ? "left" : "right", fontWeight: 600, color: "#555", borderBottom: "0.5px solid #1E2030" }}>{h}</th>
+                            <th key={h} style={{ padding: "10px 14px", textAlign: i === 0 ? "left" : "right", fontWeight: 600, color: "#888", borderBottom: "0.5px solid #1E2030" }}>{h}</th>
                           ))}
                         </tr>
                       </thead>
@@ -196,7 +196,7 @@ export default function CalculadoraInteresCompuesto() {
                           <tr key={row.year} style={{ borderBottom: "0.5px solid #1A1A2A" }}>
                             <td style={{ padding: "9px 14px", color: "#888", fontWeight: 600 }}>{row.year}</td>
                             <td style={{ padding: "9px 14px", textAlign: "right", color: NICHO.light, fontWeight: 600 }}>${fmt(row.balance)}</td>
-                            <td style={{ padding: "9px 14px", textAlign: "right", color: "#666" }}>${fmt(row.contributions)}</td>
+                            <td style={{ padding: "9px 14px", textAlign: "right", color: "#888" }}>${fmt(row.contributions)}</td>
                             <td style={{ padding: "9px 14px", textAlign: "right", color: "#6EC9A0" }}>${fmt(row.interest)}</td>
                           </tr>
                         ))}
@@ -210,7 +210,7 @@ export default function CalculadoraInteresCompuesto() {
                 style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px" }}>
                 <div className="text-center">
                   <div style={{ fontSize: "32px", marginBottom: "8px", opacity: 0.3 }}>◈</div>
-                  <p style={{ fontSize: "13px", color: "#555" }}>Ingresa los valores y presiona Calcular</p>
+                  <p style={{ fontSize: "13px", color: "#888" }}>Ingresa los valores y presiona Calcular</p>
                 </div>
               </div>
             )}
@@ -246,13 +246,13 @@ export default function CalculadoraInteresCompuesto() {
                 { label: "En 30 años", value: "$339,821", sub: "aportaste $77,000" },
               ].map((item) => (
                 <div key={item.label} style={{ background: "#0F1117", border: "0.5px solid #1E2030", borderRadius: "8px", padding: "12px 8px" }}>
-                  <p style={{ fontSize: "11px", color: "#555", marginBottom: "4px" }}>{item.label}</p>
+                  <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>{item.label}</p>
                   <p style={{ fontSize: "16px", fontWeight: 600, color: NICHO.light, marginBottom: "2px" }}>{item.value}</p>
-                  <p style={{ fontSize: "10px", color: "#333" }}>{item.sub}</p>
+                  <p style={{ fontSize: "10px", color: "#666" }}>{item.sub}</p>
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: "11px", color: "#444", marginTop: "12px" }}>
+            <p style={{ fontSize: "11px", color: "#888", marginTop: "12px" }}>
               A los 30 años, los intereses representan más del 77% del saldo final. Eso es el interés compuesto en acción.
             </p>
           </div>
@@ -285,7 +285,7 @@ export default function CalculadoraInteresCompuesto() {
           {/* CTA other tools */}
           <div style={{ background: "#1A1A2E", border: `0.5px solid ${NICHO.border}`, borderRadius: "10px", padding: "24px" }}>
             <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
-            <p style={{ fontSize: "13px", color: "#555", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <p style={{ fontSize: "13px", color: "#888", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[
                 { href: "/simulador-prestamo", label: "Simulador de préstamo", desc: "Calcula tu cuota y tabla de amortización" },
@@ -297,7 +297,7 @@ export default function CalculadoraInteresCompuesto() {
                   className="hover:!bg-[#1E1A3A] transition-colors"
                   style={{ background: "rgba(255,255,255,0.04)", borderRadius: "8px", padding: "10px 14px", textDecoration: "none", display: "block" }}>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "2px" }}>{tool.label}</p>
-                  <p style={{ fontSize: "11px", color: "#555" }}>{tool.desc}</p>
+                  <p style={{ fontSize: "11px", color: "#888" }}>{tool.desc}</p>
                 </Link>
               ))}
             </div>

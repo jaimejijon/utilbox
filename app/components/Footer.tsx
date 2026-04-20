@@ -26,7 +26,7 @@ export default function Footer() {
                 .lat
               </span>
             </div>
-            <p style={{ fontSize: "13px", lineHeight: "1.65", color: "#555" }}>
+            <p style={{ fontSize: "13px", lineHeight: "1.65", color: "#888" }}>
               Plataforma de herramientas gratuitas para toda Latinoamérica. Sin registro, sin costos.
             </p>
           </div>
@@ -39,7 +39,7 @@ export default function Footer() {
                 fontWeight: 600,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: "#444",
+                color: "#888",
                 marginBottom: "12px",
               }}
             >
@@ -50,8 +50,8 @@ export default function Footer() {
                 <li key={t.href}>
                   <Link
                     href={t.href}
-                    style={{ fontSize: "13px", color: "#555" }}
-                    className="hover:!text-[#888] transition-colors duration-200"
+                    style={{ fontSize: "13px", color: "#888" }}
+                    className="hover:!text-[#CCCCCC] transition-colors duration-200"
                   >
                     {t.label}
                   </Link>
@@ -68,20 +68,20 @@ export default function Footer() {
                 fontWeight: 600,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: "#444",
+                color: "#888",
                 marginBottom: "12px",
               }}
             >
               Plataforma
             </p>
-            <p style={{ fontSize: "13px", lineHeight: "1.65", color: "#555" }}>
+            <p style={{ fontSize: "13px", lineHeight: "1.65", color: "#888" }}>
               Todos los cálculos corren directamente en tu navegador. No almacenamos ningún dato personal.
             </p>
           </div>
         </div>
 
         <div style={{ borderTop: "0.5px solid #1E2030", paddingTop: "20px", textAlign: "center" }}>
-          <span style={{ fontSize: "11px", color: "#333" }}>
+          <span style={{ fontSize: "11px", color: "#666" }}>
             © 2025 utilbox.lat — Herramientas gratuitas para todos
           </span>
         </div>

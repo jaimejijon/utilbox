@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
-const NICHO = { color: "#5C6BC0", light: "#7F8FE0", bg: "#1E1A3A", tint: "#13141F", border: "rgba(92,107,192,0.2)" };
+const NICHO = { color: "#5C6BC0", light: "#9AAAF0", bg: "#1E1A3A", tint: "#13141F", border: "rgba(92,107,192,0.2)" };
 
 const RATES: Record<string, { rate: number; name: string; symbol: string }> = {
   USD: { rate: 1, name: "Dólar estadounidense", symbol: "$" },
@@ -69,10 +69,10 @@ export default function ConvertidorMonedas() {
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 
-        <nav style={{ fontSize: "13px", color: "#555", marginBottom: "20px" }}>
-          <Link href="/" style={{ color: "#555", textDecoration: "none" }} className="hover:!text-[#888] transition-colors">Inicio</Link>
+        <nav style={{ fontSize: "13px", color: "#888", marginBottom: "20px" }}>
+          <Link href="/" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Inicio</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <Link href="/finanzas" style={{ color: "#555", textDecoration: "none" }} className="hover:!text-[#888] transition-colors">Finanzas</Link>
+          <Link href="/finanzas" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Finanzas</Link>
           <span style={{ margin: "0 8px" }}>›</span>
           <span style={{ color: "#888" }}>Convertidor de monedas</span>
         </nav>
@@ -116,7 +116,7 @@ export default function ConvertidorMonedas() {
                   </select>
                 </div>
                 <button onClick={intercambiar}
-                  style={{ padding: "10px 12px", borderRadius: "8px", border: "0.5px solid #1E2030", background: "#0F1117", color: "#555", cursor: "pointer", fontSize: "16px", marginBottom: "1px", transition: "color 0.2s ease" }}
+                  style={{ padding: "10px 12px", borderRadius: "8px", border: "0.5px solid #1E2030", background: "#0F1117", color: "#888", cursor: "pointer", fontSize: "16px", marginBottom: "1px", transition: "color 0.2s ease" }}
                   className="hover:!text-[#7F8FE0] hover:!border-[#5C6BC0]"
                   title="Intercambiar monedas">
                   ⇄
@@ -143,13 +143,13 @@ export default function ConvertidorMonedas() {
               <div className="flex flex-col gap-4">
                 <div className="rounded-[10px] p-6 text-center"
                   style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}` }}>
-                  <p style={{ fontSize: "12px", color: "#666", marginBottom: "8px" }}>
+                  <p style={{ fontSize: "12px", color: "#888", marginBottom: "8px" }}>
                     {cantidad} {de} equivale a
                   </p>
                   <p style={{ fontSize: "38px", fontWeight: 600, color: NICHO.light, letterSpacing: "-1px", lineHeight: 1 }}>
                     {RATES[a].symbol} {fmt(resultado, a)}
                   </p>
-                  <p style={{ fontSize: "12px", color: "#555", marginTop: "6px" }}>{a} — {RATES[a].name}</p>
+                  <p style={{ fontSize: "12px", color: "#888", marginTop: "6px" }}>{a} — {RATES[a].name}</p>
                 </div>
 
                 <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px" }}>
@@ -160,12 +160,12 @@ export default function ConvertidorMonedas() {
                       { label: `1 USD →`, value: `${RATES[a].rate} ${a}` },
                     ].map((item, i) => (
                       <div key={i} style={{ background: "#0F1117", border: "0.5px solid #1E2030", borderRadius: "6px", padding: "8px 10px", display: "flex", justifyContent: "space-between", fontSize: "12px" }}>
-                        <span style={{ color: "#555" }}>{item.label}</span>
+                        <span style={{ color: "#888" }}>{item.label}</span>
                         <span style={{ color: "#D0D0D0", fontWeight: 600 }}>{item.value}</span>
                       </div>
                     ))}
                     <div className="col-span-2" style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}`, borderRadius: "6px", padding: "8px 10px", display: "flex", justifyContent: "space-between", fontSize: "12px" }}>
-                      <span style={{ color: "#666" }}>1 {de} →</span>
+                      <span style={{ color: "#888" }}>1 {de} →</span>
                       <span style={{ color: NICHO.light, fontWeight: 600 }}>{fmt(tasa, a)} {a}</span>
                     </div>
                   </div>
@@ -179,8 +179,8 @@ export default function ConvertidorMonedas() {
                     <table style={{ width: "100%", fontSize: "12px", borderCollapse: "collapse" }}>
                       <thead>
                         <tr style={{ background: "#0A0B10" }}>
-                          <th style={{ padding: "9px 14px", textAlign: "left", fontWeight: 600, color: "#555", borderBottom: "0.5px solid #1E2030" }}>{de}</th>
-                          <th style={{ padding: "9px 14px", textAlign: "right", fontWeight: 600, color: "#555", borderBottom: "0.5px solid #1E2030" }}>{a}</th>
+                          <th style={{ padding: "9px 14px", textAlign: "left", fontWeight: 600, color: "#888", borderBottom: "0.5px solid #1E2030" }}>{de}</th>
+                          <th style={{ padding: "9px 14px", textAlign: "right", fontWeight: 600, color: "#888", borderBottom: "0.5px solid #1E2030" }}>{a}</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -200,7 +200,7 @@ export default function ConvertidorMonedas() {
             ) : (
               <div className="hidden lg:flex items-center justify-center h-64"
                 style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px" }}>
-                <p style={{ fontSize: "13px", color: "#555" }}>Selecciona las monedas y presiona Convertir</p>
+                <p style={{ fontSize: "13px", color: "#888" }}>Selecciona las monedas y presiona Convertir</p>
               </div>
             )}
           </div>
@@ -238,7 +238,7 @@ export default function ConvertidorMonedas() {
                 { pais: "En pesos COP", valor: "~$5.7M COP", color: "#888" },
               ].map((item) => (
                 <div key={item.pais} style={{ background: "#0F1117", border: "0.5px solid #1E2030", borderRadius: "8px", padding: "10px" }}>
-                  <p style={{ fontSize: "10px", color: "#555", marginBottom: "3px" }}>{item.pais}</p>
+                  <p style={{ fontSize: "10px", color: "#888", marginBottom: "3px" }}>{item.pais}</p>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: item.color }}>{item.valor}</p>
                 </div>
               ))}
@@ -263,7 +263,7 @@ export default function ConvertidorMonedas() {
 
           <div style={{ background: "#1A1A2E", border: `0.5px solid ${NICHO.border}`, borderRadius: "10px", padding: "24px" }}>
             <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
-            <p style={{ fontSize: "13px", color: "#555", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <p style={{ fontSize: "13px", color: "#888", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[
                 { href: "/calculadora-interes-compuesto", label: "Interés compuesto", desc: "Proyecta el crecimiento de tus ahorros" },
@@ -275,7 +275,7 @@ export default function ConvertidorMonedas() {
                   className="hover:!bg-[#1E1A3A] transition-colors"
                   style={{ background: "rgba(255,255,255,0.04)", borderRadius: "8px", padding: "10px 14px", textDecoration: "none", display: "block" }}>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "2px" }}>{tool.label}</p>
-                  <p style={{ fontSize: "11px", color: "#555" }}>{tool.desc}</p>
+                  <p style={{ fontSize: "11px", color: "#888" }}>{tool.desc}</p>
                 </Link>
               ))}
             </div>

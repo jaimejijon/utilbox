@@ -96,8 +96,8 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              style={{ fontSize: "13px", color: "#555" }}
-              className="hover:!text-[#999] transition-colors duration-200"
+              style={{ fontSize: "13px", color: "#999" }}
+              className="hover:!text-[#CCCCCC] transition-colors duration-200"
             >
               {item.label}
             </Link>
@@ -115,7 +115,7 @@ export default function Header() {
               display: "block",
               width: "18px",
               height: "1.5px",
-              background: "#666",
+              background: "#999",
               transition: "all 0.2s ease",
               transform: open ? "rotate(45deg) translate(0, 6.5px)" : "none",
             }}
@@ -125,7 +125,7 @@ export default function Header() {
               display: "block",
               width: "18px",
               height: "1.5px",
-              background: "#666",
+              background: "#999",
               transition: "all 0.2s ease",
               opacity: open ? 0 : 1,
             }}
@@ -135,7 +135,7 @@ export default function Header() {
               display: "block",
               width: "18px",
               height: "1.5px",
-              background: "#666",
+              background: "#999",
               transition: "all 0.2s ease",
               transform: open ? "rotate(-45deg) translate(0, -6.5px)" : "none",
             }}

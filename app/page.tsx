@@ -97,7 +97,7 @@ const tools = [
     name: "Calculadora de interés compuesto",
     description: "Simula el crecimiento de tu inversión con aportaciones mensuales y capitalización mensual.",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7F8FE0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AAAF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
       </svg>
     ),
@@ -108,7 +108,7 @@ const tools = [
     name: "Simulador de préstamo",
     description: "Calcula tu cuota mensual, total de intereses y tabla de amortización completa.",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7F8FE0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AAAF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <rect x="1" y="4" width="22" height="16" rx="2" ry="2" /><line x1="1" y1="10" x2="23" y2="10" />
       </svg>
     ),
@@ -119,7 +119,7 @@ const tools = [
     name: "Convertidor de monedas",
     description: "Convierte entre más de 20 monedas latinoamericanas y mundiales al instante.",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7F8FE0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AAAF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <polyline points="17 1 21 5 17 9" /><path d="M3 11V9a4 4 0 0 1 4-4h14" /><polyline points="7 23 3 19 7 15" /><path d="M21 13v2a4 4 0 0 1-4 4H3" />
       </svg>
     ),
@@ -130,7 +130,7 @@ const tools = [
     name: "Calculadora de jubilación",
     description: "Descubre cuánto necesitas ahorrar hoy para retirarte con tranquilidad financiera.",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7F8FE0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AAAF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
       </svg>
     ),
@@ -141,7 +141,7 @@ const tools = [
     name: "Calculadora de ROI",
     description: "Calcula el retorno sobre inversión de cualquier proyecto o negocio de forma visual.",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7F8FE0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AAAF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" />
       </svg>
     ),
@@ -243,7 +243,7 @@ export default function Home() {
         <p
           style={{
             fontSize: "14px",
-            color: "#888",
+            color: "#AAAAAA",
             lineHeight: "1.65",
             maxWidth: "480px",
             margin: "0 auto 28px",
@@ -274,7 +274,7 @@ export default function Home() {
             href="#acerca"
             style={{
               background: "transparent",
-              color: "#777",
+              color: "#AAAAAA",
               fontSize: "13px",
               border: "0.5px solid #2A2A40",
               padding: "10px 20px",
@@ -297,7 +297,7 @@ export default function Home() {
             fontWeight: 600,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
-            color: "#666",
+            color: "#AAAAAA",
             marginBottom: "14px",
           }}
         >
@@ -327,7 +327,7 @@ export default function Home() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: cat.active ? cat.color : "#888",
+                  color: cat.active ? cat.color : "#BBBBBB",
                 }}
               >
                 {cat.icon}
@@ -336,7 +336,7 @@ export default function Home() {
                 style={{
                   fontSize: "11px",
                   fontWeight: 600,
-                  color: cat.active ? cat.color : "#888",
+                  color: cat.active ? cat.color : "#BBBBBB",
                   letterSpacing: "0.02em",
                   textAlign: "center",
                 }}
@@ -369,7 +369,7 @@ export default function Home() {
                 fontWeight: 600,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: "#444",
+                color: "#AAAAAA",
               }}
             >
               Finanzas — 5 herramientas
@@ -455,7 +455,7 @@ export default function Home() {
                 <p
                   style={{
                     fontSize: "11px",
-                    color: "#4A4A5A",
+                    color: "#9090AA",
                     lineHeight: "1.55",
                     flex: 1,
                   }}
@@ -471,7 +471,7 @@ export default function Home() {
                     bottom: "14px",
                     right: "14px",
                     fontSize: "13px",
-                    color: "#333",
+                    color: "#6666AA",
                   }}
                 >
                   →
@@ -540,7 +540,7 @@ export default function Home() {
                   <span
                     style={{
                       fontSize: "11px",
-                      color: "#4A4A5A",
+                      color: "#9090AA",
                       display: "block",
                       whiteSpace: "nowrap",
                       overflow: "hidden",
@@ -550,7 +550,7 @@ export default function Home() {
                     {tool.description}
                   </span>
                 </div>
-                <span style={{ color: "#333", fontSize: "14px", flexShrink: 0 }}>→</span>
+                <span style={{ color: "#6666AA", fontSize: "14px", flexShrink: 0 }}>→</span>
               </Link>
             ))}
           </div>
@@ -588,7 +588,7 @@ export default function Home() {
                     <p style={{ fontSize: "12px", fontWeight: 600, color: "#E0E0E0", marginBottom: "2px" }}>
                       {b.title}
                     </p>
-                    <p style={{ fontSize: "11px", color: "#777" }}>{b.sub}</p>
+                    <p style={{ fontSize: "11px", color: "#AAAAAA" }}>{b.sub}</p>
                   </div>
                 </div>
               ))}
@@ -635,7 +635,7 @@ export default function Home() {
             key={item.href}
             href={item.href}
             className="flex-1 flex flex-col items-center gap-1"
-            style={{ padding: "10px 4px 14px", color: "#444", textDecoration: "none" }}
+            style={{ padding: "10px 4px 14px", color: "#888", textDecoration: "none" }}
           >
             {item.icon}
             <span style={{ fontSize: "9px" }}>{item.label}</span>

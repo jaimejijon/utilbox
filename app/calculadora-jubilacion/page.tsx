@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
-const NICHO = { color: "#5C6BC0", light: "#7F8FE0", bg: "#1E1A3A", tint: "#13141F", border: "rgba(92,107,192,0.2)" };
+const NICHO = { color: "#5C6BC0", light: "#9AAAF0", bg: "#1E1A3A", tint: "#13141F", border: "rgba(92,107,192,0.2)" };
 
 function fmt(n: number) {
   return n.toLocaleString("es-MX", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -87,10 +87,10 @@ export default function CalculadoraJubilacion() {
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 
-        <nav style={{ fontSize: "13px", color: "#555", marginBottom: "20px" }}>
-          <Link href="/" style={{ color: "#555", textDecoration: "none" }} className="hover:!text-[#888] transition-colors">Inicio</Link>
+        <nav style={{ fontSize: "13px", color: "#888", marginBottom: "20px" }}>
+          <Link href="/" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Inicio</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <Link href="/finanzas" style={{ color: "#555", textDecoration: "none" }} className="hover:!text-[#888] transition-colors">Finanzas</Link>
+          <Link href="/finanzas" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Finanzas</Link>
           <span style={{ margin: "0 8px" }}>›</span>
           <span style={{ color: "#888" }}>Calculadora de jubilación</span>
         </nav>
@@ -138,21 +138,21 @@ export default function CalculadoraJubilacion() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="col-span-2 sm:col-span-1 rounded-[10px] p-5 text-center"
                     style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}` }}>
-                    <p style={{ fontSize: "11px", color: "#666", marginBottom: "2px" }}>Fondo al jubilarte (nominal)</p>
+                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "2px" }}>Fondo al jubilarte (nominal)</p>
                     <p style={{ fontSize: "24px", fontWeight: 600, color: NICHO.light, letterSpacing: "-0.5px" }}>${fmt(resultado.fondoNominal)}</p>
-                    <p style={{ fontSize: "11px", color: "#444", marginTop: "2px" }}>en {resultado.anosAcumulacion} años</p>
+                    <p style={{ fontSize: "11px", color: "#666", marginTop: "2px" }}>en {resultado.anosAcumulacion} años</p>
                   </div>
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#666", marginBottom: "2px" }}>Poder adquisitivo actual</p>
+                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "2px" }}>Poder adquisitivo actual</p>
                     <p style={{ fontSize: "20px", fontWeight: 600, color: "#D0D0D0" }}>${fmt(resultado.fondoReal)}</p>
-                    <p style={{ fontSize: "10px", color: "#444", marginTop: "2px" }}>ajustado por inflación</p>
+                    <p style={{ fontSize: "10px", color: "#666", marginTop: "2px" }}>ajustado por inflación</p>
                   </div>
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#666", marginBottom: "4px" }}>Total aportado</p>
+                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Total aportado</p>
                     <p style={{ fontSize: "18px", fontWeight: 600, color: "#D0D0D0" }}>${fmt(resultado.totalAportado)}</p>
                   </div>
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#666", marginBottom: "4px" }}>Rendimientos generados</p>
+                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Rendimientos generados</p>
                     <p style={{ fontSize: "18px", fontWeight: 600, color: "#6EC9A0" }}>${fmt(resultado.interesesGanados)}</p>
                   </div>
                 </div>
@@ -182,7 +182,7 @@ export default function CalculadoraJubilacion() {
             ) : (
               <div className="hidden lg:flex items-center justify-center h-64"
                 style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px" }}>
-                <p style={{ fontSize: "13px", color: "#555" }}>Ingresa los valores y presiona Calcular</p>
+                <p style={{ fontSize: "13px", color: "#888" }}>Ingresa los valores y presiona Calcular</p>
               </div>
             )}
           </div>
@@ -216,14 +216,14 @@ export default function CalculadoraJubilacion() {
                 { label: "Empieza a los 40 años", value: "$189,202", sub: "Aporta $90,000 en total", note: "Fondo alcanza ~9 años", noteColor: "#D4B85A" },
               ].map((item) => (
                 <div key={item.label} style={{ background: "#0F1117", border: "0.5px solid #1E2030", borderRadius: "8px", padding: "16px", textAlign: "center" }}>
-                  <p style={{ fontSize: "12px", color: "#555", marginBottom: "6px" }}>{item.label}</p>
+                  <p style={{ fontSize: "12px", color: "#888", marginBottom: "6px" }}>{item.label}</p>
                   <p style={{ fontSize: "22px", fontWeight: 600, color: NICHO.light, marginBottom: "4px" }}>{item.value}</p>
-                  <p style={{ fontSize: "11px", color: "#666", marginBottom: "4px" }}>{item.sub}</p>
+                  <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>{item.sub}</p>
                   <p style={{ fontSize: "11px", fontWeight: 600, color: item.noteColor }}>{item.note}</p>
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: "11px", color: "#444", marginTop: "12px" }}>
+            <p style={{ fontSize: "11px", color: "#666", marginTop: "12px" }}>
               Esperar 15 años reduce el fondo en casi 5 veces, a pesar de haber aportado solo $54,000 menos.
             </p>
           </div>
@@ -246,7 +246,7 @@ export default function CalculadoraJubilacion() {
 
           <div style={{ background: "#1A1A2E", border: `0.5px solid ${NICHO.border}`, borderRadius: "10px", padding: "24px" }}>
             <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
-            <p style={{ fontSize: "13px", color: "#555", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <p style={{ fontSize: "13px", color: "#888", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[
                 { href: "/calculadora-interes-compuesto", label: "Interés compuesto", desc: "Proyecta el crecimiento de tus ahorros" },
@@ -258,7 +258,7 @@ export default function CalculadoraJubilacion() {
                   className="hover:!bg-[#1E1A3A] transition-colors"
                   style={{ background: "rgba(255,255,255,0.04)", borderRadius: "8px", padding: "10px 14px", textDecoration: "none", display: "block" }}>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "2px" }}>{tool.label}</p>
-                  <p style={{ fontSize: "11px", color: "#555" }}>{tool.desc}</p>
+                  <p style={{ fontSize: "11px", color: "#888" }}>{tool.desc}</p>
                 </Link>
               ))}
             </div>
