@@ -25,7 +25,7 @@ const categories = [
   },
   {
     id: "salud",
-    href: "#",
+    href: "/salud",
     name: "Salud",
     color: "#6EC9A0",
     bg: "#1A3D2E",
