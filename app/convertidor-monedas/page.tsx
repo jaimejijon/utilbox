@@ -38,9 +38,9 @@ function fmt(n: number, _code: string) {
   return n.toLocaleString("es-MX", { minimumFractionDigits: 2, maximumFractionDigits: 4 });
 }
 
-const inputStyle = { background: "#0F1117", border: "0.5px solid #1E2030", color: "#ECECEC" };
+const inputStyle = { background: "#0F1117", border: "0.5px solid #1E2030", color: "#FFFFFF" };
 const inputClass = "w-full rounded-lg px-3 py-2.5 text-sm focus:outline-none transition-colors";
-const selectStyle = { background: "#0F1117", border: "0.5px solid #1E2030", color: "#ECECEC", borderRadius: "8px", padding: "10px 12px", width: "100%", fontSize: "13px", cursor: "pointer", outline: "none" };
+const selectStyle = { background: "#0F1117", border: "0.5px solid #1E2030", color: "#FFFFFF", borderRadius: "8px", padding: "10px 12px", width: "100%", fontSize: "13px", cursor: "pointer", outline: "none" };
 
 export default function ConvertidorMonedas() {
   const [cantidad, setCantidad] = useState("100");
@@ -69,12 +69,12 @@ export default function ConvertidorMonedas() {
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 
-        <nav style={{ fontSize: "13px", color: "#888", marginBottom: "20px" }}>
-          <Link href="/" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Inicio</Link>
+        <nav style={{ fontSize: "13px", color: "#EEEEEE", marginBottom: "20px" }}>
+          <Link href="/" style={{ color: "#EEEEEE", textDecoration: "none" }} className="hover:!text-[#FFFFFF] transition-colors">Inicio</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <Link href="/finanzas" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Finanzas</Link>
+          <Link href="/finanzas" style={{ color: "#EEEEEE", textDecoration: "none" }} className="hover:!text-[#FFFFFF] transition-colors">Finanzas</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <span style={{ color: "#888" }}>Convertidor de monedas</span>
+          <span style={{ color: "#EEEEEE" }}>Convertidor de monedas</span>
         </nav>
 
         <div className="flex flex-col lg:flex-row gap-6">
@@ -84,10 +84,10 @@ export default function ConvertidorMonedas() {
               <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: NICHO.color, display: "block" }} />
               <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: NICHO.color }}>Divisas</span>
             </div>
-            <h1 style={{ fontSize: "22px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", lineHeight: 1.2, marginBottom: "8px" }}>
+            <h1 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", letterSpacing: "-0.3px", lineHeight: 1.2, marginBottom: "8px" }}>
               Convertidor de monedas
             </h1>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "6px" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "6px" }}>
               Convierte entre 20 monedas latinoamericanas y mundiales al instante.
             </p>
             <p style={{ fontSize: "11px", color: "#D4B85A", background: "rgba(212,184,90,0.08)", border: "0.5px solid rgba(212,184,90,0.2)", borderRadius: "6px", padding: "6px 10px", display: "inline-block", marginBottom: "20px" }}>
@@ -97,7 +97,7 @@ export default function ConvertidorMonedas() {
             <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "20px" }}>
               <div style={{ marginBottom: "16px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
-                  <label style={{ fontSize: "12px", fontWeight: 600, color: "#888" }}>Cantidad</label>
+                  <label style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEEE" }}>Cantidad</label>
                   <span style={{ fontSize: "12px", color: NICHO.light, fontWeight: 600 }}>{cantidad}</span>
                 </div>
                 <input type="number" min="0" value={cantidad} onChange={(e) => setCantidad(e.target.value)}
@@ -108,7 +108,7 @@ export default function ConvertidorMonedas() {
 
               <div className="flex gap-3 items-end">
                 <div className="flex-1">
-                  <label style={{ fontSize: "12px", fontWeight: 600, color: "#888", display: "block", marginBottom: "6px" }}>De</label>
+                  <label style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEEE", display: "block", marginBottom: "6px" }}>De</label>
                   <select value={de} onChange={(e) => setDe(e.target.value)} style={selectStyle}>
                     {currencies.map((c) => (
                       <option key={c} value={c}>{c} — {RATES[c].name}</option>
@@ -116,13 +116,13 @@ export default function ConvertidorMonedas() {
                   </select>
                 </div>
                 <button onClick={intercambiar}
-                  style={{ padding: "10px 12px", borderRadius: "8px", border: "0.5px solid #1E2030", background: "#0F1117", color: "#888", cursor: "pointer", fontSize: "16px", marginBottom: "1px", transition: "color 0.2s ease" }}
+                  style={{ padding: "10px 12px", borderRadius: "8px", border: "0.5px solid #1E2030", background: "#0F1117", color: "#EEEEEE", cursor: "pointer", fontSize: "16px", marginBottom: "1px", transition: "color 0.2s ease" }}
                   className="hover:!text-[#7F8FE0] hover:!border-[#5C6BC0]"
                   title="Intercambiar monedas">
                   ⇄
                 </button>
                 <div className="flex-1">
-                  <label style={{ fontSize: "12px", fontWeight: 600, color: "#888", display: "block", marginBottom: "6px" }}>A</label>
+                  <label style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEEE", display: "block", marginBottom: "6px" }}>A</label>
                   <select value={a} onChange={(e) => setA(e.target.value)} style={selectStyle}>
                     {currencies.map((c) => (
                       <option key={c} value={c}>{c} — {RATES[c].name}</option>
@@ -143,50 +143,50 @@ export default function ConvertidorMonedas() {
               <div className="flex flex-col gap-4">
                 <div className="rounded-[10px] p-6 text-center"
                   style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}` }}>
-                  <p style={{ fontSize: "12px", color: "#888", marginBottom: "8px" }}>
+                  <p style={{ fontSize: "12px", color: "#EEEEEE", marginBottom: "8px" }}>
                     {cantidad} {de} equivale a
                   </p>
                   <p style={{ fontSize: "38px", fontWeight: 600, color: NICHO.light, letterSpacing: "-1px", lineHeight: 1 }}>
                     {RATES[a].symbol} {fmt(resultado, a)}
                   </p>
-                  <p style={{ fontSize: "12px", color: "#888", marginTop: "6px" }}>{a} — {RATES[a].name}</p>
+                  <p style={{ fontSize: "12px", color: "#EEEEEE", marginTop: "6px" }}>{a} — {RATES[a].name}</p>
                 </div>
 
                 <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px" }}>
-                  <p style={{ fontSize: "12px", fontWeight: 600, color: "#888", marginBottom: "10px" }}>Tasas de referencia (base USD)</p>
+                  <p style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEEE", marginBottom: "10px" }}>Tasas de referencia (base USD)</p>
                   <div className="grid grid-cols-2 gap-2">
                     {[
                       { label: `1 USD →`, value: `${RATES[de].rate} ${de}` },
                       { label: `1 USD →`, value: `${RATES[a].rate} ${a}` },
                     ].map((item, i) => (
                       <div key={i} style={{ background: "#0F1117", border: "0.5px solid #1E2030", borderRadius: "6px", padding: "8px 10px", display: "flex", justifyContent: "space-between", fontSize: "12px" }}>
-                        <span style={{ color: "#888" }}>{item.label}</span>
-                        <span style={{ color: "#D0D0D0", fontWeight: 600 }}>{item.value}</span>
+                        <span style={{ color: "#EEEEEE" }}>{item.label}</span>
+                        <span style={{ color: "#FFFFFF", fontWeight: 600 }}>{item.value}</span>
                       </div>
                     ))}
                     <div className="col-span-2" style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}`, borderRadius: "6px", padding: "8px 10px", display: "flex", justifyContent: "space-between", fontSize: "12px" }}>
-                      <span style={{ color: "#888" }}>1 {de} →</span>
+                      <span style={{ color: "#EEEEEE" }}>1 {de} →</span>
                       <span style={{ color: NICHO.light, fontWeight: 600 }}>{fmt(tasa, a)} {a}</span>
                     </div>
                   </div>
                 </div>
 
                 <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", overflow: "hidden" }}>
-                  <p style={{ fontSize: "12px", fontWeight: 600, color: "#888", padding: "12px 14px", borderBottom: "0.5px solid #1E2030" }}>
+                  <p style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEEE", padding: "12px 14px", borderBottom: "0.5px solid #1E2030" }}>
                     Tabla rápida — {de} a {a}
                   </p>
                   <div style={{ overflowX: "auto" }}>
                     <table style={{ width: "100%", fontSize: "12px", borderCollapse: "collapse" }}>
                       <thead>
                         <tr style={{ background: "#0A0B10" }}>
-                          <th style={{ padding: "9px 14px", textAlign: "left", fontWeight: 600, color: "#888", borderBottom: "0.5px solid #1E2030" }}>{de}</th>
-                          <th style={{ padding: "9px 14px", textAlign: "right", fontWeight: 600, color: "#888", borderBottom: "0.5px solid #1E2030" }}>{a}</th>
+                          <th style={{ padding: "9px 14px", textAlign: "left", fontWeight: 600, color: "#EEEEEE", borderBottom: "0.5px solid #1E2030" }}>{de}</th>
+                          <th style={{ padding: "9px 14px", textAlign: "right", fontWeight: 600, color: "#EEEEEE", borderBottom: "0.5px solid #1E2030" }}>{a}</th>
                         </tr>
                       </thead>
                       <tbody>
                         {[1, 5, 10, 50, 100, 500, 1000].map((v) => (
                           <tr key={v} style={{ borderBottom: "0.5px solid #1A1A2A" }}>
-                            <td style={{ padding: "8px 14px", color: "#888" }}>{RATES[de].symbol} {v.toLocaleString("es-MX")}</td>
+                            <td style={{ padding: "8px 14px", color: "#EEEEEE" }}>{RATES[de].symbol} {v.toLocaleString("es-MX")}</td>
                             <td style={{ padding: "8px 14px", textAlign: "right", fontWeight: 600, color: NICHO.light }}>
                               {RATES[a].symbol} {fmt((v / RATES[de].rate) * RATES[a].rate, a)}
                             </td>
@@ -200,7 +200,7 @@ export default function ConvertidorMonedas() {
             ) : (
               <div className="hidden lg:flex items-center justify-center h-64"
                 style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px" }}>
-                <p style={{ fontSize: "13px", color: "#888" }}>Selecciona las monedas y presiona Convertir</p>
+                <p style={{ fontSize: "13px", color: "#EEEEEE" }}>Selecciona las monedas y presiona Convertir</p>
               </div>
             )}
           </div>
@@ -209,36 +209,36 @@ export default function ConvertidorMonedas() {
         {/* SEO Content */}
         <div className="mt-14 space-y-8">
           <div style={{ borderTop: "0.5px solid #1E2030", paddingTop: "40px" }}>
-            <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", marginBottom: "16px" }}>
+            <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", letterSpacing: "-0.3px", marginBottom: "16px" }}>
               Cómo funciona el convertidor de monedas
             </h2>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "14px" }}>
               Este convertidor te permite transformar cantidades entre 20 monedas de Latinoamérica y el mundo de forma inmediata. Cubre las divisas más usadas en la región: peso mexicano, real brasileño, peso colombiano, sol peruano, peso argentino, colón costarricense y muchas más, además de monedas globales como el dólar, el euro y el yen.
             </p>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "14px" }}>
               El mecanismo es simple: todas las conversiones pasan por el dólar estadounidense como moneda puente. Tu cantidad se convierte primero a USD usando la tasa de la moneda origen, y luego se multiplica por la tasa de la moneda destino. Este es el mismo sistema que usan la mayoría de plataformas financieras internacionales.
             </p>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65" }}>
               Es útil para comparar precios en tiendas internacionales, entender el valor de un salario en otro país, planificar un viaje, o simplemente tener una referencia rápida antes de hacer una transferencia internacional.
             </p>
           </div>
 
           <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "20px 24px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "12px" }}>Ejemplo práctico: comparar salarios en la región</h3>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
-              Supón que recibes una oferta de trabajo de <strong style={{ color: "#D0D0D0" }}>$25,000 MXN al mes</strong> y quieres saber cómo se compara con salarios en otros países de la región:
+            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF", marginBottom: "12px" }}>Ejemplo práctico: comparar salarios en la región</h3>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "14px" }}>
+              Supón que recibes una oferta de trabajo de <strong style={{ color: "#FFFFFF" }}>$25,000 MXN al mes</strong> y quieres saber cómo se compara con salarios en otros países de la región:
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {[
                 { pais: "México (origen)", valor: "$25,000 MXN", color: NICHO.light },
-                { pais: "En dólares USD", valor: "~$1,429 USD", color: "#D0D0D0" },
-                { pais: "En reales BRL", valor: "~R$7,218 BRL", color: "#888" },
-                { pais: "En colones CRC", valor: "~₡754,285 CRC", color: "#888" },
-                { pais: "En soles PEN", valor: "~S/5,357 PEN", color: "#888" },
-                { pais: "En pesos COP", valor: "~$5.7M COP", color: "#888" },
+                { pais: "En dólares USD", valor: "~$1,429 USD", color: "#FFFFFF" },
+                { pais: "En reales BRL", valor: "~R$7,218 BRL", color: "#EEEEEE" },
+                { pais: "En colones CRC", valor: "~₡754,285 CRC", color: "#EEEEEE" },
+                { pais: "En soles PEN", valor: "~S/5,357 PEN", color: "#EEEEEE" },
+                { pais: "En pesos COP", valor: "~$5.7M COP", color: "#EEEEEE" },
               ].map((item) => (
                 <div key={item.pais} style={{ background: "#0F1117", border: "0.5px solid #1E2030", borderRadius: "8px", padding: "10px" }}>
-                  <p style={{ fontSize: "10px", color: "#888", marginBottom: "3px" }}>{item.pais}</p>
+                  <p style={{ fontSize: "10px", color: "#EEEEEE", marginBottom: "3px" }}>{item.pais}</p>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: item.color }}>{item.valor}</p>
                 </div>
               ))}
@@ -246,7 +246,7 @@ export default function ConvertidorMonedas() {
           </div>
 
           <div>
-            <h3 style={{ fontSize: "18px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", marginBottom: "14px" }}>Preguntas frecuentes</h3>
+            <h3 style={{ fontSize: "18px", fontWeight: 600, color: "#FFFFFF", letterSpacing: "-0.3px", marginBottom: "14px" }}>Preguntas frecuentes</h3>
             <div className="space-y-3">
               {[
                 { q: "¿Las tasas de cambio son en tiempo real?", a: "Las tasas mostradas son referenciales y se actualizan periódicamente, pero no son datos en tiempo real de los mercados financieros. Para consultas rápidas y educativas son muy útiles. Sin embargo, si vas a realizar una transferencia internacional o cambiar divisas en una casa de cambio, siempre verifica la tasa exacta con tu banco o plataforma de pago." },
@@ -254,16 +254,16 @@ export default function ConvertidorMonedas() {
                 { q: "¿Por qué el peso argentino tiene una tasa tan alta respecto al dólar?", a: "Argentina ha atravesado períodos prolongados de alta inflación y devaluación de su moneda. La tasa mostrada es la oficial de referencia; en la práctica, Argentina ha tenido históricamente múltiples tipos de cambio simultáneos. La situación cambia con frecuencia, por lo que para cualquier operación con pesos argentinos es fundamental verificar las condiciones actuales con fuentes locales." },
               ].map((item) => (
                 <div key={item.q} style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px 20px" }}>
-                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "8px" }}>{item.q}</p>
-                  <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65" }}>{item.a}</p>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>{item.q}</p>
+                  <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65" }}>{item.a}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div style={{ background: "#1A1A2E", border: `0.5px solid ${NICHO.border}`, borderRadius: "10px", padding: "24px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
-            <p style={{ fontSize: "13px", color: "#888", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[
                 { href: "/calculadora-interes-compuesto", label: "Interés compuesto", desc: "Proyecta el crecimiento de tus ahorros" },
@@ -274,8 +274,8 @@ export default function ConvertidorMonedas() {
                 <Link key={tool.href} href={tool.href}
                   className="hover:!bg-[#1E1A3A] transition-colors"
                   style={{ background: "rgba(255,255,255,0.04)", borderRadius: "8px", padding: "10px 14px", textDecoration: "none", display: "block" }}>
-                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "2px" }}>{tool.label}</p>
-                  <p style={{ fontSize: "11px", color: "#888" }}>{tool.desc}</p>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "2px" }}>{tool.label}</p>
+                  <p style={{ fontSize: "11px", color: "#EEEEEE" }}>{tool.desc}</p>
                 </Link>
               ))}
             </div>

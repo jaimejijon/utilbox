@@ -11,7 +11,7 @@ function fmt(n: number) {
   return n.toLocaleString("es-MX", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-const inputStyle = { background: "#0F1117", border: "0.5px solid #1E2030", color: "#ECECEC" };
+const inputStyle = { background: "#0F1117", border: "0.5px solid #1E2030", color: "#FFFFFF" };
 const inputClass = "w-full rounded-lg px-3 py-2.5 text-sm focus:outline-none transition-colors";
 
 export default function CalculadoraJubilacion() {
@@ -87,12 +87,12 @@ export default function CalculadoraJubilacion() {
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 
-        <nav style={{ fontSize: "13px", color: "#888", marginBottom: "20px" }}>
-          <Link href="/" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Inicio</Link>
+        <nav style={{ fontSize: "13px", color: "#EEEEEE", marginBottom: "20px" }}>
+          <Link href="/" style={{ color: "#EEEEEE", textDecoration: "none" }} className="hover:!text-[#FFFFFF] transition-colors">Inicio</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <Link href="/finanzas" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Finanzas</Link>
+          <Link href="/finanzas" style={{ color: "#EEEEEE", textDecoration: "none" }} className="hover:!text-[#FFFFFF] transition-colors">Finanzas</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <span style={{ color: "#888" }}>Calculadora de jubilación</span>
+          <span style={{ color: "#EEEEEE" }}>Calculadora de jubilación</span>
         </nav>
 
         <div className="flex flex-col lg:flex-row gap-6">
@@ -102,10 +102,10 @@ export default function CalculadoraJubilacion() {
               <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: NICHO.color, display: "block" }} />
               <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: NICHO.color }}>Retiro</span>
             </div>
-            <h1 style={{ fontSize: "22px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", lineHeight: 1.2, marginBottom: "8px" }}>
+            <h1 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", letterSpacing: "-0.3px", lineHeight: 1.2, marginBottom: "8px" }}>
               Calculadora de jubilación
             </h1>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "24px" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "24px" }}>
               Proyecta tu fondo de retiro y descubre si tu plan de ahorro actual será suficiente.
             </p>
 
@@ -114,7 +114,7 @@ export default function CalculadoraJubilacion() {
                 {fields.map((f) => (
                   <div key={f.label} className={f.span || ""}>
                     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
-                      <label style={{ fontSize: "12px", fontWeight: 600, color: "#888" }}>{f.label}</label>
+                      <label style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEEE" }}>{f.label}</label>
                       <span style={{ fontSize: "12px", color: NICHO.light, fontWeight: 600 }}>{f.value} {f.suffix}</span>
                     </div>
                     <input type="number" min={f.min} max={f.max} step={f.step || "1"}
@@ -138,21 +138,21 @@ export default function CalculadoraJubilacion() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="col-span-2 sm:col-span-1 rounded-[10px] p-5 text-center"
                     style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}` }}>
-                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "2px" }}>Fondo al jubilarte (nominal)</p>
+                    <p style={{ fontSize: "11px", color: "#EEEEEE", marginBottom: "2px" }}>Fondo al jubilarte (nominal)</p>
                     <p style={{ fontSize: "24px", fontWeight: 600, color: NICHO.light, letterSpacing: "-0.5px" }}>${fmt(resultado.fondoNominal)}</p>
-                    <p style={{ fontSize: "11px", color: "#666", marginTop: "2px" }}>en {resultado.anosAcumulacion} años</p>
+                    <p style={{ fontSize: "11px", color: "#F5F5F5", marginTop: "2px" }}>en {resultado.anosAcumulacion} años</p>
                   </div>
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "2px" }}>Poder adquisitivo actual</p>
-                    <p style={{ fontSize: "20px", fontWeight: 600, color: "#D0D0D0" }}>${fmt(resultado.fondoReal)}</p>
-                    <p style={{ fontSize: "10px", color: "#666", marginTop: "2px" }}>ajustado por inflación</p>
+                    <p style={{ fontSize: "11px", color: "#EEEEEE", marginBottom: "2px" }}>Poder adquisitivo actual</p>
+                    <p style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF" }}>${fmt(resultado.fondoReal)}</p>
+                    <p style={{ fontSize: "10px", color: "#F5F5F5", marginTop: "2px" }}>ajustado por inflación</p>
                   </div>
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Total aportado</p>
-                    <p style={{ fontSize: "18px", fontWeight: 600, color: "#D0D0D0" }}>${fmt(resultado.totalAportado)}</p>
+                    <p style={{ fontSize: "11px", color: "#EEEEEE", marginBottom: "4px" }}>Total aportado</p>
+                    <p style={{ fontSize: "18px", fontWeight: 600, color: "#FFFFFF" }}>${fmt(resultado.totalAportado)}</p>
                   </div>
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Rendimientos generados</p>
+                    <p style={{ fontSize: "11px", color: "#EEEEEE", marginBottom: "4px" }}>Rendimientos generados</p>
                     <p style={{ fontSize: "18px", fontWeight: 600, color: "#6EC9A0" }}>${fmt(resultado.interesesGanados)}</p>
                   </div>
                 </div>
@@ -182,7 +182,7 @@ export default function CalculadoraJubilacion() {
             ) : (
               <div className="hidden lg:flex items-center justify-center h-64"
                 style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px" }}>
-                <p style={{ fontSize: "13px", color: "#888" }}>Ingresa los valores y presiona Calcular</p>
+                <p style={{ fontSize: "13px", color: "#EEEEEE" }}>Ingresa los valores y presiona Calcular</p>
               </div>
             )}
           </div>
@@ -191,24 +191,24 @@ export default function CalculadoraJubilacion() {
         {/* SEO Content */}
         <div className="mt-14 space-y-8">
           <div style={{ borderTop: "0.5px solid #1E2030", paddingTop: "40px" }}>
-            <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", marginBottom: "16px" }}>
+            <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", letterSpacing: "-0.3px", marginBottom: "16px" }}>
               Por qué planificar tu jubilación desde hoy
             </h2>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "14px" }}>
               La calculadora de jubilación proyecta cuánto dinero tendrás al momento de retirarte y si ese fondo alcanzará para mantener tu estilo de vida durante los años de retiro. Es una de las herramientas de planificación financiera más importantes que puedes usar, sin importar la edad que tengas ahora.
             </p>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "14px" }}>
               La herramienta simula el crecimiento de tus ahorros actuales más tus aportaciones mensuales durante los años que faltan para jubilarte, aplicando interés compuesto. Luego calcula cuántos años alcanzaría ese fondo para cubrir tus gastos mensuales deseados. También muestra el valor real ajustado por inflación.
             </p>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65" }}>
               En muchos países de Latinoamérica, las pensiones del sistema público son insuficientes para mantener el nivel de vida previo a la jubilación. Por eso, construir un fondo propio de retiro no es un lujo — es una necesidad.
             </p>
           </div>
 
           <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "20px 24px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "12px" }}>Ejemplo práctico: el costo de esperar</h3>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
-              Dos personas quieren jubilarse a los 65 con gastos mensuales de <strong style={{ color: "#D0D0D0" }}>$1,500 USD</strong> y un retorno del <strong style={{ color: "#D0D0D0" }}>7% anual</strong>. La única diferencia es cuándo empiezan a ahorrar <strong style={{ color: "#D0D0D0" }}>$300/mes</strong>:
+            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF", marginBottom: "12px" }}>Ejemplo práctico: el costo de esperar</h3>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "14px" }}>
+              Dos personas quieren jubilarse a los 65 con gastos mensuales de <strong style={{ color: "#FFFFFF" }}>$1,500 USD</strong> y un retorno del <strong style={{ color: "#FFFFFF" }}>7% anual</strong>. La única diferencia es cuándo empiezan a ahorrar <strong style={{ color: "#FFFFFF" }}>$300/mes</strong>:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
@@ -216,20 +216,20 @@ export default function CalculadoraJubilacion() {
                 { label: "Empieza a los 40 años", value: "$189,202", sub: "Aporta $90,000 en total", note: "Fondo alcanza ~9 años", noteColor: "#D4B85A" },
               ].map((item) => (
                 <div key={item.label} style={{ background: "#0F1117", border: "0.5px solid #1E2030", borderRadius: "8px", padding: "16px", textAlign: "center" }}>
-                  <p style={{ fontSize: "12px", color: "#888", marginBottom: "6px" }}>{item.label}</p>
+                  <p style={{ fontSize: "12px", color: "#EEEEEE", marginBottom: "6px" }}>{item.label}</p>
                   <p style={{ fontSize: "22px", fontWeight: 600, color: NICHO.light, marginBottom: "4px" }}>{item.value}</p>
-                  <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>{item.sub}</p>
+                  <p style={{ fontSize: "11px", color: "#EEEEEE", marginBottom: "4px" }}>{item.sub}</p>
                   <p style={{ fontSize: "11px", fontWeight: 600, color: item.noteColor }}>{item.note}</p>
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: "11px", color: "#666", marginTop: "12px" }}>
+            <p style={{ fontSize: "11px", color: "#F5F5F5", marginTop: "12px" }}>
               Esperar 15 años reduce el fondo en casi 5 veces, a pesar de haber aportado solo $54,000 menos.
             </p>
           </div>
 
           <div>
-            <h3 style={{ fontSize: "18px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", marginBottom: "14px" }}>Preguntas frecuentes</h3>
+            <h3 style={{ fontSize: "18px", fontWeight: 600, color: "#FFFFFF", letterSpacing: "-0.3px", marginBottom: "14px" }}>Preguntas frecuentes</h3>
             <div className="space-y-3">
               {[
                 { q: "¿Qué es la regla del 4% y cómo aplica al retiro?", a: "La regla del 4% indica que puedes retirar el 4% de tu fondo de retiro anualmente de forma sostenible a largo plazo, sin agotar el capital. Bajo esta regla, si tienes $500,000, podrías retirar $20,000 al año ($1,667/mes) indefinidamente. Esta calculadora usa ese mismo principio para estimar cuántos años alcanzará tu fondo." },
@@ -237,16 +237,16 @@ export default function CalculadoraJubilacion() {
                 { q: "¿A qué edad conviene empezar a ahorrar para el retiro?", a: "Cuanto antes, mejor — sin excepción. Empezar a los 25 en lugar de los 35 puede más que duplicar el fondo final, aun aportando la misma cantidad mensual. Si ya pasaste de los 40, no desesperes: todavía hay tiempo de construir un fondo significativo aumentando las aportaciones mensuales." },
               ].map((item) => (
                 <div key={item.q} style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px 20px" }}>
-                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "8px" }}>{item.q}</p>
-                  <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65" }}>{item.a}</p>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>{item.q}</p>
+                  <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65" }}>{item.a}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div style={{ background: "#1A1A2E", border: `0.5px solid ${NICHO.border}`, borderRadius: "10px", padding: "24px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
-            <p style={{ fontSize: "13px", color: "#888", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[
                 { href: "/calculadora-interes-compuesto", label: "Interés compuesto", desc: "Proyecta el crecimiento de tus ahorros" },
@@ -257,8 +257,8 @@ export default function CalculadoraJubilacion() {
                 <Link key={tool.href} href={tool.href}
                   className="hover:!bg-[#1E1A3A] transition-colors"
                   style={{ background: "rgba(255,255,255,0.04)", borderRadius: "8px", padding: "10px 14px", textDecoration: "none", display: "block" }}>
-                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "2px" }}>{tool.label}</p>
-                  <p style={{ fontSize: "11px", color: "#888" }}>{tool.desc}</p>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "2px" }}>{tool.label}</p>
+                  <p style={{ fontSize: "11px", color: "#EEEEEE" }}>{tool.desc}</p>
                 </Link>
               ))}
             </div>

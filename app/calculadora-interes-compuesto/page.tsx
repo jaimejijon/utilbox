@@ -23,7 +23,7 @@ const inputClass =
 const inputStyle = {
   background: "#0F1117",
   border: "0.5px solid #1E2030",
-  color: "#ECECEC",
+  color: "#FFFFFF",
 };
 
 export default function CalculadoraInteresCompuesto() {
@@ -69,12 +69,12 @@ export default function CalculadoraInteresCompuesto() {
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 
         {/* Breadcrumb */}
-        <nav style={{ fontSize: "13px", color: "#888", marginBottom: "20px" }}>
-          <Link href="/" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Inicio</Link>
+        <nav style={{ fontSize: "13px", color: "#EEEEEE", marginBottom: "20px" }}>
+          <Link href="/" style={{ color: "#EEEEEE", textDecoration: "none" }} className="hover:!text-[#FFFFFF] transition-colors">Inicio</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <Link href="/finanzas" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Finanzas</Link>
+          <Link href="/finanzas" style={{ color: "#EEEEEE", textDecoration: "none" }} className="hover:!text-[#FFFFFF] transition-colors">Finanzas</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <span style={{ color: "#888" }}>Interés compuesto</span>
+          <span style={{ color: "#EEEEEE" }}>Interés compuesto</span>
         </nav>
 
         {/* Two-column layout */}
@@ -91,10 +91,10 @@ export default function CalculadoraInteresCompuesto() {
               </span>
             </div>
 
-            <h1 style={{ fontSize: "22px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", lineHeight: 1.2, marginBottom: "8px" }}>
+            <h1 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", letterSpacing: "-0.3px", lineHeight: 1.2, marginBottom: "8px" }}>
               Calculadora de interés compuesto
             </h1>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "24px" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "24px" }}>
               Simula el crecimiento de tu inversión con aportaciones mensuales y capitalización mensual.
             </p>
 
@@ -109,7 +109,7 @@ export default function CalculadoraInteresCompuesto() {
                 ].map((f) => (
                   <div key={f.label}>
                     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
-                      <label style={{ fontSize: "12px", fontWeight: 600, color: "#888" }}>{f.label}</label>
+                      <label style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEEE" }}>{f.label}</label>
                       <span style={{ fontSize: "12px", color: NICHO.light, fontWeight: 600 }}>{f.value} {f.suffix}</span>
                     </div>
                     <input
@@ -145,32 +145,32 @@ export default function CalculadoraInteresCompuesto() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="col-span-2 sm:col-span-1 rounded-[10px] p-5 text-center"
                     style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}` }}>
-                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Monto final</p>
+                    <p style={{ fontSize: "11px", color: "#EEEEEE", marginBottom: "4px" }}>Monto final</p>
                     <p style={{ fontSize: "26px", fontWeight: 600, color: NICHO.light, letterSpacing: "-0.5px" }}>${fmt(resultado.total)}</p>
                   </div>
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Capital aportado</p>
-                    <p style={{ fontSize: "20px", fontWeight: 600, color: "#D0D0D0" }}>${fmt(resultado.capitalAportado)}</p>
+                    <p style={{ fontSize: "11px", color: "#EEEEEE", marginBottom: "4px" }}>Capital aportado</p>
+                    <p style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF" }}>${fmt(resultado.capitalAportado)}</p>
                   </div>
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Intereses ganados</p>
+                    <p style={{ fontSize: "11px", color: "#EEEEEE", marginBottom: "4px" }}>Intereses ganados</p>
                     <p style={{ fontSize: "20px", fontWeight: 600, color: "#6EC9A0" }}>${fmt(resultado.intereses)}</p>
                   </div>
                 </div>
 
                 {/* Bar */}
                 <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px" }}>
-                  <p style={{ fontSize: "12px", fontWeight: 600, color: "#888", marginBottom: "10px" }}>Composición del monto final</p>
+                  <p style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEEE", marginBottom: "10px" }}>Composición del monto final</p>
                   <div style={{ width: "100%", height: "14px", borderRadius: "999px", overflow: "hidden", display: "flex", background: "#0F1117" }}>
                     <div style={{ width: `${pct}%`, background: NICHO.color, height: "100%", transition: "width 0.4s ease" }} />
                     <div style={{ flex: 1, background: "#6EC9A0", height: "100%" }} />
                   </div>
                   <div style={{ display: "flex", gap: "16px", marginTop: "8px" }}>
-                    <span style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "11px", color: "#888" }}>
+                    <span style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "11px", color: "#EEEEEE" }}>
                       <span style={{ width: "8px", height: "8px", borderRadius: "2px", background: NICHO.color, display: "block" }} />
                       Aportado ({pct}%)
                     </span>
-                    <span style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "11px", color: "#888" }}>
+                    <span style={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "11px", color: "#EEEEEE" }}>
                       <span style={{ width: "8px", height: "8px", borderRadius: "2px", background: "#6EC9A0", display: "block" }} />
                       Intereses ({100 - pct}%)
                     </span>
@@ -179,7 +179,7 @@ export default function CalculadoraInteresCompuesto() {
 
                 {/* Table */}
                 <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", overflow: "hidden" }}>
-                  <p style={{ fontSize: "12px", fontWeight: 600, color: "#888", padding: "14px 16px", borderBottom: "0.5px solid #1E2030" }}>
+                  <p style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEEE", padding: "14px 16px", borderBottom: "0.5px solid #1E2030" }}>
                     Evolución anual
                   </p>
                   <div style={{ overflowX: "auto", maxHeight: "280px", overflowY: "auto" }}>
@@ -187,16 +187,16 @@ export default function CalculadoraInteresCompuesto() {
                       <thead>
                         <tr style={{ background: "#0A0B10" }}>
                           {["Año", "Saldo", "Aportado", "Intereses"].map((h, i) => (
-                            <th key={h} style={{ padding: "10px 14px", textAlign: i === 0 ? "left" : "right", fontWeight: 600, color: "#888", borderBottom: "0.5px solid #1E2030" }}>{h}</th>
+                            <th key={h} style={{ padding: "10px 14px", textAlign: i === 0 ? "left" : "right", fontWeight: 600, color: "#EEEEEE", borderBottom: "0.5px solid #1E2030" }}>{h}</th>
                           ))}
                         </tr>
                       </thead>
                       <tbody>
                         {resultado.rows.map((row) => (
                           <tr key={row.year} style={{ borderBottom: "0.5px solid #1A1A2A" }}>
-                            <td style={{ padding: "9px 14px", color: "#888", fontWeight: 600 }}>{row.year}</td>
+                            <td style={{ padding: "9px 14px", color: "#EEEEEE", fontWeight: 600 }}>{row.year}</td>
                             <td style={{ padding: "9px 14px", textAlign: "right", color: NICHO.light, fontWeight: 600 }}>${fmt(row.balance)}</td>
-                            <td style={{ padding: "9px 14px", textAlign: "right", color: "#888" }}>${fmt(row.contributions)}</td>
+                            <td style={{ padding: "9px 14px", textAlign: "right", color: "#EEEEEE" }}>${fmt(row.contributions)}</td>
                             <td style={{ padding: "9px 14px", textAlign: "right", color: "#6EC9A0" }}>${fmt(row.interest)}</td>
                           </tr>
                         ))}
@@ -210,7 +210,7 @@ export default function CalculadoraInteresCompuesto() {
                 style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px" }}>
                 <div className="text-center">
                   <div style={{ fontSize: "32px", marginBottom: "8px", opacity: 0.3 }}>◈</div>
-                  <p style={{ fontSize: "13px", color: "#888" }}>Ingresa los valores y presiona Calcular</p>
+                  <p style={{ fontSize: "13px", color: "#EEEEEE" }}>Ingresa los valores y presiona Calcular</p>
                 </div>
               </div>
             )}
@@ -220,24 +220,24 @@ export default function CalculadoraInteresCompuesto() {
         {/* SEO Content */}
         <div className="mt-14 space-y-8">
           <div style={{ borderTop: "0.5px solid #1E2030", paddingTop: "40px" }}>
-            <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", marginBottom: "16px" }}>
+            <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", letterSpacing: "-0.3px", marginBottom: "16px" }}>
               Qué es el interés compuesto y cómo funciona
             </h2>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "14px" }}>
               El interés compuesto es uno de los conceptos más poderosos de las finanzas personales. A diferencia del interés simple, que siempre se calcula sobre el capital original, el interés compuesto se calcula sobre el saldo acumulado: cada período ganas intereses sobre tus intereses anteriores. Este efecto "bola de nieve" hace que el dinero crezca de forma exponencial con el tiempo.
             </p>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "14px" }}>
               Esta calculadora usa capitalización mensual, que es el esquema más común en fondos de inversión, cuentas de ahorro y planes de retiro. La fórmula aplica la tasa anual dividida entre 12 cada mes, sumando además tus aportaciones periódicas. El resultado es una proyección realista del crecimiento de tu patrimonio.
             </p>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65" }}>
               Es ideal para planificar metas a largo plazo: el fondo universitario de tus hijos, tu retiro, la compra de un inmueble o simplemente construir un colchón financiero. Cuanto antes empieces, más tiempo tiene el interés compuesto para trabajar a tu favor.
             </p>
           </div>
 
           <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "20px 24px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "12px" }}>Ejemplo práctico con números reales</h3>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
-              Imagina que tienes <strong style={{ color: "#D0D0D0" }}>$5,000 USD</strong> ahorrados y puedes aportar <strong style={{ color: "#D0D0D0" }}>$200 al mes</strong> en un fondo indexado con una tasa promedio del <strong style={{ color: "#D0D0D0" }}>8% anual</strong>. Así quedarían tus números a distintos plazos:
+            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF", marginBottom: "12px" }}>Ejemplo práctico con números reales</h3>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "14px" }}>
+              Imagina que tienes <strong style={{ color: "#FFFFFF" }}>$5,000 USD</strong> ahorrados y puedes aportar <strong style={{ color: "#FFFFFF" }}>$200 al mes</strong> en un fondo indexado con una tasa promedio del <strong style={{ color: "#FFFFFF" }}>8% anual</strong>. Así quedarían tus números a distintos plazos:
             </p>
             <div className="grid grid-cols-3 gap-3 text-center">
               {[
@@ -246,19 +246,19 @@ export default function CalculadoraInteresCompuesto() {
                 { label: "En 30 años", value: "$339,821", sub: "aportaste $77,000" },
               ].map((item) => (
                 <div key={item.label} style={{ background: "#0F1117", border: "0.5px solid #1E2030", borderRadius: "8px", padding: "12px 8px" }}>
-                  <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>{item.label}</p>
+                  <p style={{ fontSize: "11px", color: "#EEEEEE", marginBottom: "4px" }}>{item.label}</p>
                   <p style={{ fontSize: "16px", fontWeight: 600, color: NICHO.light, marginBottom: "2px" }}>{item.value}</p>
-                  <p style={{ fontSize: "10px", color: "#666" }}>{item.sub}</p>
+                  <p style={{ fontSize: "10px", color: "#F5F5F5" }}>{item.sub}</p>
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: "11px", color: "#888", marginTop: "12px" }}>
+            <p style={{ fontSize: "11px", color: "#EEEEEE", marginTop: "12px" }}>
               A los 30 años, los intereses representan más del 77% del saldo final. Eso es el interés compuesto en acción.
             </p>
           </div>
 
           <div>
-            <h3 style={{ fontSize: "18px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", marginBottom: "14px" }}>Preguntas frecuentes</h3>
+            <h3 style={{ fontSize: "18px", fontWeight: 600, color: "#FFFFFF", letterSpacing: "-0.3px", marginBottom: "14px" }}>Preguntas frecuentes</h3>
             <div className="space-y-3">
               {[
                 {
@@ -275,8 +275,8 @@ export default function CalculadoraInteresCompuesto() {
                 },
               ].map((item) => (
                 <div key={item.q} style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px 20px" }}>
-                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "8px" }}>{item.q}</p>
-                  <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65" }}>{item.a}</p>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>{item.q}</p>
+                  <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65" }}>{item.a}</p>
                 </div>
               ))}
             </div>
@@ -284,8 +284,8 @@ export default function CalculadoraInteresCompuesto() {
 
           {/* CTA other tools */}
           <div style={{ background: "#1A1A2E", border: `0.5px solid ${NICHO.border}`, borderRadius: "10px", padding: "24px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
-            <p style={{ fontSize: "13px", color: "#888", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[
                 { href: "/simulador-prestamo", label: "Simulador de préstamo", desc: "Calcula tu cuota y tabla de amortización" },
@@ -296,8 +296,8 @@ export default function CalculadoraInteresCompuesto() {
                 <Link key={tool.href} href={tool.href}
                   className="hover:!bg-[#1E1A3A] transition-colors"
                   style={{ background: "rgba(255,255,255,0.04)", borderRadius: "8px", padding: "10px 14px", textDecoration: "none", display: "block" }}>
-                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "2px" }}>{tool.label}</p>
-                  <p style={{ fontSize: "11px", color: "#888" }}>{tool.desc}</p>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "2px" }}>{tool.label}</p>
+                  <p style={{ fontSize: "11px", color: "#EEEEEE" }}>{tool.desc}</p>
                 </Link>
               ))}
             </div>

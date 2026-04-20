@@ -26,9 +26,9 @@ function LogoC2() {
     <svg width="28" height="28" viewBox="0 0 40 40" fill="none" aria-hidden="true">
       <polygon points="20,3 35,11.5 35,28.5 20,37 5,28.5 5,11.5" fill="#5C6BC0" />
       <circle cx="20" cy="20" r="5" fill="#0F1117" />
-      <line x1="20" y1="15" x2="20" y2="8" stroke="#ECECEC" strokeWidth="2" strokeLinecap="round" />
-      <line x1="24.8" y1="22.5" x2="30.5" y2="25.8" stroke="#ECECEC" strokeWidth="2" strokeLinecap="round" />
-      <line x1="15.2" y1="22.5" x2="9.5" y2="25.8" stroke="#ECECEC" strokeWidth="2" strokeLinecap="round" />
+      <line x1="20" y1="15" x2="20" y2="8" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+      <line x1="24.8" y1="22.5" x2="30.5" y2="25.8" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+      <line x1="15.2" y1="22.5" x2="9.5" y2="25.8" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
@@ -58,7 +58,7 @@ export default function Header() {
               fontSize: "17px",
               fontWeight: 600,
               letterSpacing: "-0.3px",
-              color: "#ECECEC",
+              color: "#FFFFFF",
             }}
           >
             utilbox
@@ -78,7 +78,7 @@ export default function Header() {
               fontSize: "15px",
               fontWeight: 600,
               letterSpacing: "-0.3px",
-              color: "#ECECEC",
+              color: "#FFFFFF",
             }}
           >
             utilbox
@@ -96,8 +96,8 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              style={{ fontSize: "13px", color: "#999" }}
-              className="hover:!text-[#CCCCCC] transition-colors duration-200"
+              style={{ fontSize: "13px", color: "#F5F5F5" }}
+              className="hover:!text-[#FFFFFF] transition-colors duration-200"
             >
               {item.label}
             </Link>
@@ -115,7 +115,7 @@ export default function Header() {
               display: "block",
               width: "18px",
               height: "1.5px",
-              background: "#999",
+              background: "#F5F5F5",
               transition: "all 0.2s ease",
               transform: open ? "rotate(45deg) translate(0, 6.5px)" : "none",
             }}
@@ -125,7 +125,7 @@ export default function Header() {
               display: "block",
               width: "18px",
               height: "1.5px",
-              background: "#999",
+              background: "#F5F5F5",
               transition: "all 0.2s ease",
               opacity: open ? 0 : 1,
             }}
@@ -135,7 +135,7 @@ export default function Header() {
               display: "block",
               width: "18px",
               height: "1.5px",
-              background: "#999",
+              background: "#F5F5F5",
               transition: "all 0.2s ease",
               transform: open ? "rotate(-45deg) translate(0, -6.5px)" : "none",
             }}
@@ -161,7 +161,7 @@ export default function Header() {
               href={item.href}
               onClick={() => setOpen(false)}
               className="block px-6 py-4 hover:bg-[#141520] transition-colors"
-              style={{ fontSize: "14px", color: "#888", borderBottom: "0.5px solid #1E2030" }}
+              style={{ fontSize: "14px", color: "#EEEEEE", borderBottom: "0.5px solid #1E2030" }}
             >
               {item.label}
             </Link>

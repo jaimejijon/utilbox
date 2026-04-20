@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${sora.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col" style={{ background: "#0F1117", color: "#ECECEC" }}>
+      <body className="min-h-full flex flex-col" style={{ background: "#0F1117", color: "#FFFFFF" }}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-120NH053PK"
           strategy="afterInteractive"

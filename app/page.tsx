@@ -79,7 +79,7 @@ const categories = [
     id: "proximamente",
     href: "#",
     name: "Más…",
-    color: "#555",
+    color: "#FFFFFF",
     bg: "#141520",
     active: false,
     icon: (
@@ -229,7 +229,7 @@ export default function Home() {
           style={{
             fontSize: "38px",
             fontWeight: 600,
-            color: "#ECECEC",
+            color: "#FFFFFF",
             lineHeight: 1.15,
             letterSpacing: "-0.7px",
             marginBottom: "20px",
@@ -243,7 +243,7 @@ export default function Home() {
         <p
           style={{
             fontSize: "14px",
-            color: "#AAAAAA",
+            color: "#F5F5F5",
             lineHeight: "1.65",
             maxWidth: "480px",
             margin: "0 auto 28px",
@@ -274,7 +274,7 @@ export default function Home() {
             href="#acerca"
             style={{
               background: "transparent",
-              color: "#AAAAAA",
+              color: "#F5F5F5",
               fontSize: "13px",
               border: "0.5px solid #2A2A40",
               padding: "10px 20px",
@@ -282,7 +282,7 @@ export default function Home() {
               textDecoration: "none",
               transition: "color 0.2s ease, border-color 0.2s ease",
             }}
-            className="hover:!text-[#ECECEC] hover:!border-[#3A3A55]"
+            className="hover:!text-[#FFFFFF] hover:!border-[#3A3A55]"
           >
             ¿Qué es utilbox?
           </a>
@@ -297,7 +297,7 @@ export default function Home() {
             fontWeight: 600,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
-            color: "#AAAAAA",
+            color: "#F5F5F5",
             marginBottom: "14px",
           }}
         >
@@ -327,7 +327,7 @@ export default function Home() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: cat.active ? cat.color : "#BBBBBB",
+                  color: cat.active ? cat.color : "#FFFFFF",
                 }}
               >
                 {cat.icon}
@@ -336,7 +336,7 @@ export default function Home() {
                 style={{
                   fontSize: "11px",
                   fontWeight: 600,
-                  color: cat.active ? cat.color : "#BBBBBB",
+                  color: cat.active ? cat.color : "#FFFFFF",
                   letterSpacing: "0.02em",
                   textAlign: "center",
                 }}
@@ -369,7 +369,7 @@ export default function Home() {
                 fontWeight: 600,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: "#AAAAAA",
+                color: "#F5F5F5",
               }}
             >
               Finanzas — 5 herramientas
@@ -445,7 +445,7 @@ export default function Home() {
                   style={{
                     fontSize: "13px",
                     fontWeight: 600,
-                    color: "#D0D0D0",
+                    color: "#FFFFFF",
                     marginBottom: "6px",
                     lineHeight: "1.35",
                   }}
@@ -455,7 +455,7 @@ export default function Home() {
                 <p
                   style={{
                     fontSize: "11px",
-                    color: "#9090AA",
+                    color: "#F5F5F5",
                     lineHeight: "1.55",
                     flex: 1,
                   }}
@@ -471,7 +471,7 @@ export default function Home() {
                     bottom: "14px",
                     right: "14px",
                     fontSize: "13px",
-                    color: "#6666AA",
+                    color: "#FFFFFF",
                   }}
                 >
                   →
@@ -530,7 +530,7 @@ export default function Home() {
                     style={{
                       fontSize: "13px",
                       fontWeight: 600,
-                      color: "#D0D0D0",
+                      color: "#FFFFFF",
                       display: "block",
                       marginBottom: "2px",
                     }}
@@ -540,7 +540,7 @@ export default function Home() {
                   <span
                     style={{
                       fontSize: "11px",
-                      color: "#9090AA",
+                      color: "#F5F5F5",
                       display: "block",
                       whiteSpace: "nowrap",
                       overflow: "hidden",
@@ -550,7 +550,7 @@ export default function Home() {
                     {tool.description}
                   </span>
                 </div>
-                <span style={{ color: "#6666AA", fontSize: "14px", flexShrink: 0 }}>→</span>
+                <span style={{ color: "#FFFFFF", fontSize: "14px", flexShrink: 0 }}>→</span>
               </Link>
             ))}
           </div>
@@ -585,10 +585,10 @@ export default function Home() {
                     }}
                   />
                   <div>
-                    <p style={{ fontSize: "12px", fontWeight: 600, color: "#E0E0E0", marginBottom: "2px" }}>
+                    <p style={{ fontSize: "12px", fontWeight: 600, color: "#FFFFFF", marginBottom: "2px" }}>
                       {b.title}
                     </p>
-                    <p style={{ fontSize: "11px", color: "#AAAAAA" }}>{b.sub}</p>
+                    <p style={{ fontSize: "11px", color: "#F5F5F5" }}>{b.sub}</p>
                   </div>
                 </div>
               ))}
@@ -635,7 +635,7 @@ export default function Home() {
             key={item.href}
             href={item.href}
             className="flex-1 flex flex-col items-center gap-1"
-            style={{ padding: "10px 4px 14px", color: "#888", textDecoration: "none" }}
+            style={{ padding: "10px 4px 14px", color: "#EEEEEE", textDecoration: "none" }}
           >
             {item.icon}
             <span style={{ fontSize: "9px" }}>{item.label}</span>

@@ -143,7 +143,7 @@ export default function FinanzasPage() {
             style={{
               fontSize: "28px",
               fontWeight: 600,
-              color: "#ECECEC",
+              color: "#FFFFFF",
               letterSpacing: "-0.4px",
               lineHeight: 1.2,
               marginBottom: "10px",
@@ -151,7 +151,7 @@ export default function FinanzasPage() {
           >
             Herramientas para tus finanzas personales
           </h1>
-          <p style={{ fontSize: "14px", color: "#888", lineHeight: "1.65", maxWidth: "520px", marginBottom: "24px" }}>
+          <p style={{ fontSize: "14px", color: "#EEEEEE", lineHeight: "1.65", maxWidth: "520px", marginBottom: "24px" }}>
             Calculadoras y simuladores para invertir, gestionar deudas, planificar el retiro y evaluar negocios.
           </p>
 
@@ -168,7 +168,7 @@ export default function FinanzasPage() {
                 >
                   {s.value}
                 </span>
-                <span style={{ fontSize: "12px", color: "#888" }}>{s.label}</span>
+                <span style={{ fontSize: "12px", color: "#EEEEEE" }}>{s.label}</span>
               </div>
             ))}
           </div>
@@ -186,7 +186,7 @@ export default function FinanzasPage() {
                 style={{
                   fontSize: "13px",
                   fontWeight: 600,
-                  color: activeTab === tab ? NICHO.color : "#555",
+                  color: activeTab === tab ? NICHO.color : "#FFFFFF",
                   padding: "14px 16px",
                   background: "transparent",
                   border: "none",
@@ -225,7 +225,7 @@ export default function FinanzasPage() {
                   fontWeight: 600,
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
-                  color: "#888",
+                  color: "#EEEEEE",
                   marginBottom: "12px",
                 }}
               >
@@ -243,7 +243,7 @@ export default function FinanzasPage() {
                     padding: "7px 8px",
                     borderRadius: "6px",
                     fontSize: "13px",
-                    color: activeTab === tab ? NICHO.color : "#666",
+                    color: activeTab === tab ? NICHO.color : "#F5F5F5",
                     background: activeTab === tab ? NICHO.bg : "transparent",
                     border: "none",
                     cursor: "pointer",
@@ -255,7 +255,7 @@ export default function FinanzasPage() {
                       width: "5px",
                       height: "5px",
                       borderRadius: "50%",
-                      background: activeTab === tab ? NICHO.color : "#666",
+                      background: activeTab === tab ? NICHO.color : "#F5F5F5",
                       flexShrink: 0,
                     }}
                   />
@@ -278,7 +278,7 @@ export default function FinanzasPage() {
                   fontWeight: 600,
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
-                  color: "#888",
+                  color: "#EEEEEE",
                   marginBottom: "12px",
                 }}
               >
@@ -299,7 +299,7 @@ export default function FinanzasPage() {
                     padding: "7px 8px",
                     borderRadius: "6px",
                     fontSize: "13px",
-                    color: "#888",
+                    color: "#EEEEEE",
                     marginBottom: "2px",
                   }}
                 >
@@ -313,7 +313,7 @@ export default function FinanzasPage() {
                     }}
                   />
                   {cat.name}
-                  <span style={{ fontSize: "10px", color: "#666", marginLeft: "auto" }}>próx.</span>
+                  <span style={{ fontSize: "10px", color: "#F5F5F5", marginLeft: "auto" }}>próx.</span>
                 </div>
               ))}
             </div>
@@ -323,7 +323,7 @@ export default function FinanzasPage() {
           <div className="flex-1 min-w-0">
             {filtered.length === 0 ? (
               <div className="text-center py-20">
-                <p style={{ fontSize: "13px", color: "#888" }}>
+                <p style={{ fontSize: "13px", color: "#EEEEEE" }}>
                   No hay herramientas en esta categoría aún.
                 </p>
               </div>
@@ -394,10 +394,10 @@ export default function FinanzasPage() {
                           {tool.category}
                         </span>
                       </div>
-                      <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "6px", lineHeight: "1.35" }}>
+                      <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "6px", lineHeight: "1.35" }}>
                         {tool.name}
                       </p>
-                      <p style={{ fontSize: "11px", color: "#9090AA", lineHeight: "1.55", flex: 1, paddingRight: "20px" }}>
+                      <p style={{ fontSize: "11px", color: "#F5F5F5", lineHeight: "1.55", flex: 1, paddingRight: "20px" }}>
                         {tool.description}
                       </p>
                       <span
@@ -407,7 +407,7 @@ export default function FinanzasPage() {
                           bottom: "14px",
                           right: "14px",
                           fontSize: "13px",
-                          color: "#6666AA",
+                          color: "#FFFFFF",
                           transition: "color 0.22s, transform 0.22s",
                         }}
                       >
@@ -453,14 +453,14 @@ export default function FinanzasPage() {
                         <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: NICHO.color, display: "block", marginBottom: "2px" }}>
                           {tool.category}
                         </span>
-                        <span style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", display: "block", marginBottom: "2px" }}>
+                        <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", display: "block", marginBottom: "2px" }}>
                           {tool.name}
                         </span>
-                        <span style={{ fontSize: "11px", color: "#9090AA", display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                        <span style={{ fontSize: "11px", color: "#F5F5F5", display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                           {tool.description}
                         </span>
                       </div>
-                      <span style={{ color: "#6666AA", fontSize: "14px", flexShrink: 0 }}>→</span>
+                      <span style={{ color: "#FFFFFF", fontSize: "14px", flexShrink: 0 }}>→</span>
                     </Link>
                   ))}
                 </div>
@@ -482,10 +482,10 @@ export default function FinanzasPage() {
               }}
             >
               <div>
-                <p style={{ fontSize: "14px", fontWeight: 600, color: "#ECECEC", marginBottom: "4px" }}>
+                <p style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", marginBottom: "4px" }}>
                   ¿Falta alguna herramienta?
                 </p>
-                <p style={{ fontSize: "12px", color: "#888" }}>
+                <p style={{ fontSize: "12px", color: "#EEEEEE" }}>
                   Estamos agregando nuevas calculadoras constantemente.
                 </p>
               </div>

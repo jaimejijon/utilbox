@@ -11,7 +11,7 @@ function fmt(n: number) {
   return n.toLocaleString("es-MX", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-const inputStyle = { background: "#0F1117", border: "0.5px solid #1E2030", color: "#ECECEC" };
+const inputStyle = { background: "#0F1117", border: "0.5px solid #1E2030", color: "#FFFFFF" };
 const inputClass = "w-full rounded-lg px-3 py-2.5 text-sm focus:outline-none transition-colors";
 
 export default function CalculadoraROI() {
@@ -56,12 +56,12 @@ export default function CalculadoraROI() {
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 
-        <nav style={{ fontSize: "13px", color: "#888", marginBottom: "20px" }}>
-          <Link href="/" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Inicio</Link>
+        <nav style={{ fontSize: "13px", color: "#EEEEEE", marginBottom: "20px" }}>
+          <Link href="/" style={{ color: "#EEEEEE", textDecoration: "none" }} className="hover:!text-[#FFFFFF] transition-colors">Inicio</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <Link href="/finanzas" style={{ color: "#888", textDecoration: "none" }} className="hover:!text-[#CCCCCC] transition-colors">Finanzas</Link>
+          <Link href="/finanzas" style={{ color: "#EEEEEE", textDecoration: "none" }} className="hover:!text-[#FFFFFF] transition-colors">Finanzas</Link>
           <span style={{ margin: "0 8px" }}>›</span>
-          <span style={{ color: "#888" }}>Calculadora de ROI</span>
+          <span style={{ color: "#EEEEEE" }}>Calculadora de ROI</span>
         </nav>
 
         <div className="flex flex-col lg:flex-row gap-6">
@@ -71,10 +71,10 @@ export default function CalculadoraROI() {
               <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: NICHO.color, display: "block" }} />
               <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" as const, color: NICHO.color }}>Negocios</span>
             </div>
-            <h1 style={{ fontSize: "22px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", lineHeight: 1.2, marginBottom: "8px" }}>
+            <h1 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", letterSpacing: "-0.3px", lineHeight: 1.2, marginBottom: "8px" }}>
               Calculadora de ROI
             </h1>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "20px" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "20px" }}>
               Calcula el retorno sobre la inversión de cualquier proyecto, negocio o campaña.
             </p>
 
@@ -85,7 +85,7 @@ export default function CalculadoraROI() {
                   className="flex-1 py-2 rounded-lg text-sm font-semibold transition-colors cursor-pointer"
                   style={{
                     background: modo === m ? NICHO.bg : "#141520",
-                    color: modo === m ? NICHO.color : "#555",
+                    color: modo === m ? NICHO.color : "#FFFFFF",
                     border: `0.5px solid ${modo === m ? NICHO.border : "#1E2030"}`,
                   }}>
                   {m === "simple" ? "Cálculo simple" : "Con período de tiempo"}
@@ -102,7 +102,7 @@ export default function CalculadoraROI() {
                   ].map((f) => (
                     <div key={f.label}>
                       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
-                        <label style={{ fontSize: "12px", fontWeight: 600, color: "#888" }}>{f.label}</label>
+                        <label style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEEE" }}>{f.label}</label>
                         <span style={{ fontSize: "12px", color: NICHO.light, fontWeight: 600 }}>{f.suffix}{f.value}</span>
                       </div>
                       <input type="number" min="0" value={f.value} onChange={(e) => f.set(e.target.value)}
@@ -121,7 +121,7 @@ export default function CalculadoraROI() {
                   ].map((f) => (
                     <div key={f.label}>
                       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
-                        <label style={{ fontSize: "12px", fontWeight: 600, color: "#888" }}>{f.label}</label>
+                        <label style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEEE" }}>{f.label}</label>
                         <span style={{ fontSize: "12px", color: NICHO.light, fontWeight: 600 }}>{f.value} {f.suffix}</span>
                       </div>
                       <input type="number" min={f.min || "0"} value={f.value} onChange={(e) => f.set(e.target.value)}
@@ -145,23 +145,23 @@ export default function CalculadoraROI() {
                 {/* Main ROI */}
                 <div className="rounded-[10px] p-6 text-center"
                   style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}` }}>
-                  <p style={{ fontSize: "12px", color: "#888", marginBottom: "6px" }}>{getRoiLabel(resultado.roi)}</p>
+                  <p style={{ fontSize: "12px", color: "#EEEEEE", marginBottom: "6px" }}>{getRoiLabel(resultado.roi)}</p>
                   <p style={{ fontSize: "44px", fontWeight: 600, color: getRoiColor(resultado.roi), letterSpacing: "-1px", lineHeight: 1 }}>
                     {resultado.roi >= 0 ? "+" : ""}{fmt(resultado.roi)}%
                   </p>
-                  <p style={{ fontSize: "12px", color: "#888", marginTop: "4px" }}>ROI total</p>
+                  <p style={{ fontSize: "12px", color: "#EEEEEE", marginTop: "4px" }}>ROI total</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                    <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Ganancia neta</p>
+                    <p style={{ fontSize: "11px", color: "#EEEEEE", marginBottom: "4px" }}>Ganancia neta</p>
                     <p style={{ fontSize: "20px", fontWeight: 600, color: resultado.gananciaNet >= 0 ? "#6EC9A0" : "#E07070" }}>
                       {resultado.gananciaNet >= 0 ? "+" : ""}${fmt(resultado.gananciaNet)}
                     </p>
                   </div>
                   {resultado.roiAnual !== null && (
                     <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                      <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>ROI anualizado</p>
+                      <p style={{ fontSize: "11px", color: "#EEEEEE", marginBottom: "4px" }}>ROI anualizado</p>
                       <p style={{ fontSize: "20px", fontWeight: 600, color: getRoiColor(resultado.roiAnual) }}>
                         {resultado.roiAnual >= 0 ? "+" : ""}{fmt(resultado.roiAnual)}%
                       </p>
@@ -169,8 +169,8 @@ export default function CalculadoraROI() {
                   )}
                   {resultado.mesesRecuperacion !== null && resultado.gananciaNet > 0 && (
                     <div className="rounded-[10px] p-5 text-center" style={{ background: "#141520", border: "0.5px solid #1E2030" }}>
-                      <p style={{ fontSize: "11px", color: "#888", marginBottom: "4px" }}>Período de recuperación</p>
-                      <p style={{ fontSize: "20px", fontWeight: 600, color: "#D0D0D0" }}>
+                      <p style={{ fontSize: "11px", color: "#EEEEEE", marginBottom: "4px" }}>Período de recuperación</p>
+                      <p style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF" }}>
                         {resultado.mesesRecuperacion.toFixed(1)} meses
                       </p>
                     </div>
@@ -179,7 +179,7 @@ export default function CalculadoraROI() {
 
                 {/* Gauge */}
                 <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px" }}>
-                  <p style={{ fontSize: "12px", fontWeight: 600, color: "#888", marginBottom: "10px" }}>Indicador de rentabilidad</p>
+                  <p style={{ fontSize: "12px", fontWeight: 600, color: "#EEEEEE", marginBottom: "10px" }}>Indicador de rentabilidad</p>
                   <div style={{ height: "12px", background: "#0F1117", borderRadius: "999px", overflow: "hidden" }}>
                     <div style={{
                       height: "100%",
@@ -188,10 +188,10 @@ export default function CalculadoraROI() {
                       transition: "width 0.4s ease",
                     }} />
                   </div>
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "10px", color: "#888", marginTop: "6px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "10px", color: "#EEEEEE", marginTop: "6px" }}>
                     <span>0%</span><span>50%</span><span>100%+</span>
                   </div>
-                  <p style={{ fontSize: "11px", color: "#888", marginTop: "8px" }}>
+                  <p style={{ fontSize: "11px", color: "#EEEEEE", marginTop: "8px" }}>
                     Un ROI del 10–15% anual se considera bueno en inversiones diversificadas.
                   </p>
                 </div>
@@ -199,7 +199,7 @@ export default function CalculadoraROI() {
             ) : (
               <div className="hidden lg:flex items-center justify-center h-64"
                 style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px" }}>
-                <p style={{ fontSize: "13px", color: "#888" }}>Ingresa los valores y presiona Calcular ROI</p>
+                <p style={{ fontSize: "13px", color: "#EEEEEE" }}>Ingresa los valores y presiona Calcular ROI</p>
               </div>
             )}
           </div>
@@ -208,34 +208,34 @@ export default function CalculadoraROI() {
         {/* SEO Content */}
         <div className="mt-14 space-y-8">
           <div style={{ borderTop: "0.5px solid #1E2030", paddingTop: "40px" }}>
-            <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", marginBottom: "16px" }}>
+            <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", letterSpacing: "-0.3px", marginBottom: "16px" }}>
               Qué es el ROI y para qué sirve
             </h2>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "14px" }}>
               El ROI (Return on Investment, o Retorno sobre la Inversión) es una de las métricas financieras más utilizadas en el mundo de los negocios. Mide la eficiencia de una inversión expresando la ganancia neta como porcentaje del costo inicial. Un ROI positivo significa que ganaste más de lo que invertiste; uno negativo, que tuviste pérdidas.
             </p>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
-              La fórmula es sencilla: <strong style={{ color: "#D0D0D0" }}>ROI = (Ganancia neta / Costo de inversión) × 100</strong>. Lo que hace poderosa a esta métrica es su universalidad: puedes aplicarla a una campaña de publicidad digital, a la compra de una máquina para tu negocio, a un curso de capacitación, o a cualquier otra inversión donde puedas medir el retorno.
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "14px" }}>
+              La fórmula es sencilla: <strong style={{ color: "#FFFFFF" }}>ROI = (Ganancia neta / Costo de inversión) × 100</strong>. Lo que hace poderosa a esta métrica es su universalidad: puedes aplicarla a una campaña de publicidad digital, a la compra de una máquina para tu negocio, a un curso de capacitación, o a cualquier otra inversión donde puedas medir el retorno.
             </p>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65" }}>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65" }}>
               El modo detallado calcula además el ROI anualizado y el período de recuperación, para comparar inversiones de distinta duración en igualdad de condiciones.
             </p>
           </div>
 
           <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "20px 24px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "12px" }}>Ejemplo práctico: evaluar una campaña de marketing</h3>
-            <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65", marginBottom: "14px" }}>
-              Una tienda en línea invierte <strong style={{ color: "#D0D0D0" }}>$8,000 USD</strong> en publicidad en redes sociales durante <strong style={{ color: "#D0D0D0" }}>6 meses</strong> y genera ventas atribuibles de <strong style={{ color: "#D0D0D0" }}>$26,000 USD</strong>:
+            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF", marginBottom: "12px" }}>Ejemplo práctico: evaluar una campaña de marketing</h3>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65", marginBottom: "14px" }}>
+              Una tienda en línea invierte <strong style={{ color: "#FFFFFF" }}>$8,000 USD</strong> en publicidad en redes sociales durante <strong style={{ color: "#FFFFFF" }}>6 meses</strong> y genera ventas atribuibles de <strong style={{ color: "#FFFFFF" }}>$26,000 USD</strong>:
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
                 { label: "Ganancia neta", value: "+$18,000", color: "#6EC9A0" },
                 { label: "ROI total", value: "+225%", color: NICHO.light },
-                { label: "ROI anualizado", value: "+450%", color: "#D0D0D0" },
-                { label: "Recuperación", value: "2.7 meses", color: "#D0D0D0" },
+                { label: "ROI anualizado", value: "+450%", color: "#FFFFFF" },
+                { label: "Recuperación", value: "2.7 meses", color: "#FFFFFF" },
               ].map((item) => (
                 <div key={item.label} style={{ background: "#0F1117", border: "0.5px solid #1E2030", borderRadius: "8px", padding: "12px 8px", textAlign: "center" }}>
-                  <p style={{ fontSize: "10px", color: "#888", marginBottom: "4px" }}>{item.label}</p>
+                  <p style={{ fontSize: "10px", color: "#EEEEEE", marginBottom: "4px" }}>{item.label}</p>
                   <p style={{ fontSize: "15px", fontWeight: 600, color: item.color }}>{item.value}</p>
                 </div>
               ))}
@@ -243,7 +243,7 @@ export default function CalculadoraROI() {
           </div>
 
           <div>
-            <h3 style={{ fontSize: "18px", fontWeight: 600, color: "#ECECEC", letterSpacing: "-0.3px", marginBottom: "14px" }}>Preguntas frecuentes</h3>
+            <h3 style={{ fontSize: "18px", fontWeight: 600, color: "#FFFFFF", letterSpacing: "-0.3px", marginBottom: "14px" }}>Preguntas frecuentes</h3>
             <div className="space-y-3">
               {[
                 { q: "¿Cuál es un ROI \"bueno\"?", a: "Depende completamente del contexto. En campañas de marketing digital, un ROI de 3:1 (es decir, 200%) es considerado un buen resultado. En inversiones financieras diversificadas como fondos indexados, un 10–15% anual es muy sólido. Para negocios físicos, un ROI de 25–50% anual puede ser excelente. Lo más importante es compararlo con el costo de oportunidad: ¿qué más podrías haber hecho con ese dinero?" },
@@ -251,16 +251,16 @@ export default function CalculadoraROI() {
                 { q: "¿Qué limitaciones tiene el ROI como métrica?", a: "El ROI es una métrica poderosa pero incompleta. No considera el riesgo asociado a la inversión, la liquidez (qué tan fácil es recuperar el dinero si lo necesitas), ni factores cualitativos como el impacto en la reputación de marca. Para decisiones financieras complejas, conviene complementarlo con otras métricas como el VPN (Valor Presente Neto) y la TIR (Tasa Interna de Retorno)." },
               ].map((item) => (
                 <div key={item.q} style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px 20px" }}>
-                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "8px" }}>{item.q}</p>
-                  <p style={{ fontSize: "13px", color: "#888", lineHeight: "1.65" }}>{item.a}</p>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>{item.q}</p>
+                  <p style={{ fontSize: "13px", color: "#EEEEEE", lineHeight: "1.65" }}>{item.a}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div style={{ background: "#1A1A2E", border: `0.5px solid ${NICHO.border}`, borderRadius: "10px", padding: "24px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#ECECEC", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
-            <p style={{ fontSize: "13px", color: "#888", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF", marginBottom: "4px" }}>Explora otras herramientas financieras</h3>
+            <p style={{ fontSize: "13px", color: "#EEEEEE", marginBottom: "16px" }}>Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[
                 { href: "/calculadora-interes-compuesto", label: "Interés compuesto", desc: "Proyecta el crecimiento de tus ahorros" },
@@ -271,8 +271,8 @@ export default function CalculadoraROI() {
                 <Link key={tool.href} href={tool.href}
                   className="hover:!bg-[#1E1A3A] transition-colors"
                   style={{ background: "rgba(255,255,255,0.04)", borderRadius: "8px", padding: "10px 14px", textDecoration: "none", display: "block" }}>
-                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#D0D0D0", marginBottom: "2px" }}>{tool.label}</p>
-                  <p style={{ fontSize: "11px", color: "#888" }}>{tool.desc}</p>
+                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "2px" }}>{tool.label}</p>
+                  <p style={{ fontSize: "11px", color: "#EEEEEE" }}>{tool.desc}</p>
                 </Link>
               ))}
             </div>
