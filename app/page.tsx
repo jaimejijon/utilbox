@@ -15,7 +15,7 @@ const categories = [
     href: "/finanzas",
     name: "Finanzas",
     color: "#5C6BC0",
-    bg: "#1E1A3A",
+    bg: "#252045",
     active: true,
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -28,7 +28,7 @@ const categories = [
     href: "#",
     name: "Salud",
     color: "#6EC9A0",
-    bg: "#132820",
+    bg: "#1A3D2E",
     active: false,
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -41,7 +41,7 @@ const categories = [
     href: "#",
     name: "Hogar",
     color: "#D4856A",
-    bg: "#301A14",
+    bg: "#3D2218",
     active: false,
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -54,7 +54,7 @@ const categories = [
     href: "#",
     name: "Educación",
     color: "#74AEDD",
-    bg: "#101E2E",
+    bg: "#152638",
     active: false,
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -67,7 +67,7 @@ const categories = [
     href: "#",
     name: "Nutrición",
     color: "#D4B85A",
-    bg: "#28220C",
+    bg: "#332B0F",
     active: false,
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -186,6 +186,9 @@ export default function Home() {
         .tool-arrow {
           transition: color 0.22s ease, transform 0.22s ease;
         }
+        .tool-card-fin:last-child:nth-child(3n-1) {
+          grid-column: span 2;
+        }
       `}</style>
       <Header />
 
@@ -294,7 +297,7 @@ export default function Home() {
             fontWeight: 600,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
-            color: "#444",
+            color: "#666",
             marginBottom: "14px",
           }}
         >
@@ -307,8 +310,8 @@ export default function Home() {
               href={cat.href}
               className="flex-shrink-0 flex flex-col items-center gap-2 relative overflow-hidden transition-all duration-200"
               style={{
-                background: cat.active ? "#1A1A2E" : "#141520",
-                border: `0.5px solid ${cat.active ? "#2E3060" : "#1E2030"}`,
+                background: cat.active ? "#20204A" : "#1A1B2E",
+                border: `0.5px solid ${cat.active ? "#4A4DA0" : "#2A2B45"}`,
                 borderRadius: "10px",
                 padding: "14px 8px 16px",
                 minWidth: "90px",
@@ -324,7 +327,7 @@ export default function Home() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: cat.active ? cat.color : "#555",
+                  color: cat.active ? cat.color : "#888",
                 }}
               >
                 {cat.icon}
@@ -333,7 +336,7 @@ export default function Home() {
                 style={{
                   fontSize: "11px",
                   fontWeight: 600,
-                  color: cat.active ? cat.color : "#555",
+                  color: cat.active ? cat.color : "#888",
                   letterSpacing: "0.02em",
                   textAlign: "center",
                 }}
@@ -347,7 +350,7 @@ export default function Home() {
                   bottom: 0,
                   left: 0,
                   right: 0,
-                  height: "2.5px",
+                  height: "3px",
                   background: cat.active ? cat.color : "transparent",
                 }}
               />
@@ -566,26 +569,26 @@ export default function Home() {
                   key={b.title}
                   className="flex items-center gap-3"
                   style={{
-                    background: "#141520",
-                    border: "0.5px solid #1E2030",
+                    background: "#1A1B2E",
+                    border: "0.5px solid #2A2B45",
                     borderRadius: "8px",
                     padding: "12px 14px",
                   }}
                 >
                   <span
                     style={{
-                      width: "8px",
-                      height: "8px",
+                      width: "9px",
+                      height: "9px",
                       borderRadius: "50%",
                       background: b.color,
                       flexShrink: 0,
                     }}
                   />
                   <div>
-                    <p style={{ fontSize: "12px", fontWeight: 600, color: "#CCC", marginBottom: "2px" }}>
+                    <p style={{ fontSize: "12px", fontWeight: 600, color: "#E0E0E0", marginBottom: "2px" }}>
                       {b.title}
                     </p>
-                    <p style={{ fontSize: "11px", color: "#444" }}>{b.sub}</p>
+                    <p style={{ fontSize: "11px", color: "#777" }}>{b.sub}</p>
                   </div>
                 </div>
               ))}
