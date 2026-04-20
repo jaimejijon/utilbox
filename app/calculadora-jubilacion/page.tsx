@@ -260,6 +260,98 @@ export default function CalculadoraJubilacion() {
             </div>
           </div>
         )}
+        {/* SEO Content */}
+        <div className="mt-14 space-y-8">
+          <div className="border-t border-slate-200 pt-10">
+            <h2 className="text-2xl font-bold text-navy mb-4">
+              Por qué planificar tu jubilación desde hoy
+            </h2>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              La calculadora de jubilación proyecta cuánto dinero tendrás al momento de retirarte y si ese fondo alcanzará para mantener tu estilo de vida durante los años de retiro. Es una de las herramientas de planificación financiera más importantes que puedes usar, sin importar la edad que tengas ahora.
+            </p>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              La herramienta simula el crecimiento de tus ahorros actuales más tus aportaciones mensuales durante los años que faltan para jubilarte, aplicando interés compuesto. Luego calcula cuántos años alcanzaría ese fondo para cubrir tus gastos mensuales deseados. También muestra el valor real ajustado por inflación, que es lo que realmente importa: no cuántos pesos o dólares tendrás, sino cuánto podrás comprar con ese dinero.
+            </p>
+            <p className="text-slate-600 leading-relaxed">
+              En muchos países de Latinoamérica, las pensiones del sistema público son insuficientes para mantener el nivel de vida previo a la jubilación. Por eso, construir un fondo propio de retiro no es un lujo — es una necesidad para quienes quieren tener opciones al llegar a esa etapa.
+            </p>
+          </div>
+
+          {/* Practical example */}
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+            <h3 className="text-lg font-bold text-navy mb-3">Ejemplo práctico: el costo de esperar</h3>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              Dos personas quieren jubilarse a los 65 con gastos mensuales de <strong className="text-navy">$1,500 USD</strong> y un retorno del <strong className="text-navy">7% anual</strong>. La única diferencia es cuándo empiezan a ahorrar <strong className="text-navy">$300/mes</strong>:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="bg-white border border-slate-200 rounded-xl p-4 text-center">
+                <p className="text-sm text-slate-500 mb-1">Empieza a los 25 años</p>
+                <p className="text-2xl font-bold text-green-600">$910,714</p>
+                <p className="text-xs text-slate-400 mt-1">fondo al jubilarse</p>
+                <p className="text-sm text-slate-600 mt-2">Aporta $144,000 en total</p>
+                <p className="text-xs text-green-600 font-medium mt-1">Fondo alcanza 50+ años</p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-xl p-4 text-center">
+                <p className="text-sm text-slate-500 mb-1">Empieza a los 40 años</p>
+                <p className="text-2xl font-bold text-amber-500">$189,202</p>
+                <p className="text-xs text-slate-400 mt-1">fondo al jubilarse</p>
+                <p className="text-sm text-slate-600 mt-2">Aporta $90,000 en total</p>
+                <p className="text-xs text-amber-600 font-medium mt-1">Fondo alcanza ~9 años</p>
+              </div>
+            </div>
+            <p className="text-xs text-slate-500 mt-3">
+              Esperar 15 años reduce el fondo en casi 5 veces, a pesar de haber aportado solo $54,000 menos. El tiempo es el ingrediente más poderoso.
+            </p>
+          </div>
+
+          {/* FAQ */}
+          <div>
+            <h3 className="text-xl font-bold text-navy mb-4">Preguntas frecuentes</h3>
+            <div className="space-y-4">
+              <div className="bg-white border border-slate-200 rounded-xl p-5">
+                <p className="font-semibold text-navy mb-2">¿Qué es la regla del 4% y cómo aplica al retiro?</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  La regla del 4% es una guía financiera que indica que puedes retirar el 4% de tu fondo de retiro anualmente de forma sostenible a largo plazo, sin agotar el capital. Fue desarrollada a partir del estudio "Trinity Study" en EE.UU. Bajo esta regla, si tienes $500,000, podrías retirar $20,000 al año ($1,667/mes) indefinidamente. Esta calculadora usa ese mismo principio para estimar cuántos años alcanzará tu fondo.
+                </p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-xl p-5">
+                <p className="font-semibold text-navy mb-2">¿Por qué importa la inflación en el cálculo de jubilación?</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  La inflación erosiona el poder adquisitivo del dinero con el tiempo. Si la inflación promedia 4% anual, $2,000 de hoy equivaldrán a menos de $900 en términos de poder de compra dentro de 20 años. La calculadora muestra tanto el fondo nominal (la cantidad de dinero que tendrás) como el valor real ajustado por inflación, para que puedas planificar con base en lo que ese dinero realmente podrá comprar en el futuro.
+                </p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-xl p-5">
+                <p className="font-semibold text-navy mb-2">¿A qué edad conviene empezar a ahorrar para el retiro?</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Cuanto antes, mejor — sin excepción. Empezar a los 25 en lugar de los 35 puede más que duplicar el fondo final, aun aportando la misma cantidad mensual. Si ya pasaste de los 40, no desesperes: todavía hay tiempo de construir un fondo significativo aumentando las aportaciones mensuales. Lo peor que puedes hacer es no hacer nada. Usa esta calculadora para ver exactamente cuánto necesitas aportar según tu situación actual.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA to other tools */}
+          <div className="bg-navy rounded-xl p-6">
+            <h3 className="text-lg font-bold text-white mb-1">Explora otras herramientas financieras</h3>
+            <p className="text-slate-400 text-sm mb-5">Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { href: "/calculadora-interes-compuesto", label: "Interés compuesto", desc: "Proyecta el crecimiento de tus ahorros" },
+                { href: "/simulador-prestamo", label: "Simulador de préstamo", desc: "Calcula tu cuota y tabla de amortización" },
+                { href: "/convertidor-monedas", label: "Convertidor de monedas", desc: "20 monedas latinoamericanas y mundiales" },
+                { href: "/calculadora-roi", label: "Calculadora de ROI", desc: "Mide la rentabilidad de tu inversión" },
+              ].map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="bg-white/10 hover:bg-white/20 rounded-lg px-4 py-3 transition-colors group"
+                >
+                  <p className="font-medium text-white group-hover:text-accent transition-colors text-sm">{tool.label}</p>
+                  <p className="text-slate-400 text-xs mt-0.5">{tool.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </>

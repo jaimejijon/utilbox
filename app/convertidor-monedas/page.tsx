@@ -199,6 +199,97 @@ export default function ConvertidorMonedas() {
             </div>
           </div>
         )}
+        {/* SEO Content */}
+        <div className="mt-14 space-y-8">
+          <div className="border-t border-slate-200 pt-10">
+            <h2 className="text-2xl font-bold text-navy mb-4">
+              Cómo funciona el convertidor de monedas
+            </h2>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              Este convertidor te permite transformar cantidades entre 20 monedas de Latinoamérica y el mundo de forma inmediata. Cubre las divisas más usadas en la región: peso mexicano, real brasileño, peso colombiano, sol peruano, peso argentino, colón costarricense y muchas más, además de monedas globales como el dólar, el euro y el yen.
+            </p>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              El mecanismo es simple: todas las conversiones pasan por el dólar estadounidense como moneda puente. Tu cantidad se convierte primero a USD usando la tasa de la moneda origen, y luego se multiplica por la tasa de la moneda destino. Este es el mismo sistema que usan la mayoría de plataformas financieras internacionales.
+            </p>
+            <p className="text-slate-600 leading-relaxed">
+              Es útil para comparar precios en tiendas internacionales, entender el valor de un salario en otro país, planificar un viaje, o simplemente tener una referencia rápida antes de hacer una transferencia internacional.
+            </p>
+          </div>
+
+          {/* Practical example */}
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+            <h3 className="text-lg font-bold text-navy mb-3">Ejemplo práctico: comparar salarios en la región</h3>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              Supón que recibes una oferta de trabajo de <strong className="text-navy">$25,000 MXN al mes</strong> y quieres saber cómo se compara con salarios en otros países de la región. Usando tasas de referencia aproximadas:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+              {[
+                { pais: "México (origen)", valor: "$25,000 MXN", color: "text-navy" },
+                { pais: "En dólares USD", valor: "~$1,429 USD", color: "text-accent" },
+                { pais: "En reales BRL", valor: "~R$7,218 BRL", color: "text-slate-700" },
+                { pais: "En colones CRC", valor: "~₡754,285 CRC", color: "text-slate-700" },
+                { pais: "En soles PEN", valor: "~S/5,357 PEN", color: "text-slate-700" },
+                { pais: "En pesos COP", valor: "~$5,785,714 COP", color: "text-slate-700" },
+              ].map((item) => (
+                <div key={item.pais} className="bg-white border border-slate-200 rounded-lg p-3">
+                  <p className="text-xs text-slate-500 mb-1">{item.pais}</p>
+                  <p className={`font-semibold ${item.color}`}>{item.valor}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-slate-500 mt-3">
+              Las tasas son referenciales. Para transacciones reales, consulta siempre el tipo de cambio actualizado de tu banco.
+            </p>
+          </div>
+
+          {/* FAQ */}
+          <div>
+            <h3 className="text-xl font-bold text-navy mb-4">Preguntas frecuentes</h3>
+            <div className="space-y-4">
+              <div className="bg-white border border-slate-200 rounded-xl p-5">
+                <p className="font-semibold text-navy mb-2">¿Las tasas de cambio son en tiempo real?</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Las tasas mostradas son referenciales y se actualizan periódicamente, pero no son datos en tiempo real de los mercados financieros. Para consultas rápidas y educativas son muy útiles. Sin embargo, si vas a realizar una transferencia internacional o cambiar divisas en una casa de cambio, siempre verifica la tasa exacta con tu banco o plataforma de pago, ya que los tipos de cambio fluctúan constantemente.
+                </p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-xl p-5">
+                <p className="font-semibold text-navy mb-2">¿Por qué el tipo de cambio del banco es diferente al de esta herramienta?</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Los bancos y casas de cambio aplican un margen (llamado spread) sobre la tasa interbancaria de referencia. Esa diferencia es su ganancia y puede variar entre el 1% y el 5% según la institución y la moneda. Por eso, si conviertes $1,000 USD en un banco, recibirás menos pesos de lo que indica esta calculadora con la tasa de referencia. Plataformas como Wise o Remitly suelen ofrecer spreads menores para transferencias internacionales.
+                </p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-xl p-5">
+                <p className="font-semibold text-navy mb-2">¿Por qué el peso argentino tiene una tasa tan alta respecto al dólar?</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Argentina ha atravesado períodos prolongados de alta inflación y devaluación de su moneda. La tasa mostrada es la oficial de referencia; en la práctica, Argentina ha tenido históricamente múltiples tipos de cambio simultáneos (oficial, blue, MEP, CCL). La situación cambia con frecuencia, por lo que para cualquier operación con pesos argentinos es fundamental verificar las condiciones actuales con fuentes locales.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA to other tools */}
+          <div className="bg-navy rounded-xl p-6">
+            <h3 className="text-lg font-bold text-white mb-1">Explora otras herramientas financieras</h3>
+            <p className="text-slate-400 text-sm mb-5">Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { href: "/calculadora-interes-compuesto", label: "Interés compuesto", desc: "Proyecta el crecimiento de tus ahorros" },
+                { href: "/simulador-prestamo", label: "Simulador de préstamo", desc: "Calcula tu cuota y tabla de amortización" },
+                { href: "/calculadora-jubilacion", label: "Calculadora de jubilación", desc: "¿Cuánto necesitas para retirarte?" },
+                { href: "/calculadora-roi", label: "Calculadora de ROI", desc: "Mide la rentabilidad de tu inversión" },
+              ].map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="bg-white/10 hover:bg-white/20 rounded-lg px-4 py-3 transition-colors group"
+                >
+                  <p className="font-medium text-white group-hover:text-accent transition-colors text-sm">{tool.label}</p>
+                  <p className="text-slate-400 text-xs mt-0.5">{tool.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </>

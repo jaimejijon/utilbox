@@ -254,6 +254,100 @@ export default function CalculadoraROI() {
             </div>
           </div>
         )}
+        {/* SEO Content */}
+        <div className="mt-14 space-y-8">
+          <div className="border-t border-slate-200 pt-10">
+            <h2 className="text-2xl font-bold text-navy mb-4">
+              Qué es el ROI y para qué sirve
+            </h2>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              El ROI (Return on Investment, o Retorno sobre la Inversión) es una de las métricas financieras más utilizadas en el mundo de los negocios. Mide la eficiencia de una inversión expresando la ganancia neta como porcentaje del costo inicial. Un ROI positivo significa que ganaste más de lo que invertiste; uno negativo, que tuviste pérdidas.
+            </p>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              La fórmula es sencilla: <strong className="text-navy">ROI = (Ganancia neta / Costo de inversión) × 100</strong>. Lo que hace poderosa a esta métrica es su universalidad: puedes aplicarla a una campaña de publicidad digital, a la compra de una máquina para tu negocio, a un curso de capacitación, o a cualquier otra inversión donde puedas medir el retorno.
+            </p>
+            <p className="text-slate-600 leading-relaxed">
+              El modo detallado de esta calculadora además calcula el <strong className="text-navy">ROI anualizado</strong>, que te permite comparar inversiones de distinta duración en igualdad de condiciones, y el <strong className="text-navy">período de recuperación</strong>, que indica en cuántos meses recuperarás lo invertido.
+            </p>
+          </div>
+
+          {/* Practical example */}
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+            <h3 className="text-lg font-bold text-navy mb-3">Ejemplo práctico: evaluar una campaña de marketing</h3>
+            <p className="text-slate-600 leading-relaxed mb-3">
+              Una tienda en línea invierte <strong className="text-navy">$8,000 USD</strong> en publicidad en redes sociales durante <strong className="text-navy">6 meses</strong> y genera ventas atribuibles de <strong className="text-navy">$26,000 USD</strong>:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm text-center">
+              <div className="bg-white border border-slate-200 rounded-lg p-3">
+                <p className="text-xs text-slate-500 mb-1">Ganancia neta</p>
+                <p className="font-bold text-green-600">+$18,000</p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-lg p-3">
+                <p className="text-xs text-slate-500 mb-1">ROI total</p>
+                <p className="font-bold text-accent">+225%</p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-lg p-3">
+                <p className="text-xs text-slate-500 mb-1">ROI anualizado</p>
+                <p className="font-bold text-navy">+450%</p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-lg p-3">
+                <p className="text-xs text-slate-500 mb-1">Recuperación</p>
+                <p className="font-bold text-navy">2.7 meses</p>
+              </div>
+            </div>
+            <p className="text-xs text-slate-500 mt-3">
+              Un ROI de 225% significa que por cada dólar invertido, se generaron $2.25 de ganancia neta además de recuperar la inversión inicial.
+            </p>
+          </div>
+
+          {/* FAQ */}
+          <div>
+            <h3 className="text-xl font-bold text-navy mb-4">Preguntas frecuentes</h3>
+            <div className="space-y-4">
+              <div className="bg-white border border-slate-200 rounded-xl p-5">
+                <p className="font-semibold text-navy mb-2">¿Cuál es un ROI "bueno"?</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Depende completamente del contexto. En campañas de marketing digital, un ROI de 3:1 (es decir, 200%) es considerado un buen resultado. En inversiones financieras diversificadas como fondos indexados, un 10–15% anual es muy sólido. Para negocios físicos, un ROI de 25–50% anual puede ser excelente. Lo más importante es compararlo con el costo de oportunidad: ¿qué más podrías haber hecho con ese dinero?
+                </p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-xl p-5">
+                <p className="font-semibold text-navy mb-2">¿El ROI considera el factor tiempo?</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  El ROI básico no considera el tiempo: un 100% de ROI en 1 mes es muy diferente a un 100% de ROI en 10 años. Por eso es importante usar el ROI anualizado cuando comparas inversiones de distinta duración. Esta calculadora lo calcula automáticamente en el modo "Con período de tiempo": divide el ROI total entre los meses de duración y lo multiplica por 12 para expresarlo en base anual.
+                </p>
+              </div>
+              <div className="bg-white border border-slate-200 rounded-xl p-5">
+                <p className="font-semibold text-navy mb-2">¿Qué limitaciones tiene el ROI como métrica?</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  El ROI es una métrica poderosa pero incompleta. No considera el riesgo asociado a la inversión, la liquidez (qué tan fácil es recuperar el dinero si lo necesitas), ni factores cualitativos como el impacto en la reputación de marca o el aprendizaje organizacional. Para decisiones financieras complejas, conviene complementarlo con otras métricas como el VPN (Valor Presente Neto), la TIR (Tasa Interna de Retorno) y un análisis de riesgos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA to other tools */}
+          <div className="bg-navy rounded-xl p-6">
+            <h3 className="text-lg font-bold text-white mb-1">Explora otras herramientas financieras</h3>
+            <p className="text-slate-400 text-sm mb-5">Todo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { href: "/calculadora-interes-compuesto", label: "Interés compuesto", desc: "Proyecta el crecimiento de tus ahorros" },
+                { href: "/simulador-prestamo", label: "Simulador de préstamo", desc: "Calcula tu cuota y tabla de amortización" },
+                { href: "/convertidor-monedas", label: "Convertidor de monedas", desc: "20 monedas latinoamericanas y mundiales" },
+                { href: "/calculadora-jubilacion", label: "Calculadora de jubilación", desc: "¿Cuánto necesitas para retirarte?" },
+              ].map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="bg-white/10 hover:bg-white/20 rounded-lg px-4 py-3 transition-colors group"
+                >
+                  <p className="font-medium text-white group-hover:text-accent transition-colors text-sm">{tool.label}</p>
+                  <p className="text-slate-400 text-xs mt-0.5">{tool.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </>
