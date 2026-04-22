@@ -16,6 +16,7 @@ const tabs = ["Todas", "Financiero", "Construcción", "Energía", "Mudanza"];
 
 const tools = [
   {
+    href: "/simulador-hipoteca",
     category: "Financiero",
     name: "Simulador de hipoteca",
     description: "Calcula tu cuota mensual, intereses totales y tabla de amortización para tu crédito hipotecario.",
@@ -26,6 +27,7 @@ const tools = [
     ),
   },
   {
+    href: "/alquiler-vs-compra",
     category: "Financiero",
     name: "Calculadora alquiler vs compra",
     description: "Compara el costo real de alquilar versus comprar una vivienda a largo plazo.",
@@ -36,6 +38,7 @@ const tools = [
     ),
   },
   {
+    href: "/presupuesto-remodelacion",
     category: "Construcción",
     name: "Presupuesto de remodelación",
     description: "Estima el costo total de tu remodelación por tipo de trabajo y materiales.",
@@ -46,6 +49,7 @@ const tools = [
     ),
   },
   {
+    href: "/consumo-electrico",
     category: "Energía",
     name: "Calculadora de consumo eléctrico",
     description: "Calcula cuánto consumen tus electrodomésticos y cuánto pagas al mes por cada uno.",
@@ -56,8 +60,9 @@ const tools = [
     ),
   },
   {
+    href: "/calculadora-pintura",
     category: "Construcción",
-    name: "Costo de pintura por m²",
+    name: "Calculadora de pintura por m²",
     description: "Calcula cuánta pintura necesitas y cuánto costará pintar cualquier ambiente.",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4856A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -66,6 +71,7 @@ const tools = [
     ),
   },
   {
+    href: "/calculadora-azulejos",
     category: "Construcción",
     name: "Calculadora de azulejos y pisos",
     description: "Calcula cuántas cajas de azulejos o pisos necesitas según el área a cubrir.",
@@ -76,6 +82,7 @@ const tools = [
     ),
   },
   {
+    href: "/ahorro-energia-solar",
     category: "Energía",
     name: "Ahorro en energía solar",
     description: "Estima cuánto ahorrarías al instalar paneles solares según tu consumo actual.",
@@ -86,6 +93,7 @@ const tools = [
     ),
   },
   {
+    href: "/fondo-emergencia-hogar",
     category: "Financiero",
     name: "Fondo de emergencia del hogar",
     description: "Calcula cuánto deberías tener ahorrado para cubrir emergencias del hogar.",
@@ -96,6 +104,7 @@ const tools = [
     ),
   },
   {
+    href: "/costo-mascota",
     category: "Financiero",
     name: "Costo real de tener una mascota",
     description: "Calcula el costo mensual y anual de tener una mascota según tipo y tamaño.",
@@ -106,6 +115,7 @@ const tools = [
     ),
   },
   {
+    href: "/calculadora-mudanza",
     category: "Mudanza",
     name: "Calculadora de mudanza",
     description: "Estima el costo total de tu mudanza según distancia, volumen y servicios adicionales.",
@@ -116,21 +126,6 @@ const tools = [
     ),
   },
 ];
-
-const ProximamenteBadge = () => (
-  <span style={{
-    background: "#1E2030",
-    color: "#888",
-    fontSize: "9px",
-    fontWeight: 600,
-    letterSpacing: "0.08em",
-    textTransform: "uppercase" as const,
-    padding: "3px 8px",
-    borderRadius: "999px",
-  }}>
-    Próximamente
-  </span>
-);
 
 export default function HogarPage() {
   const [activeTab, setActiveTab] = useState("Todas");
@@ -189,16 +184,21 @@ export default function HogarPage() {
             <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px", marginBottom: "12px" }}>
               <p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#EEEEEE", marginBottom: "12px" }}>Tipo de herramienta</p>
               {tabs.slice(1).map((tab) => (
-                <button key={tab} onClick={() => setActiveTab(tab)} className="w-full text-left transition-colors duration-200" style={{ display: "flex", alignItems: "center", gap: "8px", padding: "7px 8px", borderRadius: "6px", fontSize: "13px", color: activeTab === tab ? NICHO.color : "#FFFFFF", background: activeTab === tab ? NICHO.bg : "transparent", border: "none", cursor: "pointer", marginBottom: "2px" }}>
-                  <span style={{ width: "5px", height: "5px", borderRadius: "50%", background: activeTab === tab ? NICHO.color : "#666", flexShrink: 0 }} />
+                <button key={tab} onClick={() => setActiveTab(tab)} className="w-full text-left transition-colors duration-200" style={{ display: "flex", alignItems: "center", gap: "8px", padding: "7px 8px", borderRadius: "6px", fontSize: "13px", color: activeTab === tab ? NICHO.color : "#F5F5F5", background: activeTab === tab ? NICHO.bg : "transparent", border: "none", cursor: "pointer", marginBottom: "2px" }}>
+                  <span style={{ width: "5px", height: "5px", borderRadius: "50%", background: activeTab === tab ? NICHO.color : "#F5F5F5", flexShrink: 0 }} />
                   {tab}
                 </button>
               ))}
             </div>
             <div style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px" }}>
               <p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#EEEEEE", marginBottom: "12px" }}>Otras categorías</p>
-              {[{ name: "Finanzas", color: "#5C6BC0", href: "/finanzas" }, { name: "Salud", color: "#6EC9A0", href: "/salud" }, { name: "Educación", color: "#74AEDD", href: "/educacion" }, { name: "Nutrición", color: "#D4B85A", href: "/nutricion" }].map((cat) => (
-                <Link key={cat.name} href={cat.href} style={{ display: "flex", alignItems: "center", gap: "8px", padding: "7px 8px", borderRadius: "6px", fontSize: "13px", color: "#FFFFFF", textDecoration: "none", marginBottom: "2px" }} className="hover:bg-[#1A1B2E] transition-colors">
+              {[
+                { name: "Finanzas", color: "#5C6BC0", href: "/finanzas" },
+                { name: "Salud", color: "#6EC9A0", href: "/salud" },
+                { name: "Educación", color: "#74AEDD", href: "/educacion" },
+                { name: "Nutrición", color: "#D4B85A", href: "/nutricion" },
+              ].map((cat) => (
+                <Link key={cat.name} href={cat.href} style={{ display: "flex", alignItems: "center", gap: "8px", padding: "7px 8px", borderRadius: "6px", fontSize: "13px", color: "#EEEEEE", textDecoration: "none", marginBottom: "2px" }}>
                   <span style={{ width: "5px", height: "5px", borderRadius: "50%", background: cat.color, flexShrink: 0 }} />
                   {cat.name}
                 </Link>
@@ -208,49 +208,70 @@ export default function HogarPage() {
 
           {/* Grid */}
           <div className="flex-1 min-w-0">
-            {/* Desktop grid */}
-            <div className="hidden sm:grid sm:grid-cols-2 gap-3 mb-8">
-              {filtered.map((tool) => (
-                <div key={tool.name} className="relative flex flex-col" style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px" }}>
-                  <span style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2.5px", background: NICHO.color }} />
-                  <div className="flex items-center justify-between mb-3 mt-1">
-                    <div className="flex items-center gap-2.5">
-                      <div style={{ width: "30px", height: "30px", borderRadius: "8px", background: NICHO.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{tool.icon}</div>
-                      <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: NICHO.color }}>{tool.category}</span>
-                    </div>
-                    <ProximamenteBadge />
-                  </div>
-                  <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "6px", lineHeight: "1.35" }}>{tool.name}</p>
-                  <p style={{ fontSize: "11px", color: "#EEEEEE", lineHeight: "1.55", flex: 1, marginBottom: "12px" }}>{tool.description}</p>
-                  <button disabled style={{ background: NICHO.color, color: "#0F1117", border: "none", borderRadius: "7px", padding: "8px 14px", fontSize: "12px", fontWeight: 600, opacity: 0.45, cursor: "not-allowed", textAlign: "left" }}>
-                    Próximamente
-                  </button>
+            {filtered.length === 0 ? (
+              <div className="text-center py-20">
+                <p style={{ fontSize: "13px", color: "#EEEEEE" }}>No hay herramientas en esta categoría aún.</p>
+              </div>
+            ) : (
+              <>
+                {/* Desktop grid */}
+                <div className="hidden sm:grid sm:grid-cols-2 gap-3 mb-8">
+                  {filtered.map((tool) => (
+                    <Link
+                      key={tool.href}
+                      href={tool.href}
+                      className="group relative overflow-hidden flex flex-col transition-all duration-[220ms]"
+                      style={{ background: "#141520", borderTop: "0.5px solid #1E2030", borderRight: "0.5px solid #1E2030", borderBottom: "0.5px solid #1E2030", borderLeft: "2px solid transparent", borderRadius: "10px", padding: "16px", textDecoration: "none" }}
+                      onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.borderLeftColor = NICHO.color; el.style.background = NICHO.tint; }}
+                      onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.borderLeftColor = "transparent"; el.style.background = "#141520"; }}
+                    >
+                      <span style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2.5px", background: NICHO.color }} />
+                      <div className="flex items-center gap-2.5 mb-3 mt-1">
+                        <div style={{ width: "30px", height: "30px", borderRadius: "8px", background: NICHO.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                          {tool.icon}
+                        </div>
+                        <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: NICHO.color }}>
+                          {tool.category}
+                        </span>
+                      </div>
+                      <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "6px", lineHeight: "1.35" }}>{tool.name}</p>
+                      <p style={{ fontSize: "11px", color: "#F5F5F5", lineHeight: "1.55", flex: 1, paddingRight: "20px" }}>{tool.description}</p>
+                      <span style={{ position: "absolute", bottom: "14px", right: "14px", fontSize: "13px", color: "#FFFFFF", transition: "color 0.22s, transform 0.22s" }}>→</span>
+                    </Link>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            {/* Mobile list */}
-            <div className="flex sm:hidden flex-col gap-2 mb-8">
-              {filtered.map((tool) => (
-                <div key={tool.name} className="flex items-center gap-3" style={{ background: "#141520", borderTop: "0.5px solid #1E2030", borderRight: "0.5px solid #1E2030", borderBottom: "0.5px solid #1E2030", borderLeft: `2px solid ${NICHO.color}`, borderRadius: "10px", padding: "12px 14px" }}>
-                  <div style={{ width: "34px", height: "34px", borderRadius: "8px", background: NICHO.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{tool.icon}</div>
-                  <div className="flex-1 min-w-0">
-                    <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: NICHO.color, display: "block", marginBottom: "2px" }}>{tool.category}</span>
-                    <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", display: "block", marginBottom: "2px" }}>{tool.name}</span>
-                    <span style={{ fontSize: "11px", color: "#EEEEEE", display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{tool.description}</span>
-                  </div>
-                  <ProximamenteBadge />
+                {/* Mobile list */}
+                <div className="flex sm:hidden flex-col gap-2 mb-8">
+                  {filtered.map((tool) => (
+                    <Link
+                      key={tool.href}
+                      href={tool.href}
+                      className="flex items-center gap-3"
+                      style={{ background: "#141520", borderTop: "0.5px solid #1E2030", borderRight: "0.5px solid #1E2030", borderBottom: "0.5px solid #1E2030", borderLeft: `2px solid ${NICHO.color}`, borderRadius: "10px", padding: "12px 14px", textDecoration: "none" }}
+                    >
+                      <div style={{ width: "34px", height: "34px", borderRadius: "8px", background: NICHO.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                        {tool.icon}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: NICHO.color, display: "block", marginBottom: "2px" }}>{tool.category}</span>
+                        <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", display: "block", marginBottom: "2px" }}>{tool.name}</span>
+                        <span style={{ fontSize: "11px", color: "#F5F5F5", display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{tool.description}</span>
+                      </div>
+                      <span style={{ color: "#FFFFFF", fontSize: "14px", flexShrink: 0 }}>→</span>
+                    </Link>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </>
+            )}
 
             {/* CTA */}
             <div style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}`, borderRadius: "10px", padding: "20px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", flexWrap: "wrap" }}>
               <div>
-                <p style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", marginBottom: "4px" }}>¿Tienes una idea de herramienta?</p>
-                <p style={{ fontSize: "12px", color: "#EEEEEE" }}>Estamos construyendo estas calculadoras. Vuelve pronto.</p>
+                <p style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", marginBottom: "4px" }}>¿Falta alguna herramienta?</p>
+                <p style={{ fontSize: "12px", color: "#EEEEEE" }}>Estamos agregando nuevas calculadoras constantemente.</p>
               </div>
-              <Link href="/" style={{ background: NICHO.color, color: "#0F1117", fontSize: "12px", fontWeight: 600, padding: "8px 16px", borderRadius: "8px", textDecoration: "none", flexShrink: 0 }} className="hover:opacity-90 transition-opacity">
+              <Link href="/" style={{ background: NICHO.color, color: "#fff", fontSize: "12px", fontWeight: 600, padding: "8px 16px", borderRadius: "8px", textDecoration: "none", flexShrink: 0 }} className="hover:opacity-90 transition-opacity">
                 Ver todas las categorías →
               </Link>
             </div>
