@@ -16,6 +16,7 @@ const tabs = ["Todas", "Notas", "Financiero", "Planificación", "Productividad"]
 
 const tools = [
   {
+    href: "/promedio-ponderado",
     category: "Notas",
     name: "Calculadora de promedio ponderado",
     description: "Calcula tu promedio académico considerando el peso o créditos de cada materia.",
@@ -26,6 +27,7 @@ const tools = [
     ),
   },
   {
+    href: "/nota-minima-aprobar",
     category: "Notas",
     name: "Nota mínima para aprobar",
     description: "Descubre qué nota necesitas en tu examen final para aprobar la materia.",
@@ -36,6 +38,7 @@ const tools = [
     ),
   },
   {
+    href: "/simulador-beca",
     category: "Financiero",
     name: "Simulador de beca y financiamiento",
     description: "Estima cuánto financiamiento necesitas y qué becas podrían cubrir tu carrera.",
@@ -46,6 +49,7 @@ const tools = [
     ),
   },
   {
+    href: "/tiempo-estudio",
     category: "Planificación",
     name: "Tiempo de estudio por materia",
     description: "Planifica cuántas horas dedicar a cada materia según dificultad y créditos.",
@@ -56,6 +60,7 @@ const tools = [
     ),
   },
   {
+    href: "/costo-carrera",
     category: "Financiero",
     name: "Costo total de carrera universitaria",
     description: "Calcula el costo real de tu carrera incluyendo matrícula, materiales y vida.",
@@ -66,6 +71,7 @@ const tools = [
     ),
   },
   {
+    href: "/roi-posgrado",
     category: "Financiero",
     name: "ROI de un posgrado",
     description: "Calcula si vale la pena económicamente hacer un máster o doctorado.",
@@ -76,6 +82,7 @@ const tools = [
     ),
   },
   {
+    href: "/conversor-calificaciones",
     category: "Notas",
     name: "Conversor de sistemas de calificación",
     description: "Convierte tu nota entre diferentes escalas: GPA, escala 1-10, 1-20, porcentual.",
@@ -86,6 +93,7 @@ const tools = [
     ),
   },
   {
+    href: "/deuda-estudiantil",
     category: "Financiero",
     name: "Calculadora de deuda estudiantil",
     description: "Simula cuánto pagarás y en cuánto tiempo liquidarás tu préstamo estudiantil.",
@@ -96,6 +104,7 @@ const tools = [
     ),
   },
   {
+    href: "/planificador-estudio",
     category: "Planificación",
     name: "Planificador de horas de estudio",
     description: "Organiza tu semana de estudio distribuyendo el tiempo según tus materias y metas.",
@@ -106,6 +115,7 @@ const tools = [
     ),
   },
   {
+    href: "/productividad-academica",
     category: "Productividad",
     name: "Calculadora de productividad académica",
     description: "Mide tu eficiencia de estudio y encuentra el horario óptimo para rendir más.",
@@ -116,12 +126,6 @@ const tools = [
     ),
   },
 ];
-
-const ProximamenteBadge = () => (
-  <span style={{ background: "#1E2030", color: "#888", fontSize: "9px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" as const, padding: "3px 8px", borderRadius: "999px" }}>
-    Próximamente
-  </span>
-);
 
 export default function EducacionPage() {
   const [activeTab, setActiveTab] = useState("Todas");
@@ -207,35 +211,36 @@ export default function EducacionPage() {
                       <div style={{ width: "30px", height: "30px", borderRadius: "8px", background: NICHO.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{tool.icon}</div>
                       <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: NICHO.color }}>{tool.category}</span>
                     </div>
-                    <ProximamenteBadge />
                   </div>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "6px", lineHeight: "1.35" }}>{tool.name}</p>
                   <p style={{ fontSize: "11px", color: "#EEEEEE", lineHeight: "1.55", flex: 1, marginBottom: "12px" }}>{tool.description}</p>
-                  <button disabled style={{ background: NICHO.color, color: "#0F1117", border: "none", borderRadius: "7px", padding: "8px 14px", fontSize: "12px", fontWeight: 600, opacity: 0.45, cursor: "not-allowed" }}>
-                    Próximamente
-                  </button>
+                  <Link href={tool.href} style={{ background: NICHO.color, color: "#0F1117", border: "none", borderRadius: "7px", padding: "8px 14px", fontSize: "12px", fontWeight: 600, textDecoration: "none", textAlign: "center", display: "block" }} className="hover:opacity-90 transition-opacity">
+                    Usar herramienta →
+                  </Link>
                 </div>
               ))}
             </div>
 
             <div className="flex sm:hidden flex-col gap-2 mb-8">
               {filtered.map((tool) => (
-                <div key={tool.name} className="flex items-center gap-3" style={{ background: "#141520", borderTop: "0.5px solid #1E2030", borderRight: "0.5px solid #1E2030", borderBottom: "0.5px solid #1E2030", borderLeft: `2px solid ${NICHO.color}`, borderRadius: "10px", padding: "12px 14px" }}>
+                <Link key={tool.name} href={tool.href} className="flex items-center gap-3" style={{ background: "#141520", borderTop: "0.5px solid #1E2030", borderRight: "0.5px solid #1E2030", borderBottom: "0.5px solid #1E2030", borderLeft: `2px solid ${NICHO.color}`, borderRadius: "10px", padding: "12px 14px", textDecoration: "none" }}>
                   <div style={{ width: "34px", height: "34px", borderRadius: "8px", background: NICHO.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{tool.icon}</div>
                   <div className="flex-1 min-w-0">
                     <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: NICHO.color, display: "block", marginBottom: "2px" }}>{tool.category}</span>
                     <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", display: "block", marginBottom: "2px" }}>{tool.name}</span>
                     <span style={{ fontSize: "11px", color: "#EEEEEE", display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{tool.description}</span>
                   </div>
-                  <ProximamenteBadge />
-                </div>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={NICHO.color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </Link>
               ))}
             </div>
 
             <div style={{ background: NICHO.bg, border: `0.5px solid ${NICHO.border}`, borderRadius: "10px", padding: "20px 24px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", flexWrap: "wrap" }}>
               <div>
                 <p style={{ fontSize: "14px", fontWeight: 600, color: "#FFFFFF", marginBottom: "4px" }}>¿Tienes una idea de herramienta?</p>
-                <p style={{ fontSize: "12px", color: "#EEEEEE" }}>Estamos construyendo estas calculadoras. Vuelve pronto.</p>
+                <p style={{ fontSize: "12px", color: "#EEEEEE" }}>Todas las herramientas están disponibles. ¡Explóralas!</p>
               </div>
               <Link href="/" style={{ background: NICHO.color, color: "#0F1117", fontSize: "12px", fontWeight: 600, padding: "8px 16px", borderRadius: "8px", textDecoration: "none", flexShrink: 0 }} className="hover:opacity-90 transition-opacity">
                 Ver todas las categorías →
