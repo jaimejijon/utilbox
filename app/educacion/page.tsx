@@ -202,37 +202,51 @@ export default function EducacionPage() {
 
           {/* Grid */}
           <div className="flex-1 min-w-0">
+            {/* Desktop grid */}
             <div className="hidden sm:grid sm:grid-cols-2 gap-3 mb-8">
               {filtered.map((tool) => (
-                <div key={tool.name} className="relative flex flex-col" style={{ background: "#141520", border: "0.5px solid #1E2030", borderRadius: "10px", padding: "16px" }}>
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="group relative overflow-hidden flex flex-col transition-all duration-[220ms]"
+                  style={{ background: "#141520", borderTop: "0.5px solid #1E2030", borderRight: "0.5px solid #1E2030", borderBottom: "0.5px solid #1E2030", borderLeft: "2px solid transparent", borderRadius: "10px", padding: "16px", textDecoration: "none" }}
+                  onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.borderLeftColor = NICHO.color; el.style.background = NICHO.tint; }}
+                  onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.borderLeftColor = "transparent"; el.style.background = "#141520"; }}
+                >
                   <span style={{ position: "absolute", top: 0, left: 0, right: 0, height: "2.5px", background: NICHO.color }} />
-                  <div className="flex items-center justify-between mb-3 mt-1">
-                    <div className="flex items-center gap-2.5">
-                      <div style={{ width: "30px", height: "30px", borderRadius: "8px", background: NICHO.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{tool.icon}</div>
-                      <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: NICHO.color }}>{tool.category}</span>
+                  <div className="flex items-center gap-2.5 mb-3 mt-1">
+                    <div style={{ width: "30px", height: "30px", borderRadius: "8px", background: NICHO.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      {tool.icon}
                     </div>
+                    <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: NICHO.color }}>
+                      {tool.category}
+                    </span>
                   </div>
                   <p style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", marginBottom: "6px", lineHeight: "1.35" }}>{tool.name}</p>
-                  <p style={{ fontSize: "11px", color: "#EEEEEE", lineHeight: "1.55", flex: 1, marginBottom: "12px" }}>{tool.description}</p>
-                  <Link href={tool.href} style={{ background: NICHO.color, color: "#0F1117", border: "none", borderRadius: "7px", padding: "8px 14px", fontSize: "12px", fontWeight: 600, textDecoration: "none", textAlign: "center", display: "block" }} className="hover:opacity-90 transition-opacity">
-                    Usar herramienta →
-                  </Link>
-                </div>
+                  <p style={{ fontSize: "11px", color: "#F5F5F5", lineHeight: "1.55", flex: 1, paddingRight: "20px" }}>{tool.description}</p>
+                  <span style={{ position: "absolute", bottom: "14px", right: "14px", fontSize: "13px", color: "#FFFFFF", transition: "color 0.22s, transform 0.22s" }}>→</span>
+                </Link>
               ))}
             </div>
 
+            {/* Mobile list */}
             <div className="flex sm:hidden flex-col gap-2 mb-8">
               {filtered.map((tool) => (
-                <Link key={tool.name} href={tool.href} className="flex items-center gap-3" style={{ background: "#141520", borderTop: "0.5px solid #1E2030", borderRight: "0.5px solid #1E2030", borderBottom: "0.5px solid #1E2030", borderLeft: `2px solid ${NICHO.color}`, borderRadius: "10px", padding: "12px 14px", textDecoration: "none" }}>
-                  <div style={{ width: "34px", height: "34px", borderRadius: "8px", background: NICHO.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>{tool.icon}</div>
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="flex items-center gap-3"
+                  style={{ background: "#141520", borderTop: "0.5px solid #1E2030", borderRight: "0.5px solid #1E2030", borderBottom: "0.5px solid #1E2030", borderLeft: `2px solid ${NICHO.color}`, borderRadius: "10px", padding: "12px 14px", textDecoration: "none" }}
+                >
+                  <div style={{ width: "34px", height: "34px", borderRadius: "8px", background: NICHO.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    {tool.icon}
+                  </div>
                   <div className="flex-1 min-w-0">
                     <span style={{ fontSize: "10px", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: NICHO.color, display: "block", marginBottom: "2px" }}>{tool.category}</span>
                     <span style={{ fontSize: "13px", fontWeight: 600, color: "#FFFFFF", display: "block", marginBottom: "2px" }}>{tool.name}</span>
-                    <span style={{ fontSize: "11px", color: "#EEEEEE", display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{tool.description}</span>
+                    <span style={{ fontSize: "11px", color: "#F5F5F5", display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{tool.description}</span>
                   </div>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={NICHO.color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
+                  <span style={{ color: "#FFFFFF", fontSize: "14px", flexShrink: 0 }}>→</span>
                 </Link>
               ))}
             </div>
