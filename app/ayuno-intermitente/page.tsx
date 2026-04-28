@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -81,6 +82,17 @@ export default function AyunoIntermitente() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de ayuno intermitente — horarios 16:8, 18:6, OMAD"
+        description="Planifica tu ventana de alimentación con los protocolos de ayuno intermitente más populares: 16:8, 18:6, 20:4, OMAD y 5:2. Visualiza tu ciclo diario y obtén consejos para cada protocolo."
+        url="https://utilbox.lat/ayuno-intermitente"
+        category="Nutrición"
+        faqItems={[
+          { q: "¿El café con leche rompe el ayuno?", a: "El café negro, té sin azúcar y agua no rompen el ayuno. El café con leche, cremas, azúcar o cualquier bebida con calorías sí lo interrumpe. Una taza de café negro tiene prácticamente 0 calorías y no activa la respuesta insulínica, por lo que es compatible con todos los protocolos de ayuno." },
+          { q: "¿Puedo hacer ejercicio en ayunas?", a: "Sí, y muchas personas lo prefieren para maximizar la quema de grasa. El ejercicio en ayunas es seguro para la mayoría de las personas. Sin embargo, si realizas entrenamientos de alta intensidad o de fuerza, considera entrenar justo antes de romper el ayuno para poder consumir proteína post-entrenamiento rápidamente." },
+          { q: "¿El ayuno intermitente funciona igual para mujeres?", a: "Existe evidencia de que algunas mujeres, especialmente en edad reproductiva, pueden ser más sensibles a patrones de ayuno prolongados, experimentando alteraciones en el ciclo menstrual. Se recomienda que las mujeres comiencen con protocolos más suaves (12:12 o 14:10) y ajusten gradualmente. Mujeres embarazadas o en período de lactancia no deben practicar ayuno intermitente." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

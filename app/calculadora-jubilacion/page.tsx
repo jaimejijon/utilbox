@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -84,6 +85,17 @@ export default function CalculadoraJubilacion() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de jubilación y retiro"
+        description="Planifica tu jubilación: calcula cuánto ahorrar cada mes para alcanzar tu meta de retiro. Compatible con AFORE, AFP, fondos de pensión de México, Colombia, Chile, Perú y más."
+        url="https://utilbox.lat/calculadora-jubilacion"
+        category="Finanzas"
+        faqItems={[
+          { q: "¿Qué es la regla del 4% y cómo aplica al retiro?", a: "La regla del 4% indica que puedes retirar el 4% de tu fondo de retiro anualmente de forma sostenible a largo plazo, sin agotar el capital. Bajo esta regla, si tienes $500,000, podrías retirar $20,000 al año ($1,667/mes) indefinidamente. Esta calculadora usa ese mismo principio para estimar cuántos años alcanzará tu fondo." },
+          { q: "¿Por qué importa la inflación en el cálculo de jubilación?", a: "La inflación erosiona el poder adquisitivo del dinero con el tiempo. Si la inflación promedia 4% anual, $2,000 de hoy equivaldrán a menos de $900 en términos de poder de compra dentro de 20 años. La calculadora muestra tanto el fondo nominal como el valor real ajustado por inflación, para que puedas planificar con base en lo que ese dinero realmente podrá comprar." },
+          { q: "¿A qué edad conviene empezar a ahorrar para el retiro?", a: "Cuanto antes, mejor — sin excepción. Empezar a los 25 en lugar de los 35 puede más que duplicar el fondo final, aun aportando la misma cantidad mensual. Si ya pasaste de los 40, no desesperes: todavía hay tiempo de construir un fondo significativo aumentando las aportaciones mensuales." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

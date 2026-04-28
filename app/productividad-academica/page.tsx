@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -78,6 +79,17 @@ export default function ProductividadAcademica() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de productividad académica"
+        description="Mide tu índice de productividad académica (0-100): eficiencia de horas, tareas completadas y avance en promedio. Obtén recomendaciones personalizadas para mejorar tu rendimiento."
+        url="https://utilbox.lat/productividad-academica"
+        category="Educación"
+        faqItems={[
+          { q: "¿Qué índice de productividad se considera bueno?", a: "Un índice de 70-84 es bueno y refleja un estudiante consistente con margen de mejora. 85 o más es excelente y generalmente corresponde a los mejores promedios del grupo. Por debajo de 55 es una señal de que algo en tu dinámica de estudio necesita ajuste: quizás planificas demasiado, te falta concentración, o tienes compromisos que afectan tu disponibilidad." },
+          { q: "¿Con qué frecuencia debo medir mi productividad?", a: "Semanalmente es lo ideal. Al final de cada semana, registra tus horas reales, tareas completadas y promedio actualizado. Esto te da retroalimentación oportuna para ajustar la siguiente semana antes de que sea demasiado tarde en el semestre." },
+          { q: "¿Qué hago si mi índice es bajo varias semanas seguidas?", a: "Primero identifica qué dimensión tiene el peor desempeño: ¿no cumples horas, no completas tareas, o tu promedio no mejora? Cada problema tiene soluciones distintas. Para horas: elimina distractores y usa bloques de tiempo protegidos. Para tareas: usa técnicas de priorización. Para promedio: busca tutoría o cambia tu método de estudio activo." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

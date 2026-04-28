@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -66,6 +67,17 @@ export default function ConvertidorMonedas() {
 
   return (
     <>
+      <ToolSchema
+        name="Convertidor de monedas latinoamericanas"
+        description="Convierte entre MXN, COP, ARS, CLP, PEN, UYU, BOB, PYG, VES, USD, EUR y más de 20 monedas. Tasas de referencia para México, Colombia, Argentina, Chile, Perú y toda Latinoamérica."
+        url="https://utilbox.lat/convertidor-monedas"
+        category="Finanzas"
+        faqItems={[
+          { q: "¿Las tasas de cambio son en tiempo real?", a: "Las tasas mostradas son referenciales y se actualizan periódicamente, pero no son datos en tiempo real de los mercados financieros. Para consultas rápidas y educativas son muy útiles. Sin embargo, si vas a realizar una transferencia internacional o cambiar divisas en una casa de cambio, siempre verifica la tasa exacta con tu banco o plataforma de pago." },
+          { q: "¿Por qué el tipo de cambio del banco es diferente al de esta herramienta?", a: "Los bancos y casas de cambio aplican un margen (llamado spread) sobre la tasa interbancaria de referencia. Esa diferencia es su ganancia y puede variar entre el 1% y el 5% según la institución y la moneda. Plataformas como Wise o Remitly suelen ofrecer spreads menores para transferencias internacionales." },
+          { q: "¿Por qué el peso argentino tiene una tasa tan alta respecto al dólar?", a: "Argentina ha atravesado períodos prolongados de alta inflación y devaluación de su moneda. La tasa mostrada es la oficial de referencia; en la práctica, Argentina ha tenido históricamente múltiples tipos de cambio simultáneos. La situación cambia con frecuencia, por lo que para cualquier operación con pesos argentinos es fundamental verificar las condiciones actuales con fuentes locales." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

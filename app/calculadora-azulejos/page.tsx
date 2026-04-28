@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -59,6 +60,17 @@ export default function CalculadoraAzulejos() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de azulejos, baldosas y pisos por m²"
+        description="Calcula cuántas cajas de azulejos, baldosas, porcelanato o piso flotante necesitas para cubrir cualquier área. Incluye porcentaje de desperdicio. Gratis y sin registro."
+        url="https://utilbox.lat/calculadora-azulejos"
+        category="Hogar"
+        faqItems={[
+          { q: "¿Cuánto desperdicio debo calcular para instalación en diagonal?", a: "La instalación en diagonal (45°) genera mucho más desperdicio en los bordes. Calcula al menos un 15–20% extra. Para áreas pequeñas o con muchas esquinas y obstáculos, puede llegar al 25%." },
+          { q: "¿Qué diferencia hay entre azulejo, porcelanato y cerámica?", a: "La cerámica es porosa y más económica, ideal para paredes o zonas de bajo tráfico. El porcelanato es más denso, resistente a manchas y al desgaste, recomendado para pisos de alto tráfico. El azulejo es generalmente cerámica vidriada para paredes." },
+          { q: "¿Puedo instalar pisos sobre pisos existentes?", a: "Técnicamente sí, pero aumentas la altura del piso, lo que puede crear desniveles en puertas y transiciones entre cuartos. Es preferible retirar el piso anterior para asegurar una base plana y estable, especialmente con porcelanato pesado." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

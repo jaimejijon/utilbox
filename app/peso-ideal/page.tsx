@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -52,6 +53,17 @@ export default function PesoIdeal() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de peso ideal"
+        description="Calcula tu peso ideal según tres fórmulas médicas reconocidas: Devine, Robinson y Miller. Descubre tu rango de peso saludable según tu altura y sexo. Gratis."
+        url="https://utilbox.lat/peso-ideal"
+        category="Salud"
+        faqItems={[
+          { q: "¿Cuál de las tres fórmulas es la más precisa?", a: "Depende del contexto. La fórmula de Devine es la más antigua (1974) y fue desarrollada para dosificación de medicamentos, por lo que es conservadora. Robinson (1983) tiende a dar valores ligeramente menores, más orientados a composición corporal saludable. Miller (1983) da valores intermedios. Para la mayoría de personas, el promedio de las tres es el punto de referencia más equilibrado." },
+          { q: "¿Es posible estar en peso ideal pero no saludable?", a: "Sí. El peso ideal es un rango de referencia, no una garantía de salud. Una persona puede estar en su peso ideal pero tener alto porcentaje de grasa corporal (obesidad sarcopénica), presión arterial elevada, glucosa alterada o niveles de colesterol problemáticos. La salud metabólica es más importante que el número en la báscula." },
+          { q: "¿Qué es la complexión corporal y cómo afecta al peso ideal?", a: "La complexión se refiere al tamaño del esqueleto y la estructura ósea. Personas con complexión grande tienen huesos más densos y anchos, por lo que un mismo peso ideal sería insuficiente para ellas. El ajuste por complexión en estas fórmulas es del 10% arriba o abajo, lo cual puede significar 5–8 kg de diferencia en el resultado final." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

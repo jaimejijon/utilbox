@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -50,6 +51,17 @@ export default function GastoCalóricoDiario() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de gasto calórico diario (TDEE y TMB)"
+        description="Calcula tu tasa metabólica basal (TMB) y gasto energético total diario (TDEE) según tu nivel de actividad. Ideal para perder peso, ganar músculo o mantenerte."
+        url="https://utilbox.lat/gasto-calorico-diario"
+        category="Salud"
+        faqItems={[
+          { q: "¿Qué tan precisa es la fórmula de Mifflin-St Jeor?", a: "Es la más precisa para adultos en condiciones normales, con un margen de error de ±10%. Fue validada en 1990 y es la recomendada por la Academia de Nutrición y Dietética. Las fórmulas de Harris-Benedict (más antigua) y Katch-McArdle (requiere conocer % de grasa) también son usadas, pero Mifflin es el estándar actual." },
+          { q: "¿Cada cuánto debo recalcular mi TDEE?", a: "Se recomienda recalcular cada 4–8 semanas, especialmente si tu peso cambia más de 3–4 kg o si cambias significativamente tu nivel de actividad. El cuerpo se adapta con el tiempo, por lo que el TDEE puede cambiar. Si llevas más de 3 semanas sin ver progreso en tu objetivo, es buen momento para recalcular." },
+          { q: "¿Por qué el TDEE sedentario es tan alto?", a: "Aunque el multiplicador sedentario (1.2) es el más bajo, incluso personas sin ejercicio formal gastan energía al caminar, cocinar, trabajar y en actividades cotidianas. La TMB representa solo el 60–75% del gasto total; el resto proviene de estas actividades. Por eso el TDEE sedentario siempre es considerablemente mayor que la TMB." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

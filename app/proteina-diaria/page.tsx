@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -73,6 +74,17 @@ export default function ProteinaDiaria() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de proteína diaria recomendada"
+        description="Calcula cuánta proteína necesitas al día según tu peso, actividad física y objetivo: ganar músculo, perder grasa o mejorar rendimiento deportivo. Incluye equivalencias en alimentos reales."
+        url="https://utilbox.lat/proteina-diaria"
+        category="Nutrición"
+        faqItems={[
+          { q: "¿Puedo obtener suficiente proteína siendo vegetariano?", a: "Sí, pero requiere planificación. Las mejores fuentes vegetales son soya, tofu, tempeh, legumbres (frijoles, lentejas, garbanzos), quinoa, seitan y lácteos. La clave es combinar diferentes fuentes para obtener todos los aminoácidos esenciales. Los vegetarianos pueden necesitar un 10-20% más de proteína total porque las fuentes vegetales tienen menor digestibilidad que las animales." },
+          { q: "¿Qué pasa si como demasiada proteína?", a: "En personas sanas con riñones funcionando correctamente, el exceso de proteína se convierte en energía o se excreta. No existen evidencias de daño renal en personas sanas consumiendo hasta 3g/kg/día. Sin embargo, consumir proteína en exceso por encima de las necesidades no genera beneficio adicional y puede desplazar otros macronutrientes importantes de la dieta." },
+          { q: "¿La proteína de suplemento (whey) es mejor que la de alimentos naturales?", a: "No necesariamente. El whey es una fuente conveniente con alto valor biológico, pero no es superior a fuentes enteras como pechuga de pollo o clara de huevo en términos de ganancia muscular cuando la ingesta total de proteína es la misma. Los alimentos enteros tienen el beneficio adicional de aportar vitaminas, minerales y otros nutrientes." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

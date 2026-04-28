@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -70,6 +71,17 @@ export default function DeudaEstudiantil() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de deuda estudiantil"
+        description="Calcula la cuota mensual, total de intereses y tabla de amortización de tu préstamo estudiantil. Para ICETEX, crédito educativo en Colombia, México, Chile, Bolivia y más."
+        url="https://utilbox.lat/deuda-estudiantil"
+        category="Educación"
+        faqItems={[
+          { q: "¿Conviene pagar más de la cuota mensual?", a: "Sí, realizar abonos extraordinarios al capital reduce el saldo pendiente y, por ende, los intereses futuros. Un pago extra anual equivalente a una cuota mensual puede reducir el plazo en 1-2 años y ahorrarte miles en intereses. Verifica que tu contrato no tenga penalidad por pago anticipado." },
+          { q: "¿Qué pasa si no pago durante el período de gracia?", a: "Durante la gracia no pagas cuotas, pero el interés sigue corriendo y se suma al capital (capitalización). Si tienes 6 meses de gracia al 8% anual, tu deuda de $20,000 crece a aproximadamente $20,808. Eso significa que pagarás más intereses durante la vida del préstamo." },
+          { q: "¿Cuál es una tasa de interés razonable para un crédito educativo?", a: "En América Latina, tasas entre 5% y 12% anual son comunes para crédito educativo formal. Tasas por encima del 15% son altas y deberías explorar otras fuentes. En EE.UU. los préstamos federales estudiantiles tienen tasas entre 5% y 8% aproximadamente. Siempre compara varias instituciones antes de comprometerte." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

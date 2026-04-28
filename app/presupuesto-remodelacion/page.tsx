@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -88,6 +89,17 @@ export default function PresupuestoRemodelacion() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de presupuesto de remodelación"
+        description="Estima el costo total de tu remodelación por tipo de trabajo: demolición, albañilería, eléctrico, plomería y acabados. Para México, Colombia, Argentina, Chile y Latinoamérica."
+        url="https://utilbox.lat/presupuesto-remodelacion"
+        category="Hogar"
+        faqItems={[
+          { q: "¿Por qué hay tanta diferencia entre el mínimo y el máximo?", a: "Las obras de construcción son impredecibles. Pueden aparecer problemas ocultos (tuberías en mal estado, estructuras dañadas), los precios de materiales fluctúan, y el alcance de la obra puede cambiar. Siempre presupuesta el peor escenario y guarda un fondo de contingencia del 15–20%." },
+          { q: "¿Conviene hacer todo de una vez o por etapas?", a: "Hacerlo todo de una vez ahorra en mano de obra y reduce interrupciones. Sin embargo, si el presupuesto es limitado, priorizar por urgencia (instalaciones eléctricas y plomería primero, luego acabados) es más sensato que endeudarse." },
+          { q: "¿Cómo encontrar buenos contratistas?", a: "Pide mínimo tres cotizaciones por escrito. Verifica referencias en proyectos similares. Desconfía de precios muy por debajo del mercado. Establece hitos de pago atados al avance real de la obra, nunca pagues todo por adelantado." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -52,6 +53,17 @@ export default function RoiPosgrado() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de ROI de un posgrado o máster"
+        description="Calcula el retorno de inversión de hacer un máster, MBA o doctorado: ROI, tiempo de recuperación y ganancia acumulada a 5, 10 y 20 años. ¿Vale la pena económicamente?"
+        url="https://utilbox.lat/roi-posgrado"
+        category="Educación"
+        faqItems={[
+          { q: "¿Qué nivel de ROI hace rentable un posgrado?", a: "Un ROI mayor al 20% anual sobre la inversión total se considera bueno para educación. Si puedes recuperar la inversión en menos de 5 años, el posgrado es financieramente sólido. ROIs menores (5–15%) no son malos si hay otros beneficios como cambio de industria, acceso a mercados internacionales, o cumplimiento de requisitos legales para ejercer." },
+          { q: "¿Por qué se incluye el salario no ganado?", a: "El costo de oportunidad es real: mientras estudias a tiempo completo, dejas de ganar ese ingreso. Una persona que gana $2,500/mes y estudia un máster de 2 años pierde $60,000 en ingresos, lo cual forma parte de la inversión total. Ignorar este factor sobreestima el ROI significativamente." },
+          { q: "¿Es diferente el ROI de un doctorado vs un máster?", a: "Generalmente sí. Los doctorados tienen un costo de oportunidad mucho mayor (3–7 años) y el incremento salarial en el mercado privado puede no justificar la inversión comparado con un máster de 1–2 años. Sin embargo, para posiciones académicas o de investigación, el doctorado es requisito indispensable, lo que cambia el análisis." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

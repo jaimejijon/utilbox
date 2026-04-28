@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -49,6 +50,17 @@ export default function FechaProbableParto() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de fecha probable de parto"
+        description="Calcula tu fecha probable de parto a partir de la fecha de tu última menstruación o fecha de concepción. Incluye semanas de embarazo y trimestres. Gratis y sin registro."
+        url="https://utilbox.lat/fecha-probable-parto"
+        category="Salud"
+        faqItems={[
+          { q: "¿Qué tan precisa es la calculadora de fecha de parto?", a: "La Regla de Naegele tiene una precisión de ±2 semanas para la mayoría de mujeres con ciclos regulares. El ultrasonido del primer trimestre (entre semanas 8–13) es más preciso y puede confirmar o ajustar la fecha estimada. Si tu ciclo es irregular, la calculadora puede ser menos precisa." },
+          { q: "¿Por qué se cuentan las semanas desde la última menstruación si el bebé aún no existía?", a: "Es una convención médica establecida históricamente porque la fecha de la última menstruación es fácil de recordar, mientras que la fecha exacta de concepción rara vez se conoce con certeza. Los 280 días incluyen las aproximadamente 2 semanas antes de la ovulación/concepción real, por lo que el bebé tiene realmente ~38 semanas de desarrollo." },
+          { q: "¿Qué hacer si no recuerdo la fecha exacta de mi última menstruación?", a: "Si no recuerdas la fecha exacta, puedes estimar basándote en el mes aproximado. Tu médico realizará un ultrasonido para medir el bebé y establecer una fecha más precisa. La longitud cráneo-caudal (CRL) medida en el primer trimestre es el indicador más confiable de la edad gestacional." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

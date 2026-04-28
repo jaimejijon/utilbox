@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -92,6 +93,17 @@ export default function AlcoholEnSangre() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de alcohol en sangre (BAC)"
+        description="Estima tu nivel de alcohol en sangre según las bebidas consumidas, tu peso, sexo y tiempo transcurrido. Incluye límites legales de México, Colombia, Chile, Argentina y Perú. Solo informativo."
+        url="https://utilbox.lat/alcohol-en-sangre"
+        category="Nutrición"
+        faqItems={[
+          { q: "¿El café o el agua ayudan a eliminar el alcohol más rápido?", a: "No. El hígado metaboliza el alcohol a una tasa constante de aproximadamente 0.015 g/dL por hora y no se puede acelerar. El café solo te mantendrá despierto pero no reducirá tu nivel de alcohol en sangre. La única forma de bajar el BAC es esperar el tiempo necesario para que el cuerpo lo procese de forma natural." },
+          { q: "¿Por qué las mujeres se emborrachan más rápido con la misma cantidad de alcohol?", a: "Principalmente por dos razones: las mujeres tienen mayor porcentaje de grasa corporal y menor de agua, lo que significa que el alcohol se distribuye en un menor volumen de agua y alcanza mayor concentración. Además, las mujeres producen menos cantidad de la enzima alcohol deshidrogenasa que metaboliza el alcohol en el estómago, por lo que absorben mayor proporción." },
+          { q: "¿Cuándo es legal conducir según el BAC en Latinoamérica?", a: "Los límites varían por país: Chile tiene uno de los más estrictos (0.03 g/dL), seguido por Colombia (0.04 g/dL). México y Perú establecen 0.08 g/dL como límite general, aunque algunos estados/regiones tienen límites menores. En varios países, conductores de transporte público y menores de edad tienen límite 0.00. Lo más seguro es no conducir si has consumido cualquier cantidad de alcohol." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

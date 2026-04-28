@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -83,6 +84,17 @@ export default function PlanificadorEstudio() {
 
   return (
     <>
+      <ToolSchema
+        name="Planificador de horas de estudio semanal"
+        description="Distribuye tus horas disponibles entre tus materias según prioridad y genera un plan de estudio semanal personalizado. Para estudiantes universitarios en Latinoamérica."
+        url="https://utilbox.lat/planificador-estudio"
+        category="Educación"
+        faqItems={[
+          { q: "¿Cuántas horas de estudio al día son recomendables?", a: "Para estudiantes universitarios a tiempo completo, entre 2 y 5 horas de estudio autónomo diarias es un rango saludable. Más de 6 horas continuas de estudio produce rendimientos decrecientes por fatiga cognitiva. Lo más efectivo es estudiar en bloques de 45-90 minutos con descansos de 10-15 minutos entre ellos (técnica Pomodoro)." },
+          { q: "¿Debería estudiar los fines de semana?", a: "Sí, los fines de semana son ideales para sesiones de estudio más largas y profundas (revisión de temas complejos, práctica de problemas). Sin embargo, también son importantes para recuperar energía. Lo óptimo es dedicar 2-4 horas cada día del fin de semana en lugar de estudiar todo un día y descansar el otro." },
+          { q: "¿Cómo ajusto el plan en semana de exámenes?", a: "Durante semana de exámenes, la prioridad cambia: asigna el 70-80% del tiempo a las materias con examen más cercano, reduce al mínimo las demás. Actualiza la herramienta con nuevas prioridades para generar un plan de emergencia. En esas semanas también es válido reducir horas de sueño temporalmente, aunque no a menos de 6 horas." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

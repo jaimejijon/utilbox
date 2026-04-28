@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -92,6 +93,17 @@ export default function AlquilerVsCompra() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora alquiler vs compra de vivienda"
+        description="Compara el costo real de alquilar versus comprar casa o departamento a largo plazo. Análisis financiero para México, Colombia, Argentina, Chile, Perú y toda Latinoamérica."
+        url="https://utilbox.lat/alquiler-vs-compra"
+        category="Finanzas"
+        faqItems={[
+          { q: "¿Por qué el punto de equilibrio tarda varios años?", a: "Al inicio de una hipoteca, la mayoría de la cuota son intereses, no capital. Además el enganche tiene un costo de oportunidad. Por eso comprar solo conviene a mediano y largo plazo, generalmente a partir del año 7–15 dependiendo del mercado." },
+          { q: "¿Qué pasa si el valor de la vivienda sube?", a: "Esta calculadora no incluye la plusvalía porque es variable e incierta. Si agregas el incremento del valor de tu propiedad, comprar suele ser más conveniente en mercados con alta apreciación inmobiliaria." },
+          { q: "¿Cuándo claramente conviene alquilar?", a: "Cuando planeas vivir menos de 5 años en el lugar, cuando el precio de compra es muy alto relativo al alquiler, o cuando tienes inversiones que rinden más que la tasa de tu hipoteca." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -83,6 +84,17 @@ export default function NotaMinimaAprobar() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de nota mínima para aprobar"
+        description="Calcula qué nota necesitas en el examen final para aprobar la materia según tus parciales y porcentajes. Para universidades de México, Colombia, Ecuador, Chile, Perú y más."
+        url="https://utilbox.lat/nota-minima-aprobar"
+        category="Educación"
+        faqItems={[
+          { q: "¿Qué pasa si mis porcentajes no suman 100%?", a: "La calculadora necesita que el total de porcentajes sume exactamente 100% para dar un resultado preciso. Si tienes trabajos, quices u otras evaluaciones, inclúyelos también con su porcentaje correspondiente antes de calcular." },
+          { q: "¿Puedo usarla si mi nota mínima es diferente a 6?", a: "Sí, puedes ingresar cualquier nota mínima de aprobación. Algunas universidades exigen 5.5, 7 o incluso 70% según la escala. La herramienta se adapta a cualquier nota de corte que ingreses." },
+          { q: "¿Qué es una nota de habilitación?", a: "En algunos sistemas educativos, cuando el acumulado está cerca del límite pero no llega a aprobar, se puede obtener el derecho a un examen de habilitación o recuperación. Este examen reemplaza parcialmente el puntaje para darte una segunda oportunidad de aprobar." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

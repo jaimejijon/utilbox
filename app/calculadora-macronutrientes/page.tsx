@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -57,6 +58,17 @@ export default function CalculadoraMacronutrientes() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de macronutrientes — Proteínas, carbos y grasas"
+        description="Calcula tus macros ideales de proteína, carbohidratos y grasas según tu objetivo: pérdida de peso, ganancia muscular o mantenimiento. Gratis y sin registro."
+        url="https://utilbox.lat/calculadora-macronutrientes"
+        category="Salud"
+        faqItems={[
+          { q: "¿Las grasas realmente hacen engordar?", a: "Las grasas tienen 9 kcal por gramo (vs 4 kcal de proteínas y carbos), por lo que son más densas calóricamente. Pero no hacen engordar por sí mismas: el aumento de peso ocurre cuando el total calórico supera tu gasto. Las grasas saludables (aguacate, aceite de oliva, nueces, pescado graso) son esenciales para la salud hormonal y cardiovascular." },
+          { q: "¿Cuánta proteína necesito para ganar músculo?", a: "Las investigaciones muestran que para optimizar la síntesis de proteína muscular se necesitan entre 1.6 y 2.2 gramos de proteína por kilogramo de peso corporal al día. Cantidades superiores a 2.2 g/kg no ofrecen beneficios adicionales para la mayoría de personas. Esta calculadora usa el extremo superior de ese rango en el objetivo de ganar masa." },
+          { q: "¿Puedo seguir estos macros exactamente todos los días?", a: "No es necesario ser exacto al gramo cada día. Lo que importa es el promedio semanal. Puedes variar ±10–15% diariamente sin problema. El seguimiento rígido puede ser contraproducente para el bienestar mental. Lo más importante es mantener la consistencia en las calorías totales y asegurarte de cumplir con tu objetivo de proteínas." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

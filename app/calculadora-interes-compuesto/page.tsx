@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -65,6 +66,17 @@ export default function CalculadoraInteresCompuesto() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de interés compuesto"
+        description="Simula el crecimiento de tu inversión con interés compuesto y aportaciones periódicas. Ideal para CETES, CDT, plazo fijo, fondos de inversión y más en Latinoamérica."
+        url="https://utilbox.lat/calculadora-interes-compuesto"
+        category="Finanzas"
+        faqItems={[
+          { q: "¿Cuál es la diferencia entre interés simple e interés compuesto?", a: "El interés simple siempre se calcula sobre el capital original, sin importar cuánto tiempo pase. El interés compuesto se calcula sobre el saldo acumulado, incluyendo los intereses ganados en períodos anteriores. Con el paso de los años, la diferencia entre ambos puede ser enorme: un mismo capital al 8% anual durante 30 años crece 2.4 veces con interés simple, pero casi 10 veces con interés compuesto." },
+          { q: "¿Qué tasa anual es realista para una inversión en Latinoamérica?", a: "Depende del instrumento y el país. Los CETES en México han ofrecido tasas del 9–11% anual en años recientes. Los fondos indexados globales (en dólares) han promediado históricamente entre 7–10% anual. Instrumentos de renta fija como bonos del gobierno de Chile o Colombia suelen ofrecer entre 5–8%. Para planificación conservadora, usar una tasa del 6–7% en dólares es razonable." },
+          { q: "¿Cada cuánto se capitaliza el interés en esta calculadora?", a: "Esta calculadora usa capitalización mensual, que es el esquema más común en productos de inversión y ahorro. Eso significa que cada mes se aplica 1/12 de la tasa anual sobre el saldo del mes anterior. Si tu producto financiero capitaliza diariamente (como algunas cuentas de ahorro digitales), el rendimiento real será ligeramente mayor al calculado aquí." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

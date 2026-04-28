@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -85,6 +86,17 @@ export default function SimuladorHipoteca() {
 
   return (
     <>
+      <ToolSchema
+        name="Simulador de hipoteca y crédito hipotecario"
+        description="Calcula tu cuota mensual, total de intereses y tabla de amortización para cualquier crédito hipotecario. Compatible con INFONAVIT, FOVISSSTE, Bancolombia, BancoEstado y más."
+        url="https://utilbox.lat/simulador-hipoteca"
+        category="Finanzas"
+        faqItems={[
+          { q: "¿Qué enganche mínimo necesito para una hipoteca?", a: "En la mayoría de los países de Latinoamérica el enganche mínimo es del 10% al 20% del valor de la vivienda. Un enganche mayor reduce el monto del préstamo, baja tu cuota mensual y puede darte acceso a mejores tasas de interés." },
+          { q: "¿Qué significa la tasa de interés anual?", a: "Es el porcentaje que el banco te cobra por prestarte el dinero, expresado en términos anuales. En México las tasas hipotecarias suelen estar entre 9% y 12% anual. Compara siempre el CAT (Costo Anual Total) que incluye comisiones y seguros." },
+          { q: "¿Conviene pagar más del mínimo mensual?", a: "Sí. Hacer pagos adelantados a capital reduce el saldo pendiente y, por tanto, los intereses futuros. Pagar el doble durante los primeros años puede reducir el plazo de tu hipoteca a la mitad y ahorrarte decenas de miles de pesos en intereses." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

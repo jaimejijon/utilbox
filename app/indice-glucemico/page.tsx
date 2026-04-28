@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -129,6 +130,17 @@ export default function IndiceGlucemico() {
 
   return (
     <>
+      <ToolSchema
+        name="Índice glucémico y carga glucémica por alimento"
+        description="Consulta el índice glucémico y la carga glucémica de 60+ alimentos. Ajusta la porción y descubre el impacto real en tu glucosa según tu objetivo: diabetes, perder peso o rendimiento deportivo."
+        url="https://utilbox.lat/indice-glucemico"
+        category="Nutrición"
+        faqItems={[
+          { q: "¿El índice glucémico cambia al cocinar los alimentos?", a: "Sí, significativamente. La pasta cocida al dente tiene IG de 49, mientras que la misma pasta muy cocida puede llegar a 61. El arroz recalentado después de refrigerado tiene menor IG que el recién cocido porque se forma almidón resistente. El método de cocción también importa: la papa al horno tiene IG de 85, pero una papa cocida entera tiene 78." },
+          { q: "¿Sirve de algo combinar alimentos de IG alto con otros alimentos?", a: "Sí, mucho. Añadir proteínas (pollo, huevo), grasas saludables (aguacate, aceite de oliva) o fibra (verduras) a un alimento de IG alto reduce significativamente la respuesta glucémica total de la comida. Por eso un plato completo —arroz, pollo y ensalada— tiene un impacto glucémico mucho menor que comer solo el arroz." },
+          { q: "¿Debo evitar todos los alimentos de IG alto?", a: "No necesariamente. El contexto importa: los deportistas pueden beneficiarse de alimentos de IG alto inmediatamente después del ejercicio para reponer glucógeno muscular. En personas sanas sin problemas metabólicos, priorizar alimentos de IG bajo es una guía útil, no una regla absoluta. La carga glucémica total del día es lo que más impacta en la salud." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -38,6 +39,17 @@ export default function AguaDiariaIdeal() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de agua diaria ideal"
+        description="Calcula cuánta agua debes beber al día según tu peso, nivel de actividad física y clima. Hidratación personalizada para México, Colombia, Argentina, Chile y toda Latinoamérica. Gratis."
+        url="https://utilbox.lat/agua-diaria-ideal"
+        category="Salud"
+        faqItems={[
+          { q: "¿El café y el té cuentan como hidratación?", a: "Sí, en su mayor parte. Aunque la cafeína tiene efecto diurético, los estudios muestran que el café y el té contribuyen positivamente a la hidratación total cuando se consumen con moderación (menos de 4 tazas diarias). El agua de coco, los jugos naturales sin azúcar añadida y el agua mineral también cuentan. Bebidas con alto contenido de azúcar o alcohol son contraproducentes." },
+          { q: "¿Cómo sé si estoy bebiendo suficiente agua?", a: "La forma más sencilla es observar el color de tu orina: debe ser amarillo claro o casi transparente. Si es oscura o tiene olor fuerte, probablemente estás deshidratado. Otros signos de deshidratación incluyen sed, fatiga, dolor de cabeza, poca concentración y labios secos. No esperes a tener sed para beber agua; la sed ya es una señal de deshidratación leve." },
+          { q: "¿Es posible beber demasiada agua?", a: "Sí, aunque es poco común en personas sanas. La hiponatremia (exceso de agua que diluye el sodio en sangre) puede ocurrir en deportistas de resistencia que beben grandes cantidades sin reponer electrolitos. Para la mayoría de personas, beber hasta 3–4 litros diarios de agua es completamente seguro y saludable." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

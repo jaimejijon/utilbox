@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -105,6 +106,17 @@ export default function CalculadoraMudanza() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de costo de mudanza"
+        description="Estima el costo total de tu mudanza según distancia, volumen de muebles y servicios adicionales. Compara precios de mudanza en México, Colombia, Argentina y toda Latinoamérica."
+        url="https://utilbox.lat/calculadora-mudanza"
+        category="Hogar"
+        faqItems={[
+          { q: "¿Cómo se cobra una mudanza local?", a: "Las mudanzas locales generalmente se cobran por hora (número de trabajadores × horas) más el costo del camión. Algunas empresas tienen tarifa mínima de 3–4 horas. El precio puede variar según el día (fin de semana es más caro) y si hay escaleras o acceso difícil." },
+          { q: "¿Qué cubre el seguro de mudanza?", a: "El seguro básico cubre daños accidentales durante el transporte. La cobertura estándar del transportista puede ser muy baja (a veces solo el valor declarado de cada artículo por peso). Para artículos valiosos, considera comprar cobertura total o asegurarlos por separado." },
+          { q: "¿Es mejor hacer la mudanza solo o contratar servicio?", a: "Para mudanzas de estudio o con pocas pertenencias y buena disponibilidad de amigos con auto, la mudanza propia puede ahorrar dinero. Para mudanzas más grandes, los riesgos de daños a muebles, lesiones personales y el tiempo perdido generalmente justifican contratar profesionales." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

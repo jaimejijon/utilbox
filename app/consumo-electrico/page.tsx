@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -101,6 +102,17 @@ export default function ConsumoElectrico() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de consumo eléctrico del hogar"
+        description="Calcula cuánto consume cada electrodoméstico y cuánto pagas al mes en tu recibo de luz. Para tarifas de CFE, EPM, Enel y distribuidoras de toda Latinoamérica."
+        url="https://utilbox.lat/consumo-electrico"
+        category="Hogar"
+        faqItems={[
+          { q: "¿Cómo sé la potencia de mis electrodomésticos?", a: "La potencia en watts está indicada en la etiqueta o placa del aparato, generalmente en la parte trasera o inferior. También puedes buscar el modelo del aparato en internet para encontrar sus especificaciones técnicas." },
+          { q: "¿El refrigerador consume más si está lleno o vacío?", a: "Un refrigerador bien lleno (pero no sobrecargado) es más eficiente. Los alimentos actúan como masa térmica y ayudan a mantener la temperatura estable. Un refrigerador vacío tiene que trabajar más para enfriar aire caliente cada vez que abres la puerta." },
+          { q: "¿Vale la pena cambiar focos incandescentes por LED?", a: "Un foco LED de 10W reemplaza a uno incandescente de 60W, consumiendo un 83% menos de electricidad. Si usas 10 focos 8 horas al día, el cambio a LED puede ahorrarte más de $100 al mes dependiendo de tu tarifa." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -59,6 +60,17 @@ export default function CalculadoraPintura() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de pintura por m²"
+        description="Calcula cuántos litros o galones de pintura necesitas y cuánto costará pintar paredes, techos o fachadas. Incluye número de manos. Gratis y sin registro."
+        url="https://utilbox.lat/calculadora-pintura"
+        category="Hogar"
+        faqItems={[
+          { q: "¿Cuántas manos de pintura necesito?", a: "Para paredes previamente pintadas en buen estado: 1–2 manos. Para paredes nuevas o cuando cambias de color oscuro a claro: 2–3 manos. Pintar sobre colores oscuros con colores claros puede requerir un fondo sellador primero." },
+          { q: "¿Cuánto tiempo debo esperar entre manos?", a: "La mayoría de las pinturas látex requieren 2–4 horas entre manos. Las pinturas al aceite pueden requerir 24 horas. Consulta siempre las instrucciones del fabricante y asegúrate de que la mano anterior esté completamente seca al tacto." },
+          { q: "¿Conviene comprar pintura de primera o segunda calidad?", a: "Las pinturas de primera calidad tienen mayor concentración de pigmentos y mejor adhesión. Cubren en menos manos y duran más tiempo. El ahorro de comprar pintura barata suele eliminarse al necesitar más manos y repasar antes." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

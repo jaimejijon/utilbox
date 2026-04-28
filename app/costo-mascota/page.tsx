@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -92,6 +93,17 @@ export default function CostoMascota() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora del costo real de tener una mascota"
+        description="Calcula el gasto mensual y anual de tener un perro, gato u otra mascota según tamaño y tipo. Incluye veterinario, alimento, accesorios y más. Para México, Colombia, Argentina y más."
+        url="https://utilbox.lat/costo-mascota"
+        category="Hogar"
+        faqItems={[
+          { q: "¿Conviene el seguro médico para mascotas?", a: "Depende del tipo de mascota y tu tolerancia al riesgo. Los seguros para mascotas en Latinoamérica están creciendo pero siguen siendo limitados. Para perros de razas propensas a enfermedades genéticas o de alto costo, puede ser una buena inversión. Para mascotas pequeñas y sanas, el ahorro propio puede ser más eficiente." },
+          { q: "¿Cuál es la mascota más económica?", a: "Los roedores (hámsters, conejos enanos) tienen el costo mensual más bajo. Los peces también son económicos si ya tienes el acuario. Los gatos son generalmente más económicos que los perros porque no necesitan paseador ni entrenamiento formal." },
+          { q: "¿Cómo reducir los costos veterinarios?", a: "Mantén las vacunas y desparasitaciones al día (previene enfermedades costosas). Usa clínicas veterinarias universitarias o de bajo costo para consultas de rutina. Consulta el costo de cirugías en múltiples clínicas antes de proceder. Nunca postpongas problemas menores que pueden volverse emergencias costosas." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

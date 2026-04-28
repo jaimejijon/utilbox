@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -107,6 +108,17 @@ export default function CostoNutricionalReceta() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de costo nutricional por receta"
+        description="Calcula el costo y los macronutrientes de cualquier receta por porción. Agrega ingredientes, ingresa el precio y obtén calorías, proteínas, carbos y grasas con su costo exacto por porción."
+        url="https://utilbox.lat/costo-nutricional-receta"
+        category="Nutrición"
+        faqItems={[
+          { q: "¿En qué moneda funciona la calculadora de costo?", a: "La calculadora trabaja con cualquier moneda local —pesos mexicanos, pesos colombianos, soles peruanos, bolívares, guaraníes o dólares— ya que solo requiere el número que pagas por el ingrediente. Tú defines la unidad monetaria; la herramienta calcula el costo proporcional según la cantidad en gramos usada en la receta." },
+          { q: "¿Los valores nutricionales son precisos para ingredientes crudos o cocidos?", a: "La base de datos usa valores por 100g del alimento tal como se consume normalmente. Las carnes están calculadas cocidas, el arroz y pasta cocidos, y las verduras crudas. Si tu receta usa ingredientes crudos que luego se cocinan (como el arroz que dobla su peso al cocerse), ajusta la cantidad en gramos al peso final cocido para mayor precisión." },
+          { q: "¿Puedo usar esta herramienta para un negocio de comida?", a: "Sí. Para un emprendimiento de comida, el costo nutricional por porción te ayuda a definir precios de venta, calcular márgenes de ganancia y demostrar el valor nutricional de tus platillos a tus clientes. La regla general en restaurantes es que el costo de ingredientes no supere el 30-35% del precio de venta." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -72,6 +73,17 @@ export default function TiempoEstudio() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de tiempo de estudio por materia"
+        description="Calcula cuántas horas de estudio autónomo necesitas por materia según su dificultad y créditos. Detecta sobrecarga académica y planifica tu semana universitaria."
+        url="https://utilbox.lat/tiempo-estudio"
+        category="Educación"
+        faqItems={[
+          { q: "¿Cómo sé qué nivel de dificultad asignar a cada materia?", a: "Usa tu experiencia previa o la opinión de compañeros que ya tomaron la materia. Una guía general: dificultad 1-2 para materias descriptivas o introductórias; 3 para materias intermedias con algo de cálculo o análisis; 4-5 para ciencias exactas, programación avanzada, materias con alta tasa de reprobación." },
+          { q: "¿Cuántas horas semanales debería tener disponibles para estudiar?", a: "Un estudiante de tiempo completo debería tener entre 15 y 30 horas semanales de estudio autónomo, dependiendo de su carga académica. Considera que una semana tiene 168 horas: resta horas de sueño (56h), alimentación e higiene (14h), clases presenciales y transporte (15-20h), y lo que queda es tu tiempo disponible." },
+          { q: "¿Incluye las horas de clase en el cálculo?", a: "No. Esta calculadora calcula solo las horas de estudio autónomo recomendadas fuera del aula. Las horas de clase son adicionales. Si tienes 15 horas de clase semanales y la herramienta recomienda 22 horas de estudio, tu carga total sería de 37 horas dedicadas a lo académico." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

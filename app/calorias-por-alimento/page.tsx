@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -140,6 +141,17 @@ export default function CaloriasPorAlimento() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de calorías por alimento"
+        description="Consulta calorías, proteínas, carbohidratos, grasas y fibra de más de 80 alimentos comunes en Latinoamérica. Registra tu ingesta del día y ve el total nutricional al instante."
+        url="https://utilbox.lat/calorias-por-alimento"
+        category="Nutrición"
+        faqItems={[
+          { q: "¿Los valores son para alimento crudo o cocido?", a: "Los valores están indicados para el alimento tal como se consume. El arroz, pasta y carnes aparecen cocidos. Las frutas y verduras, crudas. Esto refleja cómo se pesa la porción en la práctica diaria sin necesidad de hacer conversiones adicionales." },
+          { q: "¿Puedo usarlo para calcular mis macros del día completo?", a: "Sí, puedes agregar todos los alimentos que consumes durante el día y la herramienta acumulará el total de calorías, proteínas, carbohidratos, grasas y fibra. Es ideal para llevar un registro diario sin apps complicadas ni registro de cuenta." },
+          { q: "¿Qué pasa si no encuentro el alimento que busco?", a: "La base de datos contiene los 80 alimentos más consumidos en Latinoamérica. Si no encuentras un alimento específico, busca el ingrediente principal o el más similar. Para preparaciones compuestas, busca cada ingrediente por separado y suma los resultados." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

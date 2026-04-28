@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -74,6 +75,17 @@ export default function PorcionesAlimenticias() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de porciones alimenticias diarias"
+        description="Calcula cuántas porciones de cereales, frutas, verduras, proteínas, lácteos y grasas saludables necesitas cada día según tu peso, estatura, actividad y objetivo nutricional."
+        url="https://utilbox.lat/porciones-alimenticias"
+        category="Nutrición"
+        faqItems={[
+          { q: "¿Debo comer exactamente las porciones recomendadas todos los días?", a: "Las porciones son una guía de referencia, no una regla estricta. Pueden variar de un día a otro siempre que el promedio semanal sea equilibrado. Lo más importante es la consistencia general: priorizar alimentos naturales, limitar ultraprocesados y mantener una distribución aproximada entre los grupos." },
+          { q: "¿Qué pasa con los alimentos mixtos como una sopa o un guiso?", a: "Para preparaciones combinadas, identifica los ingredientes principales y los contabilizas en sus grupos correspondientes. Un arroz con pollo y verduras podría contar como 2 porciones de cereal, 1.5 porciones de proteína y 1 porción de verdura. No necesitas ser exacto, el sistema busca desarrollar intuición, no perfección matemática." },
+          { q: "¿Las legumbres cuentan como proteína o como cereal?", a: "Las legumbres (frijoles, lentejas, garbanzos) son únicas porque aportan tanto proteínas como carbohidratos complejos. Se clasifican principalmente en el grupo de proteínas, pero por su contenido de carbohidratos puedes contarlas parcialmente en ambos grupos. Son altamente recomendadas por su aporte de fibra, hierro y zinc, fundamentales en la dieta latinoamericana." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

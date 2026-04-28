@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -56,6 +57,17 @@ export default function HidratacionDeportiva() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de hidratación deportiva"
+        description="Calcula cuánta agua necesitas antes, durante y después del ejercicio según tu peso, intensidad, tipo de deporte y temperatura. Incluye recomendaciones de electrolitos para sesiones largas."
+        url="https://utilbox.lat/hidratacion-deportiva"
+        category="Nutrición"
+        faqItems={[
+          { q: "¿Agua o bebida isotónica durante el ejercicio?", a: "Para ejercicios de menos de 60 minutos, el agua es suficiente. Para sesiones de más de una hora —especialmente en calor o con alta sudoración— las bebidas isotónicas ayudan a reponer electrolitos (sodio, potasio, magnesio) perdidos con el sudor, previniendo calambres y fatiga. Una alternativa económica es agua de coco o agua con una pizca de sal y jugo de limón." },
+          { q: "¿Cómo sé si estoy bien hidratado antes de entrenar?", a: "El indicador más práctico es el color de la orina: amarillo pálido indica buena hidratación; amarillo oscuro o ámbar indica déficit de líquidos. Otra señal es el peso corporal en ayunas: si hay una diferencia mayor al 1-2% respecto al día anterior, puede indicar deshidratación. Toma agua antes del entrenamiento aunque no sientas sed." },
+          { q: "¿Es posible tomar demasiada agua durante el ejercicio?", a: "Sí, aunque es poco frecuente. La hiponatremia —exceso de agua que diluye el sodio en sangre— puede ocurrir en atletas de larga distancia que beben agua en exceso sin reponer electrolitos. Para ejercicios normales de 1-2 horas, beber entre 150-300 ml cada 15-20 minutos es una guía segura para la mayoría de las personas." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

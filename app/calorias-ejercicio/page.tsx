@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -72,6 +73,17 @@ export default function CaloriasEjercicio() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de calorías quemadas por ejercicio"
+        description="Calcula cuántas calorías quemas haciendo ejercicio según tu peso, tipo de actividad y duración. Corrida, natación, ciclismo, pesas y más de 20 actividades físicas."
+        url="https://utilbox.lat/calorias-ejercicio"
+        category="Salud"
+        faqItems={[
+          { q: "¿Cuántas calorías debo quemar para perder 1 kg?", a: "Un kilogramo de grasa corporal equivale aproximadamente a 7,700 kcal. Para perder 1 kg por semana necesitarías un déficit de 1,100 kcal diarias, lo cual es mucho y no es sostenible. Lo recomendable es un déficit de 300–500 kcal diarias entre dieta y ejercicio, lo que llevaría a perder 0.3–0.5 kg por semana de forma saludable." },
+          { q: "¿El HIIT quema más calorías que el cardio tradicional?", a: "Durante la sesión, el HIIT quema calorías a una tasa similar o mayor que el cardio de alta intensidad continuo. Pero el verdadero beneficio del HIIT es el efecto EPOC (Excess Post-Exercise Oxygen Consumption): el cuerpo sigue quemando más calorías hasta 24–48 horas después de la sesión. El cardio moderado continuo quema más calorías durante la sesión pero el efecto post-ejercicio es menor." },
+          { q: "¿Las pulsaciones del corazón afectan las calorías quemadas?", a: "Sí. Las zonas de frecuencia cardíaca son otra forma de estimar la intensidad del ejercicio. La zona aeróbica (70–80% de FCmax) quema un alto porcentaje de grasas. La zona anaeróbica (80–90%) quema más calorías totales pero principalmente glucógeno. Esta calculadora usa los valores MET como proxy de la intensidad, lo cual es equivalente y más fácil de usar sin monitor cardíaco." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

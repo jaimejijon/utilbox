@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -62,6 +63,17 @@ export default function EdadBiologica() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de edad biológica"
+        description="Descubre cuántos años tiene realmente tu cuerpo según tus hábitos de salud, actividad física, dieta y descanso. Compara tu edad biológica con tu edad cronológica."
+        url="https://utilbox.lat/edad-biologica"
+        category="Salud"
+        faqItems={[
+          { q: "¿Se puede reducir la edad biológica?", a: "Sí. Estudios recientes como el de Blackburn y Epel (premios Nobel) demuestran que cambios en el estilo de vida pueden revertir marcadores de envejecimiento biológico. Dejar de fumar, empezar a hacer ejercicio regularmente y mejorar la dieta pueden reducir la edad biológica entre 3 y 10 años en un período de 6 meses a 2 años." },
+          { q: "¿El estrés realmente envejece?", a: "Sí, y la evidencia científica es sólida. El estrés crónico activa el sistema nervioso simpático de forma persistente, aumenta los niveles de cortisol y promueve la inflamación sistémica. Esto acelera el acortamiento de los telómeros (el reloj biológico de las células) y está asociado con mayor riesgo de enfermedades cardiovasculares, diabetes y deterioro cognitivo." },
+          { q: "¿Por qué el sueño afecta tanto el envejecimiento?", a: "Durante el sueño profundo, el cuerpo libera hormona del crecimiento, repara tejidos, consolida la memoria y limpia el cerebro de proteínas tóxicas (el sistema glinfático). La privación crónica de sueño reduce la longitud de los telómeros, aumenta la inflamación y está asociada con mayor riesgo de enfermedades relacionadas con el envejecimiento." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

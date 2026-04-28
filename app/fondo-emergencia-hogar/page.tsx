@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -68,6 +69,17 @@ export default function FondoEmergenciaHogar() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de fondo de emergencia del hogar"
+        description="Calcula cuánto dinero necesitas ahorrar como fondo de emergencia para cubrir reparaciones, accidentes y gastos imprevistos del hogar. Recomendaciones por tipo de vivienda."
+        url="https://utilbox.lat/fondo-emergencia-hogar"
+        category="Hogar"
+        faqItems={[
+          { q: "¿Dónde guardar el fondo de emergencia?", a: "El fondo debe estar en un lugar seguro, líquido y separado de tu cuenta de gastos diarios. Una cuenta de ahorro de alta liquidez o un fondo de inversión con rendimiento es lo ideal. Evita invertirlo en activos ilíquidos como bienes raíces o acciones de largo plazo." },
+          { q: "¿El seguro de hogar reemplaza al fondo de emergencia?", a: "No. El seguro cubre eventos catastróficos (incendio, inundación, robo) con un deducible. No cubre el mantenimiento rutinario, la reparación de electrodomésticos ni los imprevistos menores. El fondo y el seguro son complementarios, no sustitutos." },
+          { q: "¿Cuánto debe ser el fondo para viviendas antiguas?", a: "Las viviendas de más de 20 años requieren el mayor presupuesto. Las instalaciones eléctricas, plomería, impermeabilización y estructura tienen una probabilidad mucho mayor de requerir intervención. Para una casa de 30 años, el 2–3% del valor anual es una estimación conservadora." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

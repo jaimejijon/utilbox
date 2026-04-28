@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -84,6 +85,17 @@ export default function MetabolismoCafeina() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de metabolismo de cafeína"
+        description="Calcula cómo tu cuerpo metaboliza la cafeína de café, té, energéticas y suplementos a lo largo del día. Basado en la vida media de 5 horas. Descubre cuándo es seguro dormir."
+        url="https://utilbox.lat/metabolismo-cafeina"
+        category="Nutrición"
+        faqItems={[
+          { q: "¿La tolerancia a la cafeína cambia su velocidad de metabolización?", a: "No directamente. La tolerancia significa que tu cuerpo produce más receptores de adenosina para compensar el bloqueo de la cafeína, por lo que necesitas más para sentir el mismo efecto. Pero la velocidad de metabolización (vida media de ~5 horas) no cambia significativamente con la tolerancia. Un consumidor habitual y uno casual eliminan la cafeína a una tasa similar." },
+          { q: "¿El té tiene menos cafeína que el café?", a: "Generalmente sí, pero depende de la preparación. Un té verde preparado tiene 25-45mg de cafeína, un té negro 40-70mg. El café filtrado tiene 80-150mg por taza. Sin embargo, el té contiene L-teanina, un aminoácido que modera el efecto estimulante de la cafeína produciendo una energía más sostenida y sin el pico brusco y caída que a veces produce el café solo." },
+          { q: "¿La cafeína descafeinada tiene cero cafeína?", a: "No, el café descafeinado no es cero cafeína. Tiene aproximadamente 2-15mg por taza (vs 80-150mg del café regular). Para la mayoría de las personas, esta cantidad es insignificante, pero personas muy sensibles a la cafeína o con metabolismo lento pueden notar efectos incluso con descafeinado, especialmente si consumen varias tazas." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

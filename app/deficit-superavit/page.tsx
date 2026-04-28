@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -75,6 +76,17 @@ export default function DeficitSuperavit() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de déficit o superávit calórico"
+        description="Calcula el déficit o superávit calórico diario necesario para alcanzar tu peso ideal. Basado en tu TDEE real, meta en semanas y tasa de cambio semanal. Incluye alertas de seguridad nutricional."
+        url="https://utilbox.lat/deficit-superavit"
+        category="Nutrición"
+        faqItems={[
+          { q: "¿Es seguro un déficit de 1000 kcal/día para perder peso más rápido?", a: "No se recomienda para la mayoría de las personas. Un déficit mayor a 500-750 kcal/día aumenta el riesgo de perder masa muscular, experimentar fatiga, deficiencias nutricionales y el efecto rebote posterior. La pérdida recomendada es de 0.5-1 kg por semana. Déficits muy agresivos son difíciles de mantener y suelen llevar a ciclos de dieta yo-yo." },
+          { q: "¿Por qué mi peso no baja aunque estoy en déficit calórico?", a: "Varias razones: retención de líquidos (especialmente en las primeras semanas), variaciones del ciclo menstrual, mayor consumo real de calorías del que se estima, errores al medir porciones, o un TDEE menor al calculado por la fórmula. El TDEE teórico es una estimación. Si después de 3-4 semanas no hay cambios, considera reducir 100-150 kcal adicionales o aumentar actividad física." },
+          { q: "¿Cuántas calorías de superávit necesito para ganar músculo sin engordar?", a: "Un superávit limpio de 200-400 kcal/día es suficiente para ganar músculo minimizando la acumulación de grasa. Ganar más de 0.25-0.5 kg de músculo por semana (sin grasa) no es posible fisiológicamente —el exceso se convierte en grasa. Los principiantes pueden ganar algo más rápido durante los primeros 6-12 meses de entrenamiento." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -61,6 +62,17 @@ export default function CalculadoraSueno() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de sueño y ciclos de descanso"
+        description="Calcula a qué hora dormir o despertar para completar ciclos de sueño completos de 90 minutos y descansar mejor. Basada en fases de sueño REM. Gratis."
+        url="https://utilbox.lat/calculadora-sueno"
+        category="Salud"
+        faqItems={[
+          { q: "¿Por qué exactamente 90 minutos por ciclo?", a: "El ciclo de 90 minutos es un promedio observado en estudios de polisomnografía. En la práctica, los ciclos pueden variar entre 70 y 120 minutos según la persona y la noche. Los primeros ciclos de la noche tienen más sueño profundo (restaurador); los últimos tienen más REM (importante para memoria y creatividad). Ambos son esenciales." },
+          { q: "¿Qué pasa si no puedo cumplir los horarios exactos?", a: "Un margen de 10–15 minutos no afecta significativamente. Lo más importante es la consistencia: dormir y despertar a la misma hora todos los días (incluyendo fines de semana) fortalece el ritmo circadiano, hace más fácil quedarte dormido y te ayuda a despertar con mayor energía naturalmente." },
+          { q: "¿Las siestas afectan los ciclos nocturnos?", a: "Las siestas cortas de 10–20 minutos son beneficiosas y no interfieren con el sueño nocturno. Las siestas de 30–90 minutos pueden reducir la presión del sueño y dificultar conciliar el sueño nocturno. Evita dormir siesta después de las 3pm y limita la duración a 20 minutos para el máximo beneficio sin efectos negativos." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

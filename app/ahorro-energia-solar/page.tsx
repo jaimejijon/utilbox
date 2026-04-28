@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -72,6 +73,17 @@ export default function AhorroEnergiaSolar() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de ahorro en energía solar"
+        description="Estima cuánto ahorrarías al instalar paneles solares según tu consumo eléctrico mensual. Calcula el retorno de inversión solar en México, Chile, Colombia, Perú y más."
+        url="https://utilbox.lat/ahorro-energia-solar"
+        category="Hogar"
+        faqItems={[
+          { q: "¿Funciona la energía solar en días nublados?", a: "Sí, aunque con menor eficiencia. Los paneles generan electricidad con luz difusa, no solo con sol directo. En días muy nublados pueden producir entre el 10–25% de su capacidad máxima. La planificación asume un factor de eficiencia del 80% para compensar esto." },
+          { q: "¿Qué sucede con el exceso de energía generada?", a: "Si tienes un sistema interconectado a la red (lo más común), el exceso se inyecta a la red eléctrica y se acredita en tu factura como saldo a favor. Si tienes baterías, se almacena para uso nocturno. Los sistemas con baterías cuestan más pero dan mayor independencia energética." },
+          { q: "¿Necesito permiso para instalar paneles solares?", a: "En México puedes instalar hasta 30 kWp sin permisos de la CFE si estás en tarifa doméstica. Para sistemas mayores se requiere tramitar la interconexión. En otros países los requisitos varían, pero la mayoría tiene incentivos y procesos simplificados para instalaciones residenciales." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

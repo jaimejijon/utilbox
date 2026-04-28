@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -59,6 +60,17 @@ export default function SimuladorPrestamo() {
 
   return (
     <>
+      <ToolSchema
+        name="Simulador de préstamo personal"
+        description="Calcula la cuota mensual, total de intereses y tabla de amortización de tu préstamo personal. Válido para bancos de México, Colombia, Argentina, Chile, Perú y toda Latinoamérica."
+        url="https://utilbox.lat/simulador-prestamo"
+        category="Finanzas"
+        faqItems={[
+          { q: "¿Qué es el sistema francés de amortización?", a: "Es el sistema de cuota fija más usado en el mundo. Cada mes pagas la misma cantidad, pero la proporción cambia: al inicio pagas más intereses y menos capital; al final, casi todo es capital. Esto se debe a que los intereses se calculan sobre el saldo pendiente, que disminuye con cada pago. Si quieres adelantar pagos, hazlo al inicio del crédito cuando el impacto en los intereses es mayor." },
+          { q: "¿Puedo usar esta calculadora para una hipoteca?", a: "Sí. Ingresa el monto del crédito hipotecario, la tasa anual que te ofrece el banco y el plazo en meses (por ejemplo, 240 meses para 20 años, o 360 meses para 30 años). Ten en cuenta que las hipotecas pueden tener costos adicionales como seguros, comisiones y gastos notariales que esta calculadora no incluye, pero te da una base sólida para comparar opciones." },
+          { q: "¿Cómo afecta la tasa al costo total de mi préstamo?", a: "La tasa de interés tiene un impacto enorme, especialmente a plazos largos. En un préstamo de $100,000 a 36 meses, pasar del 12% al 18% anual aumenta los intereses totales en más de $9,000. Antes de aceptar un crédito, siempre pregunta la Tasa Anual Efectiva (TAE o CAT en México), que incluye comisiones y costos adicionales además de la tasa nominal." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

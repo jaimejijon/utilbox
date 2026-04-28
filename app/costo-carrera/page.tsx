@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -68,6 +69,17 @@ export default function CostoCarrera() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de costo total de carrera universitaria"
+        description="Calcula el costo real de tu carrera universitaria: matrícula, materiales, transporte, alimentación y arriendo. Para universidades de México, Colombia, Argentina, Chile y más."
+        url="https://utilbox.lat/costo-carrera"
+        category="Educación"
+        faqItems={[
+          { q: "¿Incluye el costo de libros y materiales digitales?", a: "Sí, el campo de materiales incluye libros, impresiones, licencias de software y cualquier material de estudio. En carreras técnicas o de salud este rubro puede ser significativo (USD 100–500 por semestre dependiendo de la carrera y país)." },
+          { q: "¿Por qué el costo con financiamiento es mayor?", a: "Cuando pides un crédito educativo pagas intereses sobre el capital prestado. A una tasa del 8% anual y plazo de 5 años, los intereses pueden sumar entre el 20% y 30% del capital original. Por eso siempre es mejor ahorrar o conseguir beca primero, y usar el crédito solo para el monto imprescindible." },
+          { q: "¿Cómo puedo reducir el costo de mi carrera?", a: "Las principales estrategias son: aplicar a becas desde el primer semestre, vivir con familia en lugar de arrendar, comprar materiales de segunda mano, usar bibliotecas universitarias, y tomar la carrera en universidad pública si la calidad es similar. También puedes trabajar part-time durante la carrera, aunque esto puede afectar tu rendimiento académico." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

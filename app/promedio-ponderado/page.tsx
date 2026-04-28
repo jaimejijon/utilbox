@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -100,6 +101,17 @@ export default function PromedioPonderado() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de promedio ponderado"
+        description="Calcula tu promedio académico ponderado por créditos en escala 1-10, 1-20, GPA o porcentual. Para universidades de México, Colombia, Argentina, Chile, Perú y toda Latinoamérica."
+        url="https://utilbox.lat/promedio-ponderado"
+        category="Educación"
+        faqItems={[
+          { q: "¿En qué se diferencia el promedio ponderado del promedio simple?", a: "El promedio simple suma todas las notas y las divide entre el número de materias, dando el mismo peso a todas. El promedio ponderado multiplica cada nota por sus créditos antes de dividir, por lo que las materias con más créditos influyen más en el resultado final." },
+          { q: "¿Cómo afectan los créditos al promedio?", a: "Una materia con más créditos tiene mayor peso en el promedio. Si tienes una nota baja en una materia de 5 créditos, impacta más que una nota baja en una materia de 2 créditos. Por eso es importante enfocarse más en las materias de mayor carga crediticia." },
+          { q: "¿Qué escala debo usar según mi país?", a: "En México, Colombia y España se usa mayormente escala 1-10. En Perú, Bolivia y Venezuela es común la escala 1-20. Estados Unidos y Canadá usan GPA (0-4). El sistema porcentual (0-100%) es común en algunos programas latinoamericanos y anglosajones. Consulta el reglamento de tu institución para confirmar." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

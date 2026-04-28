@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -52,6 +53,17 @@ export default function SimuladorBeca() {
 
   return (
     <>
+      <ToolSchema
+        name="Simulador de beca y financiamiento educativo"
+        description="Simula diferentes porcentajes de beca (25%, 50%, 75%, 100%) y calcula la cuota mensual del crédito educativo restante. Para becas universitarias en México, Colombia, Chile y más."
+        url="https://utilbox.lat/simulador-beca"
+        category="Educación"
+        faqItems={[
+          { q: "¿Cuánto promedio se necesita para una beca por mérito?", a: "Varía por institución. En general, becas parciales (25–50%) se obtienen con promedios de 8.0+, mientras que becas completas suelen exigir 9.0 o más y demostrar necesidad económica simultáneamente. Los fondos gubernamentales pueden tener criterios distintos." },
+          { q: "¿Es mejor pagar la carrera en 5 o en 10 años?", a: "En 5 años pagas menos interés total pero la cuota mensual es mayor. En 10 años la cuota es más baja pero el interés acumulado puede ser el doble. Lo ideal es elegir el plazo más corto que tu ingreso mensual te permita pagar cómodamente, sin que supere el 25-30% de tu salario." },
+          { q: "¿Puedo combinar beca y crédito educativo?", a: "Sí, y es la estrategia más común. Muchas instituciones ofrecen paquetes de ayuda financiera que combinan beca (no reembolsable) con préstamo subsidiado (baja tasa). Solicita primero la beca máxima disponible y usa el crédito solo para el monto restante." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -53,6 +54,17 @@ export default function CalculadoraROI() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de ROI — Retorno sobre la inversión"
+        description="Calcula el retorno sobre tu inversión (ROI) en porcentaje y tiempo de recuperación. Ideal para emprendedores y negocios en México, Colombia, Argentina, Chile y toda Latinoamérica."
+        url="https://utilbox.lat/calculadora-roi"
+        category="Finanzas"
+        faqItems={[
+          { q: "¿Cuál es un ROI \"bueno\"?", a: "Depende completamente del contexto. En campañas de marketing digital, un ROI de 3:1 (es decir, 200%) es considerado un buen resultado. En inversiones financieras diversificadas como fondos indexados, un 10–15% anual es muy sólido. Para negocios físicos, un ROI de 25–50% anual puede ser excelente. Lo más importante es compararlo con el costo de oportunidad: ¿qué más podrías haber hecho con ese dinero?" },
+          { q: "¿El ROI considera el factor tiempo?", a: "El ROI básico no considera el tiempo: un 100% de ROI en 1 mes es muy diferente a un 100% de ROI en 10 años. Por eso es importante usar el ROI anualizado cuando comparas inversiones de distinta duración. Esta calculadora lo calcula automáticamente en el modo Con período de tiempo." },
+          { q: "¿Qué limitaciones tiene el ROI como métrica?", a: "El ROI es una métrica poderosa pero incompleta. No considera el riesgo asociado a la inversión, la liquidez (qué tan fácil es recuperar el dinero si lo necesitas), ni factores cualitativos como el impacto en la reputación de marca. Para decisiones financieras complejas, conviene complementarlo con otras métricas como el VPN (Valor Presente Neto) y la TIR (Tasa Interna de Retorno)." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

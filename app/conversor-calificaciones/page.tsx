@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -81,6 +82,17 @@ export default function ConversorCalificaciones() {
 
   return (
     <>
+      <ToolSchema
+        name="Conversor de sistemas de calificación"
+        description="Convierte tu nota entre escala 1-10, 1-20, GPA (0-4) y porcentual (0-100%). Equivalencias académicas para México, Colombia, Perú, Venezuela, Argentina, Uruguay y más."
+        url="https://utilbox.lat/conversor-calificaciones"
+        category="Educación"
+        faqItems={[
+          { q: "¿La conversión es oficial o aproximada?", a: "Es una conversión basada en normalización proporcional, no una tabla oficial. Las universidades e instituciones pueden usar sus propias equivalencias, que a veces difieren de estas cifras. Para aplicaciones formales, siempre verifica la tabla de equivalencias específica de la institución a la que aplicas." },
+          { q: "¿El GPA de 4.0 equivale al 10 perfecto?", a: "En principio sí, pero en la práctica el GPA 4.0 se obtiene con A+ en el sistema americano, que puede ser más o menos exigente que un 10 en escala latinoamericana. Algunos sistemas permiten créditos extra (honor) que suben el GPA por encima de 4.0, aunque esta herramienta no contempla ese caso." },
+          { q: "¿Cómo funciona la escala 1-20 en relación al 1-10?", a: "La escala 1-20 es común en Francia y algunos países latinoamericanos como Venezuela y Perú. Una nota de 10/20 no equivale a 5/10 sino que depende del mínimo aprobatorio de cada sistema. En Francia 10/20 es el mínimo aprobatorio, similar a 5/10 en México. Esta herramienta normaliza ambas escalas desde su mínimo (1) hasta su máximo para mantener la proporcionalidad." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

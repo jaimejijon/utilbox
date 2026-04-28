@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -78,6 +79,17 @@ export default function InterpretadorPresionArterial() {
 
   return (
     <>
+      <ToolSchema
+        name="Interpretador de presión arterial"
+        description="Interpreta tu lectura de presión arterial: sistólica y diastólica. Descubre si es normal, alta o baja y qué significa para tu salud cardiovascular. Gratis y sin registro."
+        url="https://utilbox.lat/interpretador-presion-arterial"
+        category="Salud"
+        faqItems={[
+          { q: "¿Por qué la presión varía durante el día?", a: "La presión arterial fluctúa constantemente a lo largo del día. Suele ser más baja por la mañana al despertar y sube naturalmente durante la tarde. El estrés, el café, el ejercicio, las emociones y hasta hablar pueden elevarla temporalmente. Por eso se recomienda medir siempre en las mismas condiciones y nunca después de hacer ejercicio o consumir estimulantes." },
+          { q: "¿Qué diferencia hay entre hipertensión y presión alta ocasional?", a: "La hipertensión es el diagnóstico de presión arterial crónicamente elevada, confirmado con múltiples mediciones en distintos días y momentos. Un valor elevado aislado no es suficiente para diagnosticar hipertensión. El fenómeno de hipertensión de bata blanca (presión alta solo en el consultorio médico) es común y puede llevar a diagnósticos incorrectos sin el contexto adecuado." },
+          { q: "¿Cómo puedo bajar la presión sin medicamentos?", a: "Para presión levemente elevada, los cambios en el estilo de vida pueden ser suficientes: reducir el sodio a menos de 2,300 mg/día, hacer 150 min/semana de ejercicio aeróbico, mantener un peso saludable, reducir el alcohol, dejar de fumar y manejar el estrés. La dieta DASH (rica en frutas, verduras y baja en sodio) ha demostrado reducir la presión sistólica hasta 11 mmHg." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 

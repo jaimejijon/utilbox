@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Header from "../components/Header";
+import ToolSchema from "../components/ToolSchema";
 import Footer from "../components/Footer";
 import Link from "next/link";
 
@@ -56,6 +57,17 @@ export default function CalculadoraIMC() {
 
   return (
     <>
+      <ToolSchema
+        name="Calculadora de IMC — Índice de Masa Corporal"
+        description="Calcula tu IMC gratis: ingresa tu peso y altura para conocer tu clasificación (bajo peso, normal, sobrepeso u obesidad) y tu rango de peso saludable. Sin registro."
+        url="https://utilbox.lat/calculadora-imc"
+        category="Salud"
+        faqItems={[
+          { q: "¿El IMC es igual para hombres y mujeres?", a: "La fórmula del IMC es la misma para ambos sexos, pero la interpretación puede variar ligeramente. Las mujeres tienden a tener más porcentaje de grasa corporal que los hombres con el mismo IMC, lo cual es fisiológicamente normal. Algunos expertos sugieren umbrales ligeramente distintos, pero los rangos de la OMS son los más utilizados internacionalmente." },
+          { q: "¿A qué edad deja de ser preciso el IMC?", a: "En adultos mayores de 65 años, el IMC puede subestimar el riesgo de salud porque con la edad se pierde masa muscular y el peso disminuye, pero el porcentaje de grasa puede seguir siendo elevado. En personas mayores, un IMC entre 22 y 27 puede ser más saludable que el rango estándar de 18.5–24.9." },
+          { q: "¿Un IMC normal garantiza buena salud?", a: "No necesariamente. Puedes tener un IMC normal pero seguir siendo metabólicamente poco saludable si no haces ejercicio, tienes malos hábitos alimenticios o tienes grasa acumulada en la zona abdominal (grasa visceral). El IMC es solo un indicador, no un certificado de salud. La cintura abdominal, la presión arterial y los niveles de glucosa son complementos importantes." },
+        ]}
+      />
       <Header />
       <main className="flex-1 w-full" style={{ maxWidth: "1024px", margin: "0 auto", padding: "32px 24px 48px" }}>
 
