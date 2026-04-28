@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/blog";
 
 const BASE_URL = "https://www.utilbox.lat";
 const now = new Date();
@@ -65,12 +66,20 @@ const tools = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const posts = getAllPosts();
+
   return [
     {
       url: BASE_URL,
       lastModified: now,
       changeFrequency: "daily",
       priority: 1.0,
+    },
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     ...categories.map((path) => ({
       url: `${BASE_URL}${path}`,
@@ -83,6 +92,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    ...posts.map((post) => ({
+      url: `${BASE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
   ];
 }

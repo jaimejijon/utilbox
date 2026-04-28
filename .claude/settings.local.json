@@ -10,7 +10,9 @@
       "Bash(git commit -m ' *)",
       "Bash(xargs sed *)",
       "Bash(git push *)",
-      "Bash(git merge *)"
+      "Bash(git merge *)",
+      "Bash(xargs grep *)",
+      "Bash(npm install *)"
     ]
   }
 }
