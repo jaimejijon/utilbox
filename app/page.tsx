@@ -90,59 +90,69 @@ const categories = [
   },
 ];
 
-const tools = [
+const categoryCards = [
   {
-    href: "/calculadora-interes-compuesto",
-    category: "Inversión",
-    name: "Calculadora de interés compuesto",
-    description: "Simula el crecimiento de tu inversión con aportaciones mensuales y capitalización mensual.",
+    id: "finanzas",
+    href: "/finanzas",
+    name: "Finanzas",
+    count: 5,
+    color: "#5C6BC0",
+    bg: "#1E1A3A",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AAAF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="3" y="12" width="4" height="9" /><rect x="9.5" y="7" width="4" height="14" /><rect x="16" y="3" width="4" height="18" />
       </svg>
     ),
   },
   {
-    href: "/simulador-prestamo",
-    category: "Crédito",
-    name: "Simulador de préstamo",
-    description: "Calcula tu cuota mensual, total de intereses y tabla de amortización completa.",
+    id: "salud",
+    href: "/salud",
+    name: "Salud",
+    count: 10,
+    color: "#6EC9A0",
+    bg: "#1A3D2E",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AAAF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <rect x="1" y="4" width="22" height="16" rx="2" ry="2" /><line x1="1" y1="10" x2="23" y2="10" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
       </svg>
     ),
   },
   {
-    href: "/convertidor-monedas",
-    category: "Divisas",
-    name: "Convertidor de monedas",
-    description: "Convierte entre más de 20 monedas latinoamericanas y mundiales al instante.",
+    id: "hogar",
+    href: "/hogar",
+    name: "Hogar",
+    count: 10,
+    color: "#D4856A",
+    bg: "#3D2218",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AAAF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <polyline points="17 1 21 5 17 9" /><path d="M3 11V9a4 4 0 0 1 4-4h14" /><polyline points="7 23 3 19 7 15" /><path d="M21 13v2a4 4 0 0 1-4 4H3" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9,22 9,12 15,12 15,22" />
       </svg>
     ),
   },
   {
-    href: "/calculadora-jubilacion",
-    category: "Retiro",
-    name: "Calculadora de jubilación",
-    description: "Descubre cuánto necesitas ahorrar hoy para retirarte con tranquilidad financiera.",
+    id: "educacion",
+    href: "/educacion",
+    name: "Educación",
+    count: 10,
+    color: "#74AEDD",
+    bg: "#152638",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AAAF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
       </svg>
     ),
   },
   {
-    href: "/calculadora-roi",
-    category: "Negocios",
-    name: "Calculadora de ROI",
-    description: "Calcula el retorno sobre inversión de cualquier proyecto o negocio de forma visual.",
+    id: "nutricion",
+    href: "/nutricion",
+    name: "Nutrición",
+    count: 10,
+    color: "#D4B85A",
+    bg: "#332B0F",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AAAF0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 2a3 3 0 0 0-3 3c0 1.5.5 2.5 1 3.5C8.5 9 7 10.5 7 12.5c0 3 2 5.5 5 5.5s5-2.5 5-5.5c0-2-1.5-3.5-3-4C14.5 7.5 15 6.5 15 5a3 3 0 0 0-3-3z" />
       </svg>
     ),
   },
@@ -170,26 +180,6 @@ export default function Home() {
   return (
     <>
       <style>{`
-        .tool-card-fin {
-          border-left-color: transparent !important;
-          background: #141520 !important;
-          transition: border-left-color 0.22s ease, background 0.22s ease;
-        }
-        .tool-card-fin:hover {
-          border-left-color: #5C6BC0 !important;
-          background: #13141F !important;
-        }
-        .tool-card-fin:hover .tool-arrow {
-          color: #5C6BC0 !important;
-          transform: translateX(3px);
-        }
-        .tool-arrow {
-          transition: color 0.22s ease, transform 0.22s ease;
-        }
-        .tool-card-fin:last-child:nth-child(3n-1) {
-          grid-column: span 2;
-        }
-
         .categoria-card {
           transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
           cursor: pointer;
@@ -395,198 +385,101 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tools */}
+      {/* Category cards */}
       <main className="flex-1">
         <section className="max-w-5xl mx-auto px-6 mb-10">
-          <div className="flex items-center justify-between mb-5">
-            <p
-              style={{
-                fontSize: "11px",
-                fontWeight: 600,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: "#F5F5F5",
-              }}
-            >
-              Finanzas — 5 herramientas
-            </p>
-            <Link
-              href="/finanzas"
-              style={{ fontSize: "12px", color: "#5C6BC0" }}
-              className="hover:opacity-80 transition-opacity"
-            >
-              Ver todas →
-            </Link>
-          </div>
-
-          {/* Desktop grid */}
-          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {tools.map((tool) => (
+          <p
+            style={{
+              fontSize: "11px",
+              fontWeight: 600,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "#F5F5F5",
+              marginBottom: "14px",
+            }}
+          >
+            Herramientas por categoría
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {categoryCards.map((cat) => (
               <Link
-                key={tool.href}
-                href={tool.href}
-                className="tool-card-fin relative overflow-hidden flex flex-col"
+                key={cat.id}
+                href={cat.href}
+                className={`categoria-card categoria-${cat.id} relative overflow-hidden flex flex-col`}
                 style={{
-                  borderTop: "0.5px solid #1E2030",
-                  borderRight: "0.5px solid #1E2030",
-                  borderBottom: "0.5px solid #1E2030",
-                  borderLeft: "2px solid transparent",
-                  borderRadius: "10px",
-                  padding: "16px",
+                  background: "#141520",
+                  border: "0.5px solid #1E2030",
+                  borderRadius: "12px",
+                  padding: "20px",
                   textDecoration: "none",
                 }}
               >
-                {/* Top accent */}
+                {/* Top color bar */}
                 <span
                   style={{
                     position: "absolute",
                     top: 0,
                     left: 0,
                     right: 0,
-                    height: "2.5px",
-                    background: "#5C6BC0",
+                    height: "3px",
+                    background: cat.color,
+                    borderRadius: "12px 12px 0 0",
                   }}
                 />
 
-                {/* Icon + category */}
-                <div className="flex items-center gap-2.5 mb-3 mt-1">
-                  <div
-                    style={{
-                      width: "30px",
-                      height: "30px",
-                      borderRadius: "8px",
-                      background: "#1E1A3A",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    {tool.icon}
-                  </div>
-                  <span
-                    style={{
-                      fontSize: "10px",
-                      fontWeight: 600,
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: "#5C6BC0",
-                    }}
-                  >
-                    {tool.category}
-                  </span>
-                </div>
-
-                <p
-                  style={{
-                    fontSize: "13px",
-                    fontWeight: 600,
-                    color: "#FFFFFF",
-                    marginBottom: "6px",
-                    lineHeight: "1.35",
-                  }}
-                >
-                  {tool.name}
-                </p>
-                <p
-                  style={{
-                    fontSize: "11px",
-                    color: "#F5F5F5",
-                    lineHeight: "1.55",
-                    flex: 1,
-                  }}
-                >
-                  {tool.description}
-                </p>
-
-                {/* Arrow */}
-                <span
-                  className="tool-arrow"
-                  style={{
-                    position: "absolute",
-                    bottom: "14px",
-                    right: "14px",
-                    fontSize: "13px",
-                    color: "#FFFFFF",
-                  }}
-                >
-                  →
-                </span>
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile list */}
-          <div className="flex sm:hidden flex-col gap-2">
-            {tools.map((tool) => (
-              <Link
-                key={tool.href}
-                href={tool.href}
-                className="flex items-center gap-3 transition-colors duration-200"
-                style={{
-                  background: "#141520",
-                  borderTop: "0.5px solid #1E2030",
-                  borderRight: "0.5px solid #1E2030",
-                  borderBottom: "0.5px solid #1E2030",
-                  borderLeft: "2px solid #5C6BC0",
-                  borderRadius: "10px",
-                  padding: "12px 14px",
-                  textDecoration: "none",
-                }}
-              >
+                {/* Icon */}
                 <div
                   style={{
-                    width: "34px",
-                    height: "34px",
-                    borderRadius: "8px",
-                    background: "#1E1A3A",
+                    width: "42px",
+                    height: "42px",
+                    borderRadius: "10px",
+                    background: cat.bg,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    flexShrink: 0,
+                    color: cat.color,
+                    marginBottom: "12px",
+                    marginTop: "4px",
                   }}
                 >
-                  {tool.icon}
+                  {cat.icon}
                 </div>
-                <div className="flex-1 min-w-0">
-                  <span
-                    style={{
-                      fontSize: "10px",
-                      fontWeight: 600,
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: "#5C6BC0",
-                      display: "block",
-                      marginBottom: "2px",
-                    }}
-                  >
-                    {tool.category}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: "13px",
-                      fontWeight: 600,
-                      color: "#FFFFFF",
-                      display: "block",
-                      marginBottom: "2px",
-                    }}
-                  >
-                    {tool.name}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: "11px",
-                      color: "#F5F5F5",
-                      display: "block",
-                      whiteSpace: "nowrap",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                    }}
-                  >
-                    {tool.description}
-                  </span>
-                </div>
-                <span style={{ color: "#FFFFFF", fontSize: "14px", flexShrink: 0 }}>→</span>
+
+                {/* Name */}
+                <p
+                  className="categoria-nombre"
+                  style={{
+                    fontSize: "16px",
+                    fontWeight: 700,
+                    color: "#FFFFFF",
+                    marginBottom: "4px",
+                  }}
+                >
+                  {cat.name}
+                </p>
+
+                {/* Count */}
+                <p
+                  style={{
+                    fontSize: "12px",
+                    color: "#8B8FA8",
+                    marginBottom: "16px",
+                    flex: 1,
+                  }}
+                >
+                  {cat.count} herramientas
+                </p>
+
+                {/* CTA */}
+                <span
+                  style={{
+                    fontSize: "12px",
+                    fontWeight: 600,
+                    color: cat.color,
+                  }}
+                >
+                  Ver todas →
+                </span>
               </Link>
             ))}
           </div>

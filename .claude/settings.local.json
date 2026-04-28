@@ -12,7 +12,8 @@
       "Bash(git push *)",
       "Bash(git merge *)",
       "Bash(xargs grep *)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(grep -v \"^import\\\\|^//\")"
     ]
   }
 }

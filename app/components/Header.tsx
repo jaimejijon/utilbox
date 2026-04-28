@@ -91,6 +91,7 @@ export default function Header() {
           {[
             { href: "/", label: "Herramientas" },
             { href: "/finanzas", label: "Categorías" },
+            { href: "/blog", label: "Blog" },
             { href: "/#acerca", label: "Acerca de" },
           ].map((item) => (
             <Link
@@ -154,6 +155,7 @@ export default function Header() {
           {[
             { href: "/", label: "Herramientas" },
             { href: "/finanzas", label: "Categorías" },
+            { href: "/blog", label: "Blog" },
             { href: "/#acerca", label: "Acerca de" },
           ].map((item) => (
             <Link
