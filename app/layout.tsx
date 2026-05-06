@@ -47,6 +47,11 @@ export default function RootLayout({
             gtag('config', 'G-120NH053PK');
           `}
         </Script>
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7414774371732537"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
         {children}
       </body>
     </html>
