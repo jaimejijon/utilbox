@@ -74,9 +74,23 @@ export default function Footer() {
             >
               Plataforma
             </p>
-            <p style={{ fontSize: "13px", lineHeight: "1.65", color: "#EEEEEE" }}>
-              Todos los cálculos corren directamente en tu navegador. No almacenamos ningún dato personal.
-            </p>
+            <ul className="space-y-2">
+              {[
+                { href: "/blog", label: "Blog" },
+                { href: "/privacidad", label: "Política de Privacidad" },
+                { href: "/terminos", label: "Términos de Uso" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    style={{ fontSize: "13px", color: "#EEEEEE" }}
+                    className="hover:!text-[#FFFFFF] transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
