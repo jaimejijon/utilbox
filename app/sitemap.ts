@@ -79,7 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/blog`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.8,
     },
     ...categories.map((path) => ({
       url: `${BASE_URL}${path}`,
@@ -96,8 +96,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...posts.map((post) => ({
       url: `${BASE_URL}/blog/${post.slug}`,
       lastModified: new Date(post.date),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
     })),
   ];
 }
