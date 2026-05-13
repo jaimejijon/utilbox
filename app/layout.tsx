@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { LanguageProvider } from "./context/LanguageContext";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -55,7 +56,7 @@ export default function RootLayout({
           strategy="afterInteractive"
           crossOrigin="anonymous"
         />
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

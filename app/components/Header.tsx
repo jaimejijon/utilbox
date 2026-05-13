@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/lib/translations";
 
 function LogoC1() {
   return (
@@ -33,8 +35,65 @@ function LogoC2() {
   );
 }
 
+function LangToggle() {
+  const { lang, setLang } = useLanguage();
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "2px",
+        marginLeft: "4px",
+        borderLeft: "0.5px solid #2A2A40",
+        paddingLeft: "14px",
+      }}
+    >
+      <button
+        onClick={() => setLang("es")}
+        style={{
+          fontSize: "12px",
+          fontWeight: lang === "es" ? 700 : 400,
+          color: lang === "es" ? "#FFFFFF" : "#666880",
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+          padding: "2px 3px",
+          lineHeight: 1,
+        }}
+      >
+        ES
+      </button>
+      <span style={{ color: "#2A2A40", fontSize: "12px", userSelect: "none" }}>|</span>
+      <button
+        onClick={() => setLang("en")}
+        style={{
+          fontSize: "12px",
+          fontWeight: lang === "en" ? 700 : 400,
+          color: lang === "en" ? "#FFFFFF" : "#666880",
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+          padding: "2px 3px",
+          lineHeight: 1,
+        }}
+      >
+        EN
+      </button>
+    </div>
+  );
+}
+
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { lang, setLang } = useLanguage();
+  const t = translations[lang].nav;
+
+  const navLinks = [
+    { href: "/", label: t.tools },
+    { href: "/finanzas", label: t.categories },
+    { href: "/blog", label: t.blog },
+    { href: "/#acerca", label: t.about },
+  ];
 
   return (
     <header
@@ -88,12 +147,7 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden sm:flex items-center gap-7">
-          {[
-            { href: "/", label: "Herramientas" },
-            { href: "/finanzas", label: "Categorías" },
-            { href: "/blog", label: "Blog" },
-            { href: "/#acerca", label: "Acerca de" },
-          ].map((item) => (
+          {navLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -103,13 +157,14 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
+          <LangToggle />
         </nav>
 
         {/* Hamburger */}
         <button
           className="flex sm:hidden flex-col justify-center gap-[5px] w-9 h-9 items-center"
           onClick={() => setOpen(!open)}
-          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-label={open ? t.closeMenu : t.openMenu}
         >
           <span
             style={{
@@ -152,12 +207,7 @@ export default function Header() {
             borderTop: "0.5px solid #1E2030",
           }}
         >
-          {[
-            { href: "/", label: "Herramientas" },
-            { href: "/finanzas", label: "Categorías" },
-            { href: "/blog", label: "Blog" },
-            { href: "/#acerca", label: "Acerca de" },
-          ].map((item) => (
+          {navLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -168,6 +218,46 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
+          {/* Language toggle row */}
+          <div
+            className="px-6 py-4"
+            style={{ borderBottom: "0.5px solid #1E2030" }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <span style={{ fontSize: "11px", color: "#666880", marginRight: "4px" }}>
+                {lang === "es" ? "Idioma" : "Language"}
+              </span>
+              <button
+                onClick={() => setLang("es")}
+                style={{
+                  fontSize: "13px",
+                  fontWeight: lang === "es" ? 700 : 400,
+                  color: lang === "es" ? "#FFFFFF" : "#666880",
+                  background: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: "2px 4px",
+                }}
+              >
+                ES
+              </button>
+              <span style={{ color: "#2A2A40", fontSize: "13px" }}>|</span>
+              <button
+                onClick={() => setLang("en")}
+                style={{
+                  fontSize: "13px",
+                  fontWeight: lang === "en" ? 700 : 400,
+                  color: lang === "en" ? "#FFFFFF" : "#666880",
+                  background: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: "2px 4px",
+                }}
+              >
+                EN
+              </button>
+            </div>
+          </div>
         </nav>
       )}
     </header>

@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/lib/translations";
 
 const tools = [
   { href: "/calculadora-interes-compuesto", label: "Interés compuesto" },
@@ -9,6 +13,9 @@ const tools = [
 ];
 
 export default function Footer() {
+  const { lang } = useLanguage();
+  const t = translations[lang].footer;
+
   return (
     <footer
       style={{ background: "#0F1117", borderTop: "0.5px solid #1E2030" }}
@@ -27,7 +34,7 @@ export default function Footer() {
               </span>
             </div>
             <p style={{ fontSize: "13px", lineHeight: "1.65", color: "#EEEEEE" }}>
-              Plataforma de herramientas gratuitas para toda Latinoamérica. Sin registro, sin costos.
+              {t.desc}
             </p>
           </div>
 
@@ -43,24 +50,24 @@ export default function Footer() {
                 marginBottom: "12px",
               }}
             >
-              Finanzas
+              {t.financeSection}
             </p>
             <ul className="space-y-2">
-              {tools.map((t) => (
-                <li key={t.href}>
+              {tools.map((tool) => (
+                <li key={tool.href}>
                   <Link
-                    href={t.href}
+                    href={tool.href}
                     style={{ fontSize: "13px", color: "#EEEEEE" }}
                     className="hover:!text-[#FFFFFF] transition-colors duration-200"
                   >
-                    {t.label}
+                    {tool.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* About */}
+          {/* Platform */}
           <div>
             <p
               style={{
@@ -72,13 +79,13 @@ export default function Footer() {
                 marginBottom: "12px",
               }}
             >
-              Plataforma
+              {t.platformSection}
             </p>
             <ul className="space-y-2">
               {[
                 { href: "/blog", label: "Blog" },
-                { href: "/privacidad", label: "Política de Privacidad" },
-                { href: "/terminos", label: "Términos de Uso" },
+                { href: "/privacidad", label: t.privacy },
+                { href: "/terminos", label: t.terms },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -96,7 +103,7 @@ export default function Footer() {
 
         <div style={{ borderTop: "0.5px solid #1E2030", paddingTop: "20px", textAlign: "center" }}>
           <span style={{ fontSize: "11px", color: "#F5F5F5" }}>
-            © 2025 utilbox.lat — Herramientas gratuitas para todos
+            {t.copyright}
           </span>
         </div>
       </div>
