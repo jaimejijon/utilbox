@@ -14,7 +14,8 @@
       "Bash(xargs grep *)",
       "Bash(npm install *)",
       "Bash(grep -v \"^import\\\\|^//\")",
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "Bash(node *)"
     ]
   }
 }
