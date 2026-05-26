@@ -92,7 +92,7 @@ export default function Header() {
     { href: "/", label: t.tools },
     { href: "/finanzas", label: t.categories },
     { href: "/blog", label: t.blog },
-    { href: "/#acerca", label: t.about },
+    { href: "/acerca", label: t.about },
   ];
 
   return (
